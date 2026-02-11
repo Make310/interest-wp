@@ -30,12 +30,22 @@ $counter_offer_href = !empty($args['counter_offer_href']) ? $args['counter_offer
         </div>
 
         <div class="footer__right">
-            <form class="footer__form" action="https://hnp.app/api/hnp_form" method="post">
-                <input type="email" name="email" placeholder="janedoe@gmail.com" class="footer__input" required>
-                <button type="submit" class="footer__submit">JOIN</button>
-            </form>
-            <p class="footer__form-label">Join our email newsletter</p>
-            <p class="footer__copyright"><?php echo esc_html(date('Y')); ?> All rights reserved</p>
+            <div class="footer__signup">
+                <form class="footer__form" action="https://hnp.app/api/hnp_form" method="post">
+                    <input type="email" name="email" placeholder="janedoe@gmail.com" class="footer__input" required>
+                    <button type="submit" class="footer__submit">JOIN</button>
+                </form>
+                <p class="footer__form-label">Join our email newsletter</p>
+                <p class="footer__copyright"><?php echo esc_html(date('Y')); ?> All rights reserved</p>
+            </div>
+            <img
+                src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/footer-crest-dark.png'); ?>"
+                alt=""
+                class="footer__crest"
+                loading="lazy"
+                decoding="async"
+                aria-hidden="true"
+            >
         </div>
     </div>
 </footer>

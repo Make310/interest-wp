@@ -167,13 +167,13 @@
                     </div>
 
                     <div class="quote">
-                        <p class="quote__text">"Consumers who shop around for rates and fees may save thousands of dollars over the life of a loan."</p>
+                        <p class="quote__text">"Consumers who shop around for rates and fees may save<br>thousands of dollars over the life of a loan."</p>
                         <span class="quote__source">Federal Trade Commission</span>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ftc.png" alt="FTC" class="quote__logo">
                     </div>
 
                     <div class="quote">
-                        <p class="quote__text">"You are not required to use the lender or settlement service providers recommended by your real estate agent."</p>
+                        <p class="quote__text">"You are not required to use the lender or settlement service<br>providers recommended by your real estate agent."</p>
                         <span class="quote__source">U.S. Department of Housing and Urban Development</span>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hud.png" alt="HUD" class="quote__logo">
                     </div>
