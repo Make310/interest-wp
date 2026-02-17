@@ -12,7 +12,7 @@
     <div class="navbar__container">
         <!-- Logo izquierdo - imagen -->
         <a href="<?php echo home_url('/'); ?>" class="navbar__brand">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Interest Rate Research Logo Black.png" alt="Interest Rate Research">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/INTEREST RATE RESEARCH LOGO.png" alt="Interest Rate Research">
         </a>
 
         <!-- Logo centro - Masthead -->

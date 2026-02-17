@@ -33,10 +33,10 @@
             <div class="hero__lenders">
                 <p class="hero__lenders-title">Thanks to our participating lenders:</p>
                 <div class="hero__lenders-logos">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-prmg-300x111.png" alt="PRMG">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Freedom.png" alt="Freedom Mortgage">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Rocket-Mortgage-Logo.png" alt="Rocket Mortgage">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pennymac-logo-1200x630.png" alt="PennyMac" class="hide-mobile">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-prmg-300x111.png" alt="PRMG" class="hero__lender-logo hero__lender-logo--prmg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Freedom.png" alt="Freedom Mortgage" class="hero__lender-logo hero__lender-logo--freedom">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Rocket-Mortgage-Logo.png" alt="Rocket Mortgage" class="hero__lender-logo hero__lender-logo--rocket">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pennymac-logo-1200x630.png" alt="PennyMac" class="hero__lender-logo hero__lender-logo--pennymac hide-mobile">
                 </div>
             </div>
         </div>
