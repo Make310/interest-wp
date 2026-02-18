@@ -7,9 +7,22 @@
 
     const menuBtn = document.querySelector('.navbar__menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const menuIcon = document.querySelector('.navbar__menu-icon');
     const body = document.body;
 
     if (menuBtn && mobileMenu) {
+        const openIcon = menuIcon?.dataset.openIcon || menuIcon?.getAttribute('src') || '';
+        const closeIcon = menuIcon?.dataset.closeIcon || openIcon;
+
+        function setMenuIcon(isOpen) {
+            if (!menuIcon) {
+                return;
+            }
+            menuIcon.setAttribute('src', isOpen ? openIcon : closeIcon);
+        }
+
+        setMenuIcon(false);
+
         menuBtn.addEventListener('click', function() {
             const isActive = this.classList.contains('is-active');
 
@@ -18,11 +31,13 @@
                 mobileMenu.classList.remove('is-active');
                 body.classList.remove('menu-open');
                 this.setAttribute('aria-expanded', 'false');
+                setMenuIcon(false);
             } else {
                 this.classList.add('is-active');
                 mobileMenu.classList.add('is-active');
                 body.classList.add('menu-open');
                 this.setAttribute('aria-expanded', 'true');
+                setMenuIcon(true);
             }
         });
 
@@ -33,6 +48,7 @@
                 mobileMenu.classList.remove('is-active');
                 body.classList.remove('menu-open');
                 menuBtn.setAttribute('aria-expanded', 'false');
+                setMenuIcon(false);
             });
         });
     }

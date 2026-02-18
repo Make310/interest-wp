@@ -190,13 +190,12 @@
     <section class="section">
         <div class="card">
             <div class="research">
-                <span class="research__label research__label--mobile">RESEARCH EXCERPTS</span>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/house low 2.png" alt="House" class="research__house">
                 <h1 class="research__title">
                     <span class="research__title-line research__title-line--desktop">Benefits of shopping around</span><br class="research__break research__break--desktop">
                     <span class="research__title-line research__title-line--desktop">when buying a home</span>
-                    <span class="research__title-line research__title-line--mobile">Benefits of shopping</span>
-                    <span class="research__title-line research__title-line--mobile">around when buying</span>
+                    <span class="research__title-line research__title-line--mobile">Benefits of shopping around</span>
+                    <span class="research__title-line research__title-line--mobile">when buying a home</span>
                 </h1>
                 <p class="research__subtitle">
                     <span class="research__subtitle-line research__subtitle-line--desktop">A center-aligned collection of statements from neutral, authoritative institutions.</span>

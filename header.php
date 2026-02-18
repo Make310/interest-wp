@@ -35,8 +35,18 @@
         </nav>
 
         <!-- Botón menú móvil -->
+        <?php
+        $mobile_menu_open_icon = esc_url(home_url('/IRR%20website%20assets/Open%20hamburger%20icon.png'));
+        $mobile_menu_close_icon = esc_url(home_url('/IRR%20website%20assets/Closed%20hamburger%20Icon.png'));
+        ?>
         <button class="navbar__menu-btn" aria-label="Menu" aria-expanded="false">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bold_mobile-hamburger-menu-3.png" alt="Menu" class="navbar__menu-icon">
+            <img
+                src="<?php echo $mobile_menu_close_icon; ?>"
+                data-open-icon="<?php echo $mobile_menu_open_icon; ?>"
+                data-close-icon="<?php echo $mobile_menu_close_icon; ?>"
+                alt="Menu"
+                class="navbar__menu-icon"
+            >
         </button>
     </div>
 </nav>
