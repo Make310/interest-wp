@@ -13,7 +13,7 @@ get_header();
                 <div class="guarantee__header">
                     <h1 class="guarantee__title">Close With Confidence<br>You Got the Lower Rate</h1>
                     <div class="guarantee__badge">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/IRR Gaurantee Badge with Ribon.png" alt="Interest Rate Research Guarantee">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/IRR Gaurantee Seal and Ribbon 2.png" alt="Interest Rate Research Guarantee">
                     </div>
                 </div>
                 <div class="guarantee__content">

@@ -36,8 +36,8 @@
 
         <!-- Botón menú móvil -->
         <?php
-        $mobile_menu_open_icon = esc_url(home_url('/IRR%20website%20assets/Open%20hamburger%20icon.png'));
-        $mobile_menu_close_icon = esc_url(home_url('/IRR%20website%20assets/Closed%20hamburger%20Icon.png'));
+        $mobile_menu_open_icon = esc_url(get_template_directory_uri() . '/assets/images/open-hamburger-icon.png');
+        $mobile_menu_close_icon = esc_url(get_template_directory_uri() . '/assets/images/closed-hamburger-icon.png');
         ?>
         <button class="navbar__menu-btn" aria-label="Menu" aria-expanded="false">
             <img
