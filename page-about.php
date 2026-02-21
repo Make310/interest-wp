@@ -122,7 +122,7 @@ for ($i = 1; $i <= 7; $i++) {
     </section>
 
     <!-- Footer Section -->
-    <?php get_template_part('template-parts/footers/home'); ?>
+    <?php get_template_part('template-parts/footers/home', null, array('fullwidth' => false)); ?>
 </main>
 
 <?php get_footer(); ?>
