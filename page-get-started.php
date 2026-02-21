@@ -10,21 +10,30 @@ get_header();
     <section class="section">
         <div class="card card--guarantee">
             <div class="guarantee guarantee--getstarted">
-                <div class="guarantee__header">
-                    <h1 class="guarantee__title">Close With Confidence<br>You Got the Lower Rate</h1>
-                    <div class="guarantee__badge">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/IRR Gaurantee Seal and Ribbon 2.png" alt="Interest Rate Research Guarantee">
-                    </div>
-                </div>
                 <div class="guarantee__content">
+                    <h1 class="guarantee__title">
+                        <span class="guarantee__title-line guarantee__title-line--desktop">Close with confidence</span><br class="gs-break-desktop">
+                        <span class="guarantee__title-line guarantee__title-line--desktop">you got the lower rate</span>
+                        <span class="guarantee__title-line guarantee__title-line--mobile">Close with confidence</span>
+                        <span class="guarantee__title-line guarantee__title-line--mobile">you got the lower rate</span>
+                    </h1>
                     <p class="guarantee__text">
-                        To take advantage of our lower rate guarantee upload your first offer for a certified <strong>Counter Offer</strong> within 24 hours. Otherwise, choose <strong>New Offer</strong> or schedule a call.
+                        <span class="guarantee__text-line guarantee__text-line--desktop">To take advantage of our lower rate guaranty</span><br class="gs-break-desktop">
+                        <span class="guarantee__text-line guarantee__text-line--desktop">upload your first offer for a certified Counter Offer within 24&nbsp;hours.</span><br class="gs-break-desktop">
+                        <span class="guarantee__text-line guarantee__text-line--desktop">Otherwise, choose New Offer or schedule a call.</span>
+                        <span class="guarantee__text-line guarantee__text-line--mobile">To take advantage of our lower rate guaranty</span>
+                        <span class="guarantee__text-line guarantee__text-line--mobile">upload your first offer for a certified Counter</span>
+                        <span class="guarantee__text-line guarantee__text-line--mobile">Offer within 24 hours. Otherwise, choose New</span>
+                        <span class="guarantee__text-line guarantee__text-line--mobile">Offer or schedule a call.</span>
                     </p>
                     <div class="guarantee__buttons">
                         <a href="#counter-offer" class="btn btn--dark">COUNTER OFFER</a>
                         <a href="#new-offer" class="btn btn--outline">NEW OFFER</a>
                         <a href="#schedule-call" class="btn btn--link">SCHEDULE A CALL</a>
                     </div>
+                </div>
+                <div class="guarantee__badge">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/IRR Gaurantee Seal and Ribbon 2.png" alt="Interest Rate Research Guarantee">
                 </div>
             </div>
         </div>
@@ -49,20 +58,19 @@ get_header();
 
                 <h2 class="step__subtitle">Have you recieved a Loan Estimate?</h2>
                 <p class="step__text">
-                    To use or lower rate gaurantee click the icon above to upload your first offer<br>
-                    <em>Safe and secure, your information will never be sold or misused here.<br>
-                    You will receive a certified counter offer by the end of the business day</em>
+                    To use or lower rate guarentee click the icon above to upload your first offer<br class="gs-break-desktop">
+                    Safe and secure, your information will never be sold or misused here.<br class="gs-break-desktop">
+                    You will receive a certified counter offer by the end of the business day
                 </p>
                 <a href="#" class="step__faq-link">FAQ's on uploading your loan estimate</a>
             </div>
 
             <div class="hero__lenders">
-                <p class="hero__lenders-title">Thanks to our participating lenders:</p>
                 <div class="hero__lenders-logos">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-prmg-300x111.png" alt="PRMG">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Freedom.png" alt="Freedom Mortgage">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Rocket-Mortgage-Logo.png" alt="Rocket Mortgage">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pennymac-logo-1200x630.png" alt="PennyMac" class="hide-mobile">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-prmg-300x111.png" alt="PRMG" class="hero__lender-logo hero__lender-logo--prmg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Freedom.png" alt="Freedom Mortgage" class="hero__lender-logo hero__lender-logo--freedom">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Rocket-Mortgage-Logo.png" alt="Rocket Mortgage" class="hero__lender-logo hero__lender-logo--rocket">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pennymac-logo-1200x630.png" alt="PennyMac" class="hero__lender-logo hero__lender-logo--pennymac hide-mobile">
                 </div>
             </div>
         </div>
