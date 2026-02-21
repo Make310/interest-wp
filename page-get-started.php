@@ -22,9 +22,10 @@ get_header();
                         <span class="guarantee__text-line guarantee__text-line--desktop">upload your first offer for a certified Counter Offer within 24&nbsp;hours.</span><br class="gs-break-desktop">
                         <span class="guarantee__text-line guarantee__text-line--desktop">Otherwise, choose New Offer or schedule a call.</span>
                         <span class="guarantee__text-line guarantee__text-line--mobile">To take advantage of our lower rate guaranty</span>
-                        <span class="guarantee__text-line guarantee__text-line--mobile">upload your first offer for a certified Counter</span>
-                        <span class="guarantee__text-line guarantee__text-line--mobile">Offer within 24 hours. Otherwise, choose New</span>
-                        <span class="guarantee__text-line guarantee__text-line--mobile">Offer or schedule a call.</span>
+                        <span class="guarantee__text-line guarantee__text-line--mobile">upload your first offer for a certified</span>
+                        <span class="guarantee__text-line guarantee__text-line--mobile">Counter Offer within 24 hours.</span>
+                        <span class="guarantee__text-line guarantee__text-line--mobile guarantee__text-line--mobile-p2-start">If you have no you have no offer,</span>
+                        <span class="guarantee__text-line guarantee__text-line--mobile">choose New Offer below or schedule a call.</span>
                     </p>
                     <div class="guarantee__buttons">
                         <a href="#counter-offer" class="btn btn--dark">COUNTER OFFER</a>
@@ -56,11 +57,20 @@ get_header();
                     </div>
                 </div>
 
-                <h2 class="step__subtitle">Have you recieved a Loan Estimate?</h2>
-                <p class="step__text">
-                    To use or lower rate guarentee click the icon above to upload your first offer<br class="gs-break-desktop">
-                    Safe and secure, your information will never be sold or misused here.<br class="gs-break-desktop">
-                    You will receive a certified counter offer by the end of the business day
+                <h2 class="step__subtitle">
+                    <span class="counter-offer__title-line counter-offer__title-line--desktop">Have you recieved a Loan Estimate?</span>
+                    <span class="counter-offer__title-line counter-offer__title-line--mobile">Have you recieved a</span>
+                    <span class="counter-offer__title-line counter-offer__title-line--mobile">Loan Estimate?</span>
+                </h2>
+                <p class="step__text counter-offer__text">
+                    <span class="counter-offer__text-line counter-offer__text-line--desktop">To use or lower rate guarentee click the icon above to upload your first offer</span><br class="gs-break-desktop">
+                    <span class="counter-offer__text-line counter-offer__text-line--desktop">Safe and secure, your information will never be sold or misused here.</span><br class="gs-break-desktop">
+                    <span class="counter-offer__text-line counter-offer__text-line--desktop">You will receive a certified counter offer by the end of the business day</span>
+
+                    <span class="counter-offer__text-line counter-offer__text-line--mobile">To use or lowest rate guarantee click the</span>
+                    <span class="counter-offer__text-line counter-offer__text-line--mobile">icon above to upload your first offer. Safe</span>
+                    <span class="counter-offer__text-line counter-offer__text-line--mobile">and secure, you will receive a certified</span>
+                    <span class="counter-offer__text-line counter-offer__text-line--mobile">counter offer within 24 hours.</span>
                 </p>
                 <a href="#" class="step__faq-link">FAQ's on uploading your loan estimate</a>
             </div>
@@ -82,8 +92,13 @@ get_header();
             <div class="new-offer" id="new-offer">
                 <span class="step__label">NEW OFFER</span>
                 <p class="new-offer__subtitle">
-                    Fast and Free, use Interest Rate Research<br>
-                    for the lowest interest rate guarantee
+                    <span class="new-offer__subtitle-line new-offer__subtitle-line--desktop">Fast and Free, use Interest Rate Research</span><br class="gs-break-desktop">
+                    <span class="new-offer__subtitle-line new-offer__subtitle-line--desktop">for the lowest inPut our gaurnanteterest</span>
+
+                    <span class="new-offer__subtitle-line new-offer__subtitle-line--mobile">Fast and Free consultation, use</span>
+                    <span class="new-offer__subtitle-line new-offer__subtitle-line--mobile">Interest Rate Research for the lowest</span>
+                    <span class="new-offer__subtitle-line new-offer__subtitle-line--mobile">interest rate available today</span>
+                    <span class="new-offer__subtitle-line new-offer__subtitle-line--mobile">from the top lenders</span>
                 </p>
 
                 <div class="new-offer__form-wrapper">
@@ -366,8 +381,12 @@ get_header();
             <div class="schedule-call" id="schedule-call">
                 <span class="step__label">SCHEDULE A CALL</span>
                 <p class="schedule-call__subtitle">
-                    Have questions or just want to talk it over?<br>
-                    Pick a time to speak with a Mortgage and Interest Rate Pro
+                    <span class="schedule-call__subtitle-line schedule-call__subtitle-line--desktop">Have questions or just want to talk it over?</span><br class="gs-break-desktop">
+                    <span class="schedule-call__subtitle-line schedule-call__subtitle-line--desktop">Pick a time to speak with a Mortgage and Interest Rate Pro</span>
+
+                    <span class="schedule-call__subtitle-line schedule-call__subtitle-line--mobile">Have questions or just want to talk it</span>
+                    <span class="schedule-call__subtitle-line schedule-call__subtitle-line--mobile">over? Pick a time to speak with a</span>
+                    <span class="schedule-call__subtitle-line schedule-call__subtitle-line--mobile">Mortgage and Interest Rate Pro</span>
                 </p>
 
                 <div class="schedule-call__calendar">
