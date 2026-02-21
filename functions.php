@@ -22,6 +22,114 @@ function irr_enqueue() {
 
     // Main JS
     wp_enqueue_script('irr-main', get_template_directory_uri() . '/assets/js/main.js', [], '1.0.0', true);
+
+    // Research chart scripts
+    if (is_page('research') || is_page_template('page-research.php')) {
+        wp_enqueue_script('irr-chartjs', 'https://cdn.jsdelivr.net/npm/chart.js@4.4.1', [], '4.4.1', true);
+        wp_enqueue_script('irr-chartjs-annotation', 'https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1', ['irr-chartjs'], '3.0.1', true);
+
+        $chart_inline = <<<'JS'
+document.addEventListener('DOMContentLoaded', function () {
+  const canvas = document.getElementById('ratesChart');
+  if (!canvas || typeof Chart === 'undefined') return;
+
+  const annotationPlugin = window['chartjs-plugin-annotation'] || window.chartjsPluginAnnotation;
+  if (annotationPlugin) {
+    Chart.register(annotationPlugin);
+  }
+
+  const labels = ['2019', '2020', '2021', '2022', '2023', '2024'];
+  const data30yr = [4.45, 3.72, 2.96, 5.34, 6.90, 6.85];
+  const data15yr = [3.90, 3.15, 2.28, 4.65, 6.15, 6.20];
+  const data10yr = [2.75, 1.80, 1.60, 2.95, 3.85, 4.35];
+
+  new Chart(canvas.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: '30-year Fixed Rate Mortgage, Monthly Average',
+          data: data30yr,
+          borderWidth: 3,
+          pointRadius: 3,
+          tension: 0.25
+        },
+        {
+          label: '15-year Fixed Rate Mortgage, Monthly Average',
+          data: data15yr,
+          borderWidth: 3,
+          pointRadius: 3,
+          tension: 0.25
+        },
+        {
+          label: 'U.S. 10-year Treasury Constant Maturity Rate, Monthly Average',
+          data: data10yr,
+          borderWidth: 3,
+          pointRadius: 3,
+          tension: 0.25
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { top: 10, right: 10, bottom: 10, left: 10 } },
+      interaction: { mode: 'nearest', intersect: false },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { boxWidth: 14, boxHeight: 14 }
+        },
+        tooltip: { enabled: true },
+        annotation: {
+          annotations: {
+            peakLabel: {
+              type: 'label',
+              xValue: '2023',
+              yValue: 7.62,
+              backgroundColor: 'rgba(255,255,255,0.9)',
+              borderColor: 'rgba(0,0,0,0.15)',
+              borderWidth: 1,
+              padding: 8,
+              content: ['Recent peak in', 'October 2023 at 7.62%'],
+              textAlign: 'center',
+              font: { size: 12, weight: '600' }
+            },
+            troughLabel: {
+              type: 'label',
+              xValue: '2020',
+              yValue: 2.69,
+              backgroundColor: 'rgba(255,255,255,0.9)',
+              borderColor: 'rgba(0,0,0,0.15)',
+              borderWidth: 1,
+              padding: 8,
+              content: ['Recent trough in', 'December 2020 at 2.69%'],
+              textAlign: 'center',
+              font: { size: 12, weight: '600' }
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          title: { display: true, text: 'Percent' },
+          beginAtZero: true,
+          suggestedMax: 8,
+          ticks: { stepSize: 1 },
+          grid: { color: 'rgba(0,0,0,0.08)' }
+        },
+        x: {
+          grid: { display: false }
+        }
+      }
+    }
+  });
+});
+JS;
+
+        wp_add_inline_script('irr-chartjs-annotation', $chart_inline, 'after');
+    }
 }
 add_action('wp_enqueue_scripts', 'irr_enqueue');
 

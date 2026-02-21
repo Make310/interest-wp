@@ -23,8 +23,13 @@ $all_tags = get_tags(array('hide_empty' => true));
     <section class="research-header">
         <h1 class="research-header__title"><span class="underline">The Research</span></h1>
         <p class="research-header__subtitle">
-            Fast and Free, use Interest Rate Research<br>
-            for the lowest interest rates
+            <span class="research-header__subtitle-line research-header__subtitle-line--desktop">Fast and Free, use Interest Rate Research</span><br class="research-header__subtitle-break research-header__subtitle-break--desktop">
+            <span class="research-header__subtitle-line research-header__subtitle-line--desktop">for the lowest inPut our gaurnanteterest</span>
+
+            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">Fast and Free consultation, use</span>
+            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">Interest Rate Research for the lowest</span>
+            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">interest rate available today from the</span>
+            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">top lenders.</span>
         </p>
 
         <?php if ($all_tags) : ?>
@@ -56,9 +61,19 @@ $all_tags = get_tags(array('hide_empty' => true));
             ?>
                 <article class="post">
                     <?php
-                    $categories = get_the_category();
-                    if ($categories) : ?>
-                        <span class="post__category"><?php echo esc_html(strtoupper($categories[0]->name)); ?></span>
+                    $post_label = '';
+                    $post_tags  = get_the_tags();
+                    if (!empty($post_tags) && !is_wp_error($post_tags)) {
+                        $post_label = $post_tags[0]->name;
+                    } else {
+                        $categories = get_the_category();
+                        if (!empty($categories)) {
+                            $post_label = $categories[0]->name;
+                        }
+                    }
+
+                    if ($post_label) : ?>
+                        <span class="post__category"><?php echo esc_html(strtoupper($post_label)); ?></span>
                     <?php endif; ?>
 
                     <h2 class="post__title">
@@ -73,8 +88,9 @@ $all_tags = get_tags(array('hide_empty' => true));
                 </article>
 
                 <?php
-                // Insert chart section after 2nd post (only on first page)
-                if ($post_count == 2 && $paged == 1) : ?>
+                // Insert chart section after 2nd post (first page).
+                // If there is only one post, insert after the 1st so the chart is still visible.
+                if (($post_count == 2 || ($post_count == 1 && (int) $blog_query->post_count === 1)) && $paged == 1) : ?>
                     </section>
 
                     <!-- Chart Card -->
@@ -84,31 +100,13 @@ $all_tags = get_tags(array('hide_empty' => true));
                                 <h2 class="chart-section__title">Freddie Mac Prime Mortgage Market Survey and Interest Rate</h2>
                                 <p class="chart-section__subtitle">(Percent per annum, not seasonally adjusted)</p>
 
-                                <div class="chart-section__image">
-                                    <img src="https://picsum.photos/600/350" alt="Interest Rate Chart">
+                                <div class="chart-section__card">
+                                    <div class="chart-section__holder">
+                                        <canvas id="ratesChart" aria-label="Mortgage rates line chart" role="img"></canvas>
+                                    </div>
                                 </div>
 
                                 <p class="chart-section__source">Source: Freddie Mac and U.S. Federal Reserve.</p>
-
-                                <div class="chart-section__legend">
-                                    <span class="legend-item legend-item--blue">30-year Fixed Rate Mortgage, Monthly Average</span>
-                                    <span class="legend-item legend-item--orange">15-year Fixed Rate Mortgage, Monthly Average</span>
-                                    <span class="legend-item legend-item--red">U.S. 10-year Treasury Constant Maturity Rate, Monthly Average</span>
-                                </div>
-
-                                <div class="chart-section__nav">
-                                    <button class="chart-nav-btn" aria-label="Previous">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-                                    </button>
-                                    <span class="chart-section__date">01/19/26</span>
-                                    <button class="chart-nav-btn" aria-label="Next">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
-                                    </button>
-                                </div>
-
-                                <p class="chart-section__caption">
-                                    The 30-year fixed-rate mortgage averaged 6.06% as of January 15, 2026, down from last week when it averaged 6.16%. A year ago at this time, the 30-year FRM averaged 7.04%.
-                                </p>
                             </div>
                         </div>
                     </section>
@@ -125,18 +123,12 @@ $all_tags = get_tags(array('hide_empty' => true));
     <!-- Pagination -->
     <?php
     $total_pages = $blog_query->max_num_pages;
-    if ($total_pages > 1) :
+    if ($total_pages > 0) :
         $current_page = max(1, $paged);
         $research_page_url = get_permalink();
     ?>
     <nav class="pagination">
         <?php
-        // Previous page link
-        if ($current_page > 1) :
-            $prev_url = ($current_page == 2) ? $research_page_url : $research_page_url . 'page/' . ($current_page - 1) . '/';
-            echo '<a href="' . esc_url($prev_url) . '" class="pagination__item">&larr;</a>';
-        endif;
-
         // Page numbers
         for ($i = 1; $i <= $total_pages; $i++) :
             $page_url = ($i == 1) ? $research_page_url : $research_page_url . 'page/' . $i . '/';
@@ -149,12 +141,6 @@ $all_tags = get_tags(array('hide_empty' => true));
                 echo '<span class="pagination__dots">...</span>';
             endif;
         endfor;
-
-        // Next page link
-        if ($current_page < $total_pages) :
-            $next_url = $research_page_url . 'page/' . ($current_page + 1) . '/';
-            echo '<a href="' . esc_url($next_url) . '" class="pagination__item">&rarr;</a>';
-        endif;
         ?>
     </nav>
     <?php endif; ?>

@@ -10,14 +10,15 @@ $search_query = get_search_query();
 <main class="main main--full-height">
     <!-- Page Header -->
     <section class="research-header">
-        <p class="research-header__label">SEARCH RESULTS</p>
-        <h1 class="research-header__title"><span class="underline"><?php echo esc_html($search_query); ?></span></h1>
+        <h1 class="research-header__title"><span class="underline">The Research</span></h1>
         <p class="research-header__subtitle">
-            <?php
-            global $wp_query;
-            $results_count = $wp_query->found_posts;
-            printf(_n('%d result found', '%d results found', $results_count), $results_count);
-            ?>
+            <span class="research-header__subtitle-line research-header__subtitle-line--desktop">Fast and Free, use Interest Rate Research</span><br class="research-header__subtitle-break research-header__subtitle-break--desktop">
+            <span class="research-header__subtitle-line research-header__subtitle-line--desktop">for the lowest inPut our gaurnanteterest</span>
+
+            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">Fast and Free consultation, use</span>
+            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">Interest Rate Research for the lowest</span>
+            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">interest rate available today from the</span>
+            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">top lenders.</span>
         </p>
 
         <div class="search-box">
@@ -37,9 +38,18 @@ $search_query = get_search_query();
             <?php while (have_posts()) : the_post(); ?>
                 <article class="post">
                     <?php
-                    $categories = get_the_category();
-                    if ($categories) : ?>
-                        <span class="post__category"><?php echo esc_html(strtoupper($categories[0]->name)); ?></span>
+                    $post_label = '';
+                    $post_tags  = get_the_tags();
+                    if (!empty($post_tags) && !is_wp_error($post_tags)) {
+                        $post_label = $post_tags[0]->name;
+                    } else {
+                        $categories = get_the_category();
+                        if (!empty($categories)) {
+                            $post_label = $categories[0]->name;
+                        }
+                    }
+                    if ($post_label) : ?>
+                        <span class="post__category"><?php echo esc_html(strtoupper($post_label)); ?></span>
                     <?php endif; ?>
 
                     <h2 class="post__title">
@@ -60,9 +70,10 @@ $search_query = get_search_query();
 
     <!-- Pagination -->
     <?php
-    $total_pages = $wp_query->max_num_pages;
-    if ($total_pages > 1) :
-        $current_page = max(1, get_query_var('paged'));
+    global $wp_query;
+    $total_pages = (int) $wp_query->max_num_pages;
+    if ($total_pages > 0) :
+        $current_page = max(1, (int) get_query_var('paged'), (int) get_query_var('page'));
     ?>
     <nav class="pagination">
         <?php
@@ -88,7 +99,7 @@ $search_query = get_search_query();
     <?php endif; ?>
 
     <!-- Footer Section -->
-    <?php get_template_part('template-parts/footers/research'); ?>
+    <?php get_template_part('template-parts/footers/home', null, array('fullwidth' => true)); ?>
 </main>
 
 <?php get_footer(); ?>
