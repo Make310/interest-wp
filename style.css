@@ -5066,6 +5066,140 @@ body.is-research-context .pagination__item:hover {
     color: #111111;
 }
 
+/* ========================================
+   RESEARCH FOOTER - DESKTOP ZOOM SAFETY
+   Keeps footer balanced when browser zoom reduces CSS viewport width on desktop.
+======================================== */
+@media (hover: hover) and (pointer: fine) and (max-width: 1023px) {
+    body.is-research-context .footer--home {
+        padding: 24px 0 26px;
+    }
+
+    body.is-research-context .footer--home .footer__container--home {
+        gap: 18px;
+    }
+
+    body.is-research-context .footer--home .footer__logo {
+        font-size: clamp(22px, 3.1vw, 28px);
+        line-height: 1.08;
+        margin-bottom: 10px;
+    }
+
+    body.is-research-context .footer--home .footer__link {
+        font-size: clamp(11px, 1.55vw, 14px);
+        line-height: 1.05;
+    }
+
+    body.is-research-context .footer--home .footer__email {
+        font-size: clamp(11px, 1.45vw, 13px);
+        line-height: 1.08;
+    }
+
+    body.is-research-context .footer--home .footer__form-label,
+    body.is-research-context .footer--home .footer__copyright {
+        font-size: clamp(12px, 1.6vw, 16px);
+        line-height: 1.15;
+        margin-bottom: 2px;
+    }
+
+    body.is-research-context .footer--home .footer__input {
+        font-size: clamp(13px, 1.65vw, 15px);
+    }
+
+    body.is-research-context .footer--home .footer__submit {
+        font-size: clamp(14px, 1.8vw, 17px);
+        padding-inline: clamp(12px, 1.8vw, 16px);
+        white-space: nowrap;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) and (max-width: 1023px) {
+    body.is-research-context .footer--home .footer__container--home {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 22px;
+    }
+
+    body.is-research-context .footer--home .footer__left {
+        min-width: 0;
+    }
+
+    body.is-research-context .footer--home .footer__right {
+        position: relative;
+        min-height: 126px;
+        padding-right: 86px;
+        text-align: left;
+    }
+
+    body.is-research-context .footer--home .footer__signup {
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        transform: none;
+    }
+
+    body.is-research-context .footer--home .footer__form {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 10px auto;
+        gap: 8px;
+    }
+
+    body.is-research-context .footer--home .footer__input {
+        height: 46px;
+        min-width: 0;
+        padding: 0 12px;
+    }
+
+    body.is-research-context .footer--home .footer__submit {
+        height: 46px;
+        min-width: 68px;
+    }
+
+    body.is-research-context .footer--home .footer__crest {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: auto;
+        left: auto;
+        width: 78px;
+        height: auto;
+        margin: 0;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (max-width: 767px) {
+    body.is-research-context .footer--home .footer__right {
+        min-height: 118px;
+        padding-right: 96px;
+    }
+
+    body.is-research-context .footer--home .footer__form {
+        margin-bottom: 8px;
+    }
+
+    body.is-research-context .footer--home .footer__input {
+        height: 42px;
+        padding: 0 10px;
+        font-size: 13px;
+    }
+
+    body.is-research-context .footer--home .footer__submit {
+        height: 42px;
+        padding: 0 12px;
+        font-size: 15px;
+    }
+
+    body.is-research-context .footer--home .footer__crest {
+        width: 72px;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        margin: 0;
+    }
+}
+
 body.is-research-context .pagination__item--active {
     width: 54px;
     height: 54px;
@@ -8931,5 +9065,455 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
         object-fit: contain;
         transform: none;
         transform-origin: top center;
+    }
+}
+
+/* ========================================
+   SITEWIDE ZOOM RESILIENCE (DESKTOP/TABLET)
+   Prevents layout regressions when browser zoom changes CSS viewport size.
+======================================== */
+
+body .navbar__container,
+body .navbar__brand,
+body .navbar__nav,
+body .navbar__nav-list,
+body .main,
+body .section,
+body .card,
+body .footer__container--home,
+body .footer__left,
+body .footer__right,
+body .footer__signup,
+body .footer__form,
+body .hero,
+body .guarantee,
+body .step,
+body .research,
+body .about-page,
+body .about-main,
+body .about-toc,
+body .article,
+body .article__header,
+body .article__content,
+body .research-header,
+body .blog-posts,
+body .post {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+body .footer__form {
+    max-width: 100%;
+}
+
+body .footer__submit {
+    white-space: nowrap;
+}
+
+body .navbar__brand img,
+body .navbar__logo img,
+body .footer__crest,
+body .guarantee__badge img,
+body .step__seal-img {
+    max-width: 100%;
+}
+
+/* Keep shell/navbar/footer styles active when zoom-out pushes CSS viewport > 2200px */
+@media (min-width: 2201px) {
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) {
+        --home-prop-scale: 0.88;
+        --home-fluid-scale: 0.88;
+        --home-inline-pad: 60px;
+        --home-card-inline-pad: 49px;
+        padding-top: 106px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__container {
+        max-width: 1320px;
+        height: 106px;
+        padding: 0 46px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__brand {
+        margin-left: 49px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__brand img {
+        height: 21px;
+        width: auto;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__logo {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__logo img {
+        height: 63px;
+        width: auto;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__nav {
+        display: block;
+        margin-right: 49px;
+        min-width: 0;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__menu-btn {
+        display: none;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .mobile-menu {
+        display: none !important;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__nav-list {
+        gap: 19px;
+        flex-wrap: nowrap;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__nav-link {
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: 19px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #111;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__nav-arrow img {
+        height: 17px;
+        width: auto;
+    }
+
+    body.page-template-page-get-started .main,
+    body.page-template-page-about .main.main--about {
+        max-width: 1320px;
+        padding: 30px 60px;
+    }
+
+    body.page-template-page-get-started .section,
+    body.page-template-page-about .section {
+        margin-bottom: 26px;
+    }
+
+    body.page-template-page-about .about-page {
+        gap: 35px;
+        padding: 35px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home {
+        background: linear-gradient(90deg, #2d2e31 0%, #34353a 52%, #2e2f32 100%);
+        padding: 39px 0 40px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__container--home {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 63px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__left {
+        flex: 0 0 42%;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__right {
+        flex: 1 1 58%;
+        position: relative;
+        padding-right: 114px;
+        min-height: 150px;
+        text-align: left;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__logo {
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: 30px;
+        line-height: 1.08;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin-bottom: 14px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__nav {
+        gap: 7px;
+        margin-bottom: 14px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__link {
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: 15px;
+        line-height: 1.05;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__email {
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: 14px;
+        line-height: 1.08;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__signup {
+        width: 100%;
+        max-width: 722px;
+        min-width: 0;
+        margin-left: auto;
+        transform: translateX(44px);
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__form {
+        width: 100%;
+        max-width: 722px;
+        display: flex;
+        align-items: stretch;
+        gap: 12px;
+        margin: 0 0 14px;
+        flex-wrap: nowrap;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__input {
+        flex: 1 1 auto;
+        min-width: 0;
+        height: 55px;
+        padding: 0 16px;
+        border: 2px solid #4d4d4f;
+        font-size: 16px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__submit {
+        height: 55px;
+        padding: 0 23px;
+        font-size: 18px;
+        line-height: 1;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: #181818;
+        flex: 0 0 auto;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__form-label,
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__copyright {
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: 18px;
+        line-height: 1.16;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    body:is(.page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__crest {
+        width: 121px;
+        position: absolute;
+        right: 25px;
+        top: 74px;
+        bottom: auto;
+        opacity: 0.95;
+        filter: grayscale(100%) contrast(115%) brightness(88%);
+        margin: 0;
+    }
+}
+
+/* ========================================
+   RESEARCH + BLOGS ALIGNMENT TO HOME SHELL
+   (No cards, same horizontal grid as navbar/home cards)
+======================================== */
+
+@media (max-width: 767px) {
+    body.is-research-context .main {
+        padding: 8px;
+        max-width: 100%;
+    }
+
+    body.is-research-context .research-header,
+    body.is-research-context .blog-posts,
+    body.is-research-context .pagination {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    body.single-post.is-research-context .article {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (min-width: 760px) and (max-width: 2200px) {
+    body.is-research-context .main {
+        max-width: calc(1500px * var(--home-fluid-scale));
+        padding: clamp(20px, calc(34px * var(--home-fluid-scale)), 34px) var(--home-inline-pad, clamp(24px, calc(68px * var(--home-fluid-scale)), 68px));
+    }
+
+    body.is-research-context .research-header {
+        padding-left: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
+        padding-right: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
+    }
+
+    body.is-research-context .blog-posts {
+        padding-left: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
+        padding-right: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
+    }
+
+    body.is-research-context .pagination {
+        padding-left: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
+        padding-right: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
+    }
+
+    body.single-post.is-research-context .article {
+        padding-left: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
+        padding-right: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
+    }
+}
+
+@media (min-width: 2201px) {
+    body.is-research-context .main {
+        max-width: 1320px;
+        padding: 30px 60px;
+    }
+
+    body.is-research-context .research-header,
+    body.is-research-context .blog-posts,
+    body.is-research-context .pagination,
+    body.single-post.is-research-context .article {
+        padding-left: 49px;
+        padding-right: 49px;
+    }
+}
+
+/* ========================================
+   RESEARCH FOOTER ZOOM-SAFE RANGES
+   (Desktop zoom can push CSS viewport into tablet/mobile breakpoints)
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body.is-research-context .footer--home {
+        padding: 34px 0 38px;
+    }
+
+    body.is-research-context .footer--home .footer__container--home {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 26px;
+    }
+
+    body.is-research-context .footer--home .footer__left {
+        min-width: 0;
+    }
+
+    body.is-research-context .footer--home .footer__right {
+        position: relative;
+        min-width: 0;
+        min-height: 148px;
+        padding-right: 108px;
+        text-align: left;
+    }
+
+    body.is-research-context .footer--home .footer__signup {
+        width: 100%;
+        max-width: 470px;
+        min-width: 0;
+        margin-left: auto;
+        transform: none;
+    }
+
+    body.is-research-context .footer--home .footer__form {
+        width: 100%;
+        max-width: 470px;
+        margin: 0 0 12px auto;
+        gap: 10px;
+    }
+
+    body.is-research-context .footer--home .footer__input {
+        height: 52px;
+        font-size: 14px;
+    }
+
+    body.is-research-context .footer--home .footer__submit {
+        height: 52px;
+        padding: 0 18px;
+        font-size: 17px;
+    }
+
+    body.is-research-context .footer--home .footer__form-label,
+    body.is-research-context .footer--home .footer__copyright {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    body.is-research-context .footer--home .footer__crest {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: auto;
+        width: 98px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 767px) and (hover: hover) and (pointer: fine) {
+    body.is-research-context .footer--home {
+        padding: 24px 0 26px;
+    }
+
+    body.is-research-context .footer--home .footer__container--home {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    body.is-research-context .footer--home .footer__right {
+        position: relative;
+        min-height: 112px;
+        padding-right: 118px;
+        text-align: left;
+    }
+
+    body.is-research-context .footer--home .footer__signup,
+    body.is-research-context .footer--home .footer__form {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    body.is-research-context .footer--home .footer__form {
+        margin: 0 0 8px;
+        gap: 8px;
+    }
+
+    body.is-research-context .footer--home .footer__input {
+        height: 46px;
+        min-width: 0;
+        padding: 0 12px;
+        font-size: 14px;
+    }
+
+    body.is-research-context .footer--home .footer__submit {
+        height: 46px;
+        padding: 0 14px;
+        font-size: 16px;
+        line-height: 1;
+        flex: 0 0 auto;
+    }
+
+    body.is-research-context .footer--home .footer__form-label,
+    body.is-research-context .footer--home .footer__copyright {
+        font-size: 12px;
+        line-height: 1.2;
+        margin-bottom: 2px;
+    }
+
+    body.is-research-context .footer--home .footer__crest {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: auto;
+        width: 96px;
+        margin: 0;
     }
 }
