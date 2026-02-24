@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class((is_page('research') || is_page_template('page-research.php') || is_search() || is_archive()) ? 'is-research-context' : ''); ?>>
+<body <?php body_class((is_page('research') || is_page_template('page-research.php') || is_search() || is_archive() || is_home() || is_singular('post')) ? 'is-research-context' : ''); ?>>
 <?php wp_body_open(); ?>
 
 <nav class="navbar">

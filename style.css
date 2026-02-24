@@ -8907,3 +8907,29 @@ body.page-template-page-about .main.main--about > .section {
         margin: 0;
     }
 }
+
+/* ========================================
+   HOME CARD 2 - BADGE RATIO 214x333
+======================================== */
+
+body.home main .section:nth-of-type(2) .guarantee__badge img {
+    width: clamp(78px, 30vw, 104px);
+    height: calc(clamp(78px, 30vw, 104px) * 333 / 214);
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+    transform: none;
+    transform-origin: top center;
+}
+
+@media (min-width: 760px) and (max-width: 2200px) {
+    body.home main .section:nth-of-type(2) .guarantee__badge img {
+        width: clamp(100px, calc(214px * var(--home-fluid-scale)), 214px);
+        height: calc(clamp(100px, calc(214px * var(--home-fluid-scale)), 214px) * 333 / 214);
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+        transform: none;
+        transform-origin: top center;
+    }
+}
