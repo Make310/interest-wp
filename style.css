@@ -7644,7 +7644,9 @@ body.page-template-page-get-started .guarantee--getstarted .guarantee__badge {
 
 body.page-template-page-get-started .guarantee--getstarted .guarantee__badge img {
     width: clamp(78px, 30vw, 104px);
-    transform: scaleY(0.94);
+    height: calc(clamp(78px, 30vw, 104px) * 333 / 214);
+    object-fit: contain;
+    transform: none;
     transform-origin: top center;
 }
 
@@ -7657,7 +7659,11 @@ body.page-template-page-get-started .guarantee--getstarted .guarantee__badge img
 
     body.page-template-page-get-started .guarantee--getstarted .guarantee__badge img {
         width: clamp(100px, calc(214px * var(--home-fluid-scale)), 214px);
-        transform: scaleY(1.12);
+        height: calc(clamp(100px, calc(214px * var(--home-fluid-scale)), 214px) * 333 / 214);
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+        transform: none;
         transform-origin: top center;
     }
 }
@@ -8085,6 +8091,7 @@ body.page-template-page-get-started .main > .section:last-of-type {
 
     body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__badge img {
         width: clamp(90px, 24vw, 108px);
+        height: calc(clamp(90px, 24vw, 108px) * 333 / 214);
     }
 
     body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons {
