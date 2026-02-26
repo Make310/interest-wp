@@ -9869,3 +9869,25 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
         );
     }
 }
+
+/* Research desktop zoom-out (<50% browser zoom equivalent can push width >2200):
+   avoid footer bottom gaps caused by fixed negative margin compensation combined
+   with large viewport/subpixel rounding. */
+@media (min-width: 2201px) {
+    body.is-research-context .main.main--full-height {
+        padding-bottom: 0 !important;
+    }
+
+    body.is-research-context .main > .footer--home.footer--fullwidth {
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    body.single-post.is-research-context .main {
+        padding-bottom: 0 !important;
+    }
+
+    body.single-post.is-research-context .main > .footer--home.footer--fullwidth {
+        margin-bottom: 0 !important;
+    }
+}

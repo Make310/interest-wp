@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <?php while (have_posts()) : the_post(); ?>
-<main class="main">
+<main class="main main--full-height">
     <article class="article">
         <!-- Article Header -->
         <header class="article__header">
@@ -53,6 +53,8 @@ get_header();
             </div>
         </nav>
     </article>
+
+    <?php get_template_part('template-parts/footers/home', null, array('fullwidth' => true)); ?>
 </main>
 <?php endwhile; ?>
 
