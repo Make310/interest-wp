@@ -11,8 +11,11 @@
                 <?php the_author(); ?>
             </a>
         </p>
-        <p class="article__author-date">
-            <?php echo get_the_date(); ?>
-        </p>
+        <?php $author_bio = get_the_author_meta('description'); ?>
+        <?php if ($author_bio) : ?>
+            <p class="article__author-bio">
+                <?php echo esc_html($author_bio); ?>
+            </p>
+        <?php endif; ?>
     </div>
 </div>

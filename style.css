@@ -5508,10 +5508,11 @@ body.is-research-context .pagination__dots {
     color: #588986;
 }
 
-.article__author-date {
+.article__author-bio {
     font-size: 13px;
     color: #666;
     margin: 0;
+    line-height: 1.5;
 }
 
 /* Article Tags */
@@ -5735,7 +5736,7 @@ body.is-research-context .pagination__dots {
         font-size: 16px;
     }
 
-    .article__author-date {
+    .article__author-bio {
         font-size: 14px;
     }
 
