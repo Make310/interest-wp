@@ -149,7 +149,7 @@ body.page-template-page-about .footer--home {
     body.page-template-page-about .navbar__container {
         max-width: calc(1500px * var(--home-fluid-scale));
         height: clamp(56px, calc(120px * var(--home-fluid-scale)), 120px);
-        padding: 0 clamp(24px, calc(52px * var(--home-fluid-scale)), 52px);
+        padding: 0 var(--home-inline-pad);
     }
 
     body.page-template-page-about .navbar__brand {
@@ -6981,10 +6981,12 @@ article {
         top: 90px;
         align-self: flex-start;
         margin-bottom: 0;
+        order: 2;
     }
 
     .about-main {
         flex: 1;
+        order: 1;
     }
 
     .about-section__title {
@@ -8371,6 +8373,8 @@ body.page-template-page-about .section > .card {
     max-width: none;
     margin-left: 0;
     margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
     border: 1px solid #a7a7a7;
     border-radius: 0 !important;
     background-color: #ffffff;
@@ -8418,7 +8422,7 @@ body.page-template-page-about .about-section:last-child {
     body.page-template-page-about .navbar__container {
         max-width: calc(1500px * var(--home-fluid-scale));
         height: clamp(56px, calc(120px * var(--home-fluid-scale)), 120px);
-        padding: 0 clamp(24px, calc(52px * var(--home-fluid-scale)), 52px);
+        padding: 0 var(--home-inline-pad);
     }
 
     body.page-template-page-about .navbar__brand {
@@ -8481,7 +8485,7 @@ body.page-template-page-about .about-section:last-child {
 
     body.page-template-page-about .about-page {
         gap: clamp(24px, calc(40px * var(--home-fluid-scale)), 40px);
-        padding: clamp(18px, calc(40px * var(--home-fluid-scale)), 40px);
+        padding: clamp(18px, calc(40px * var(--home-fluid-scale)), 40px) var(--home-card-inline-pad);
     }
 }
 
@@ -9213,7 +9217,7 @@ body .step__seal-img {
 
     body.page-template-page-about .about-page {
         gap: 35px;
-        padding: 35px;
+        padding: 35px var(--home-card-inline-pad);
     }
 
     body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home {
