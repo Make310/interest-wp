@@ -9891,3 +9891,46 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
         margin-bottom: 0 !important;
     }
 }
+
+/* ========================================
+   FOOTER TEXT START PARITY WITH NAVBAR BRAND
+   Align footer left text start with navbar "INTEREST..." start.
+======================================== */
+
+@media (max-width: 759px) {
+    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home .footer__container--home,
+    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--research .footer__container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}
+
+@media (min-width: 760px) and (max-width: 2200px) {
+    /* Fullwidth footer (research/blog archives/single/search): align with navbar brand start */
+    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home.footer--fullwidth .footer__container--home,
+    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--research .footer__container {
+        max-width: calc(1500px * var(--home-fluid-scale, 0.88)) !important;
+        padding-left: calc(var(--home-inline-pad, 37px) + var(--home-card-inline-pad, 49px)) !important;
+        padding-right: var(--home-inline-pad, 37px) !important;
+    }
+
+    /* In-card footer (home/get/about): compensate narrower container while matching navbar text axis */
+    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home:not(.footer--fullwidth) .footer__container--home {
+        padding-left: var(--home-card-inline-pad, 49px) !important;
+    }
+}
+
+@media (min-width: 2201px) {
+    /* Fullwidth footer in extreme zoom-out range */
+    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home.footer--fullwidth .footer__container--home,
+    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--research .footer__container {
+        max-width: calc(1500px * var(--home-fluid-scale, 0.88)) !important;
+        padding-left: calc(clamp(46px, calc(52px * var(--home-fluid-scale, 0.88)), 52px) + clamp(28px, calc(56px * var(--home-fluid-scale, 0.88)), 56px)) !important;
+        padding-right: clamp(46px, calc(52px * var(--home-fluid-scale, 0.88)), 52px) !important;
+    }
+
+    /* In-card footer in extreme zoom-out range */
+    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .footer--home:not(.footer--fullwidth) .footer__container--home {
+        padding-left: clamp(28px, calc(56px * var(--home-fluid-scale, 0.88)), 56px) !important;
+    }
+}
