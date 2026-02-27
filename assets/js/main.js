@@ -52,6 +52,54 @@
             });
         });
     }
+
+    // ================================
+    // RESEARCH/BLOG WIDTH CAP TO NAV "RESEARCH"
+    // ================================
+    function syncResearchContentWidth() {
+        if (!body.classList.contains('is-research-context')) {
+            return;
+        }
+
+        if (window.innerWidth < 768) {
+            body.style.removeProperty('--research-content-max-width');
+            return;
+        }
+
+        const navResearch = document.querySelector('.navbar .navbar__nav .navbar__nav-link[href*="/research"]');
+        const contentStart = document.querySelector(
+            'body.is-research-context .research-header, ' +
+            'body.single-post.is-research-context .article, ' +
+            'body.is-research-context .main > .section, ' +
+            'body.is-research-context .blog-posts'
+        );
+
+        if (!navResearch || !contentStart) {
+            body.style.removeProperty('--research-content-max-width');
+            return;
+        }
+
+        const navRect = navResearch.getBoundingClientRect();
+        const contentRect = contentStart.getBoundingClientRect();
+
+        if (navRect.width < 10) {
+            body.style.removeProperty('--research-content-max-width');
+            return;
+        }
+
+        const maxWidth = Math.max(280, navRect.right - contentRect.left);
+        body.style.setProperty('--research-content-max-width', `${maxWidth}px`);
+    }
+
+    syncResearchContentWidth();
+    window.addEventListener('resize', syncResearchContentWidth, { passive: true });
+    window.addEventListener('orientationchange', syncResearchContentWidth, { passive: true });
+    requestAnimationFrame(syncResearchContentWidth);
+    setTimeout(syncResearchContentWidth, 150);
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(syncResearchContentWidth);
+    }
+
     // File Upload Dropdown
     const fileDropdown = document.querySelector('.file-dropdown');
     const fileDropdownBtn = document.querySelector('.file-dropdown__btn');

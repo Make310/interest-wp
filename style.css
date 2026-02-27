@@ -9934,3 +9934,18 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
         padding-left: clamp(28px, calc(56px * var(--home-fluid-scale, 0.88)), 56px) !important;
     }
 }
+
+/* ========================================
+   RESEARCH/BLOG CONTENT WIDTH CAP
+   Keep current left start, cap right edge at navbar "RESEARCH" end.
+======================================== */
+@media (min-width: 768px) {
+    body.is-research-context .research-header,
+    body.is-research-context .blog-posts,
+    body.is-research-context .pagination,
+    body.single-post.is-research-context .article {
+        width: min(100%, var(--research-content-max-width, 100%)) !important;
+        max-width: var(--research-content-max-width, 100%) !important;
+        box-sizing: border-box;
+    }
+}
