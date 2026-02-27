@@ -361,55 +361,111 @@
     }
 
     // ================================
-    // NEWSLETTER SUBSCRIPTION FORM
+    // FOOTER SUBSCRIBE MODAL
     // ================================
-    const newsletterForms = document.querySelectorAll('.footer__form');
+    const subscribeModal = document.getElementById('footer-subscribe-modal');
+    const subscribeModalCloseBtn = document.querySelector('.js-footer-subscribe-close');
+    const subscribeTriggerForms = document.querySelectorAll('.js-footer-subscribe-trigger');
+    const subscribeModalEmailInput = document.querySelector('.js-footer-subscribe-modal-email');
+    const subscribeModalForm = subscribeModal ? subscribeModal.querySelector('.footer-subscribe-modal__form') : null;
 
-    newsletterForms.forEach(form => {
-        form.addEventListener('submit', async function(e) {
+    function openFooterSubscribeModal(prefillEmail) {
+        if (!subscribeModal) {
+            return;
+        }
+
+        if (subscribeModalEmailInput && prefillEmail) {
+            subscribeModalEmailInput.value = prefillEmail;
+        }
+
+        if (typeof subscribeModal.showModal === 'function') {
+            subscribeModal.showModal();
+        } else {
+            subscribeModal.setAttribute('open', 'open');
+        }
+    }
+
+    function closeFooterSubscribeModal() {
+        if (!subscribeModal) {
+            return;
+        }
+
+        if (typeof subscribeModal.close === 'function') {
+            subscribeModal.close();
+        } else {
+            subscribeModal.removeAttribute('open');
+        }
+    }
+
+    subscribeTriggerForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const emailInput = form.querySelector('.footer__input');
-            const submitBtn = form.querySelector('.footer__submit');
-            const email = emailInput.value.trim();
-
-            if (!email) {
+            const emailInput = form.querySelector('.js-footer-subscribe-email');
+            if (!emailInput) {
+                openFooterSubscribeModal('');
                 return;
             }
 
-            // Store original button text
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = '...';
-            submitBtn.disabled = true;
-
-            try {
-                const formData = new FormData();
-                formData.append('email', email);
-                formData.append('source', 'irr-newsletter');
-
-                const response = await fetch('https://hnp.app/api/hnp_form', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    emailInput.value = '';
-                    submitBtn.textContent = '✓';
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 2000);
-                } else {
-                    throw new Error('Subscription failed');
-                }
-            } catch (error) {
-                console.error('Newsletter subscription error:', error);
-                submitBtn.textContent = 'Error';
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 2000);
+            if (!emailInput.checkValidity()) {
+                emailInput.reportValidity();
+                return;
             }
+
+            openFooterSubscribeModal(emailInput.value.trim());
         });
     });
+
+    if (subscribeModalCloseBtn) {
+        subscribeModalCloseBtn.addEventListener('click', function() {
+            closeFooterSubscribeModal();
+        });
+    }
+
+    if (subscribeModal) {
+        subscribeModal.addEventListener('click', function(e) {
+            const modalBox = subscribeModal.querySelector('.footer-subscribe-modal__inner');
+            if (modalBox && !modalBox.contains(e.target)) {
+                closeFooterSubscribeModal();
+            }
+        });
+    }
+
+    if (subscribeModalForm) {
+        subscribeModalForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            if (!subscribeModalForm.checkValidity()) {
+                subscribeModalForm.reportValidity();
+                return;
+            }
+
+            const submitBtn = subscribeModalForm.querySelector('.footer-subscribe-modal__submit');
+            const originalText = submitBtn ? submitBtn.textContent : '';
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = '...';
+            }
+
+            try {
+                const formData = new FormData(subscribeModalForm);
+                await fetch(subscribeModalForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                });
+
+                closeFooterSubscribeModal();
+                const homeUrl = subscribeModal.dataset.homeUrl || `${window.location.origin}/`;
+                window.location.href = homeUrl;
+            } catch (error) {
+                console.error('Footer subscribe modal error:', error);
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            }
+        });
+    }
 })();

@@ -9949,3 +9949,136 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
         box-sizing: border-box;
     }
 }
+
+/* ========================================
+   FOOTER SUBSCRIBE MODAL (HNP-STYLE FLOW)
+======================================== */
+.footer-subscribe-modal {
+    width: min(960px, calc(100vw - 32px));
+    border: 1px solid #cfcfcf;
+    border-radius: 0;
+    padding: 0;
+    background: #f2f2f2;
+    color: #111;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    max-height: calc(100vh - 32px);
+    overflow: auto;
+}
+
+.footer-subscribe-modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.footer-subscribe-modal__inner {
+    padding: 26px;
+}
+
+.footer-subscribe-modal__head {
+    margin-bottom: 14px;
+}
+
+.footer-subscribe-modal__close {
+    margin: 0 0 10px;
+    text-align: right;
+}
+
+.footer-subscribe-modal__close button {
+    background: transparent;
+    border: 0;
+    color: #111;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+}
+
+.footer-subscribe-modal__kicker {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.footer-subscribe-modal__title {
+    margin: 0;
+    font-size: clamp(22px, 2.4vw, 34px);
+    line-height: 1.2;
+    font-family: 'Garet', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+}
+
+.footer-subscribe-modal__intro {
+    margin: 0 0 14px;
+    color: #303030;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.footer-subscribe-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-subscribe-modal__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.footer-subscribe-modal__form input,
+.footer-subscribe-modal__form textarea {
+    width: 100%;
+    border: 1px solid #bcbcbc;
+    border-radius: 0;
+    background: #fff;
+    color: #111;
+    font-size: 15px;
+    line-height: 1.2;
+    padding: 11px 12px;
+}
+
+.footer-subscribe-modal__form textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.footer-subscribe-modal__submit {
+    align-self: flex-start;
+    border: 1px solid #111;
+    border-radius: 0;
+    background: #111;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    padding: 12px 18px;
+    cursor: pointer;
+}
+
+.footer-subscribe-modal__submit:hover {
+    background: #242424;
+}
+
+@media (max-width: 767px) {
+    .footer-subscribe-modal {
+        width: calc(100vw - 18px);
+    }
+
+    .footer-subscribe-modal__inner {
+        padding: 16px;
+    }
+
+    .footer-subscribe-modal__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-subscribe-modal__title {
+        font-size: clamp(20px, 7vw, 30px);
+    }
+}

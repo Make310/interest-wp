@@ -31,8 +31,8 @@ $counter_offer_href = !empty($args['counter_offer_href']) ? $args['counter_offer
 
         <div class="footer__right">
             <div class="footer__signup">
-                <form class="footer__form" action="https://hnp.app/api/hnp_form" method="post">
-                    <input type="email" name="email" placeholder="janedoe@gmail.com" class="footer__input" required>
+                <form class="footer__form js-footer-subscribe-trigger" action="#" method="post" novalidate>
+                    <input type="email" name="email" placeholder="janedoe@gmail.com" class="footer__input js-footer-subscribe-email" required>
                     <button type="submit" class="footer__submit">JOIN</button>
                 </form>
                 <p class="footer__form-label">Join our email newsletter</p>
@@ -49,3 +49,30 @@ $counter_offer_href = !empty($args['counter_offer_href']) ? $args['counter_offer
         </div>
     </div>
 </footer>
+
+<dialog class="footer-subscribe-modal" id="footer-subscribe-modal" data-home-url="<?php echo esc_url(home_url('/')); ?>">
+    <div class="footer-subscribe-modal__inner">
+        <div class="footer-subscribe-modal__head">
+            <p class="footer-subscribe-modal__close">
+                <button type="button" class="js-footer-subscribe-close">Close</button>
+            </p>
+            <p class="footer-subscribe-modal__kicker">Subscribe Today</p>
+            <h3 class="footer-subscribe-modal__title">Stay up to date on the latest news, trends, and home grants.</h3>
+        </div>
+
+        <div class="footer-subscribe-modal__body">
+            <p class="footer-subscribe-modal__intro">Get the latest insights and updates on real estate, homebuying, and housing grants straight to your inbox.</p>
+            <form action="https://hnp.app/api/hnp_subscribe" method="post" class="footer-subscribe-modal__form">
+                <div class="footer-subscribe-modal__grid">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                    <input type="text" name="birthday" placeholder="Birthday" required onfocus="this.type='date'" onblur="if(!this.value){this.type='text'}">
+                    <input type="number" name="zip_code" placeholder="Zip code" required>
+                </div>
+                <input type="email" name="email" class="js-footer-subscribe-modal-email" placeholder="Your email" required>
+                <textarea name="details" rows="5" placeholder="Case details..." required></textarea>
+                <button type="submit" class="footer-subscribe-modal__submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</dialog>
