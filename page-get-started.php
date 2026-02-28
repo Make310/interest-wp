@@ -42,7 +42,8 @@ get_header();
 
     <!-- Counter Offer Card -->
     <section class="section" id="counter-offer">
-        <div class="card card--step">
+        <div class="card card--step card--counter-offer">
+            <div class="card__inner card__inner--counter-offer">
             <div class="step">
                 <span class="step__label">COUNTER OFFER</span>
 
@@ -73,6 +74,7 @@ get_header();
                     <span class="counter-offer__text-line counter-offer__text-line--mobile">counter offer within 24 hours.</span>
                 </p>
                 <a href="#" class="step__faq-link">FAQ's on uploading your loan estimate</a>
+            </div>
             </div>
 
             <div class="hero__lenders">

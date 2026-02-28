@@ -10,9 +10,15 @@ get_header();
 // Get current tag info
 $current_tag = get_queried_object();
 $tag_name = single_tag_title('', false);
+$tag_description = '';
 
-// Get all tags for filter
-$all_tags = get_tags(array('hide_empty' => true));
+if ($current_tag && isset($current_tag->term_id)) {
+    $tag_description = term_description($current_tag->term_id, 'post_tag');
+}
+
+if (!trim(wp_strip_all_tags($tag_description))) {
+    $tag_description = sprintf('Posts tagged with "%s".', $tag_name);
+}
 
 // Pagination
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -21,11 +27,8 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 <main class="main main--full-height">
     <!-- Page Header -->
     <section class="research-header">
-        <p class="research-header__label">TAG</p>
         <h1 class="research-header__title"><span class="underline"><?php echo esc_html($tag_name); ?></span></h1>
-        <p class="research-header__subtitle">
-            Posts tagged with "<?php echo esc_html($tag_name); ?>"
-        </p>
+        <div class="research-header__tag-description"><?php echo wp_kses_post($tag_description); ?></div>
     </section>
 
     <!-- Blog Posts -->

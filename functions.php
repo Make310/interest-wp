@@ -17,8 +17,11 @@ function irr_enqueue() {
     // Google Fonts - EB Garamond for headings
     wp_enqueue_style('irr-google-fonts', 'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap', [], null);
 
-    // Main stylesheet
-    wp_enqueue_style('irr-style', get_stylesheet_uri(), ['irr-google-fonts'], '1.0.0');
+    // Main stylesheet (filemtime for reliable cache busting while iterating UI)
+    $irr_style_ver = file_exists(get_stylesheet_directory() . '/style.css')
+        ? (string) filemtime(get_stylesheet_directory() . '/style.css')
+        : '1.0.0';
+    wp_enqueue_style('irr-style', get_stylesheet_uri(), ['irr-google-fonts'], $irr_style_ver);
 
     // Main JS
     wp_enqueue_script('irr-main', get_template_directory_uri() . '/assets/js/main.js', [], '1.0.0', true);

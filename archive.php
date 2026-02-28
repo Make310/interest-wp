@@ -15,6 +15,9 @@ $archive_type = '';
 if (is_tag()) {
     $archive_title = single_tag_title('', false);
     $archive_description = tag_description();
+    if (!trim(wp_strip_all_tags($archive_description))) {
+        $archive_description = sprintf('Articles tagged with "%s".', $archive_title);
+    }
     $archive_type = 'tag';
 } elseif (is_category()) {
     $archive_title = single_cat_title('', false);
@@ -32,15 +35,16 @@ if (is_tag()) {
     <section class="research-header">
         <?php if ($archive_type === 'tag') : ?>
             <p class="research-header__label">TAG</p>
+            <?php if ($archive_description) : ?>
+                <div class="research-header__tag-description"><?php echo wp_kses_post($archive_description); ?></div>
+            <?php endif; ?>
         <?php elseif ($archive_type === 'category') : ?>
             <p class="research-header__label">CATEGORY</p>
-        <?php elseif ($archive_type === 'author') : ?>
-            <p class="research-header__label">AUTHOR</p>
         <?php endif; ?>
 
         <h1 class="research-header__title"><span class="underline"><?php echo esc_html($archive_title); ?></span></h1>
 
-        <?php if ($archive_description) : ?>
+        <?php if ($archive_description && $archive_type !== 'tag') : ?>
             <p class="research-header__subtitle"><?php echo wp_kses_post($archive_description); ?></p>
         <?php endif; ?>
 

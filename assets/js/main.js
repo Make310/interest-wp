@@ -100,6 +100,153 @@
         document.fonts.ready.then(syncResearchContentWidth);
     }
 
+    // ================================
+    // BANKIRR HEADER WIDTH/GUTTER SYNC
+    // ================================
+    function syncBankirrHeaderLayout() {
+        if (!body.classList.contains('has-bankirr-header')) {
+            return;
+        }
+
+        const cardRef = document.querySelector('main > .section:first-of-type .card');
+        const mainRef = document.querySelector('main.main') || document.querySelector('main');
+        const fallbackRef = document.querySelector('main .section:first-of-type') || mainRef;
+        const ref = cardRef || fallbackRef;
+
+        if (!ref) {
+            body.style.removeProperty('--bankirr-shell-width');
+            body.style.removeProperty('--bankirr-content-gutter');
+            return;
+        }
+
+        const refRect = ref.getBoundingClientRect();
+        let refLeft = refRect.left;
+        let shellWidth = refRect.width;
+
+        // Research/search/blog pages usually don't start with a card.
+        // Use main content box width so header width stays consistent with card-based pages.
+        if (!cardRef && mainRef && ref === mainRef && window.innerWidth >= 768) {
+            const mainStyle = window.getComputedStyle(mainRef);
+            const padLeft = parseFloat(mainStyle.paddingLeft) || 0;
+            const padRight = parseFloat(mainStyle.paddingRight) || 0;
+            refLeft = refRect.left + padLeft;
+            shellWidth = Math.max(0, refRect.width - padLeft - padRight);
+        }
+
+        if (shellWidth > 0) {
+            body.style.setProperty('--bankirr-shell-width', `${shellWidth}px`);
+        }
+
+        const textAnchor = document.querySelector(
+            'main .hero__title, main .guarantee__title, main .step__title, ' +
+            'main .research-header__title, main .post__title, main .article__title, ' +
+            'main h1, main h2, main p'
+        );
+
+        let leftGutter = Number.NaN;
+        if (textAnchor) {
+            const anchorRect = textAnchor.getBoundingClientRect();
+            leftGutter = Math.max(0, anchorRect.left - refLeft);
+        }
+
+        if (!Number.isFinite(leftGutter) || leftGutter <= 0) {
+            const refStyle = window.getComputedStyle(ref);
+            leftGutter = parseFloat(refStyle.paddingLeft);
+            if (!cardRef && mainRef && ref === mainRef && window.innerWidth >= 768) {
+                leftGutter = 0;
+            }
+        }
+
+        if (Number.isFinite(leftGutter) && leftGutter >= 0) {
+            body.style.setProperty('--bankirr-content-gutter', `${leftGutter}px`);
+        } else {
+            body.style.removeProperty('--bankirr-content-gutter');
+        }
+    }
+
+    syncBankirrHeaderLayout();
+    window.addEventListener('resize', syncBankirrHeaderLayout, { passive: true });
+    window.addEventListener('orientationchange', syncBankirrHeaderLayout, { passive: true });
+    requestAnimationFrame(syncBankirrHeaderLayout);
+    setTimeout(syncBankirrHeaderLayout, 180);
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(syncBankirrHeaderLayout);
+    }
+
+    // ================================
+    // BANKIRR HEADER TICKERS
+    // ================================
+    (function initBankirrTickers() {
+        const desktopTrack = document.getElementById('bankirrTrack');
+        const mobileTrack = document.getElementById('tickerTrack');
+        const desktopDate = document.getElementById('bankirrDate');
+        const mobileDate = document.getElementById('bankirrMobileDate');
+
+        if (!desktopTrack && !mobileTrack) {
+            return;
+        }
+
+        const data = [
+            { label: '30YR FIXED', change: 0.00 },
+            { label: '15YR FIXED', change: -0.01 },
+            { label: '30YR JUMBO', change: -0.01 },
+            { label: '30YR FHA', change: -0.01 },
+            { label: '30YR VA', change: -0.02 }
+        ];
+
+        const fmt = (x) => `${x.toFixed(2)}%`;
+        const arrowDesktop = (x) => (x > 0 ? '▲' : (x < 0 ? '▼' : 'NO CHANGE'));
+        const arrowMobile = (x) => (x > 0 ? '▲' : (x < 0 ? '▼' : '—'));
+        const cls = (x) => (x > 0 ? 'up' : (x < 0 ? 'down' : 'flat'));
+
+        const desktopRow = data.map((d) => (
+            `<span class="metric">${d.label} <span class="${cls(d.change)}">${fmt(d.change)} ${arrowDesktop(d.change)}</span></span>`
+        )).join('');
+
+        const mobileRow = data.map((d) => (
+            `<span class="metric">${d.label} <span class="${cls(d.change)}">${fmt(d.change)} ${arrowMobile(d.change)}</span></span>`
+        )).join('');
+
+        if (desktopTrack) {
+            const lap = `<div class="bankirr-board__row">${desktopRow}</div>`;
+            desktopTrack.innerHTML = lap + lap;
+        }
+
+        if (mobileTrack) {
+            const lap = `<div class="ticker__row">${mobileRow}</div>`;
+            mobileTrack.innerHTML = lap + lap;
+        }
+
+        function updateTickerDate() {
+            const now = new Date();
+            const dateFormatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'America/New_York',
+                month: 'short',
+                day: '2-digit',
+                year: 'numeric'
+            });
+            const timeFormatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'America/New_York',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+
+            const formattedDate = dateFormatter.format(now).toUpperCase();
+            const formattedTime = timeFormatter.format(now).toUpperCase();
+
+            if (desktopDate) {
+                desktopDate.textContent = `${formattedDate} ${formattedTime} ET`;
+            }
+            if (mobileDate) {
+                mobileDate.textContent = `${formattedDate.split(',')[0]}`;
+            }
+        }
+
+        updateTickerDate();
+        setInterval(updateTickerDate, 60000);
+    })();
+
     // File Upload Dropdown
     const fileDropdown = document.querySelector('.file-dropdown');
     const fileDropdownBtn = document.querySelector('.file-dropdown__btn');

@@ -444,60 +444,6 @@ button {
     padding-bottom: 0;
 }
 
-/* Search page layout - full width container with centered content */
-body.search .main.main--full-height {
-    width: auto;
-    max-width: 900px;
-    padding-left: 12px;
-    padding-right: 12px;
-}
-
-body.search .research-header {
-    text-align: left;
-    max-width: none;
-    margin: 0;
-    padding: 24px 16px;
-}
-
-body.search .research-header .tags {
-    justify-content: center;
-}
-
-body.search .research-header .search-box {
-    margin: 0;
-    width: 100%;
-    max-width: 500px;
-}
-
-body.search .blog-posts {
-    max-width: none;
-    margin: 0;
-    padding: 0 16px;
-}
-
-/* Search: keep footer flush to bottom with no white gap */
-body.search .main.main--full-height {
-    padding-bottom: 0;
-    min-height: calc(100vh - 52px);
-}
-
-body.search .main > .footer--home.footer--fullwidth {
-    margin-bottom: 0;
-    margin-top: auto !important;
-}
-
-@media (min-width: 768px) {
-    body.search .main.main--full-height {
-        min-height: calc(100vh - 56px);
-    }
-}
-
-@media (min-width: 1024px) {
-    body.search .main.main--full-height {
-        min-height: calc(100vh - 60px);
-    }
-}
-
 .section {
     margin-bottom: 12px;
 }
@@ -5814,7 +5760,46 @@ body.is-research-context .pagination__dots {
 .archive-author {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.research-header__tag-description {
+    margin: 0 0 10px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #222;
+}
+
+body.tag .research-header {
+    padding-bottom: 8px;
+}
+
+body.tag .research-header__tag-description {
+    margin-bottom: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #111111;
+}
+
+body.tag .research-header__tag-description p {
+    margin: 0;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
+}
+
+@media (min-width: 768px) {
+    body.tag .research-header {
+        padding-bottom: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    body.tag .research-header {
+        padding-bottom: 12px;
+    }
 }
 
 .archive-author .avatar {
@@ -7601,10 +7586,15 @@ body.page-template-page-get-started #counter-offer .hero__lenders {
     text-align: center;
     border-top: 0;
     padding-top: 0;
+    overflow: hidden;
 }
 
 body.page-template-page-get-started #counter-offer > .card {
-    padding-bottom: 0;
+    padding: 0;
+}
+
+body.page-template-page-get-started #counter-offer .card__inner--counter-offer {
+    position: relative;
 }
 
 body.page-template-page-get-started #counter-offer .hero__lenders-title {
@@ -7634,16 +7624,21 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
     }
 
     body.page-template-page-get-started #counter-offer .hero__lenders {
-        margin-top: 22px;
+        margin-top: 0;
+        width: 100%;
+        border-top: 1px solid #a7a7a7;
     }
 
     body.page-template-page-get-started #counter-offer .hero__lenders-logos {
-        border-top: 1px solid #a7a7a7;
         padding: 18px 16px 18px;
-        margin-left: -17px;
-        margin-right: -17px;
-        width: calc(100% + 34px);
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
         gap: 12px;
+    }
+
+    body.page-template-page-get-started #counter-offer .card__inner--counter-offer {
+        padding: 44px 16px 22px;
     }
 
     body.page-template-page-get-started #counter-offer .hero__lenders-logos img {
@@ -7683,15 +7678,17 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
     }
 
     body.page-template-page-get-started #counter-offer .hero__lenders {
-        margin-top: clamp(32px, calc(94px * var(--home-fluid-scale)), 94px);
+        --gs-counter-inline-pad: clamp(26px, calc(56px * var(--home-fluid-scale)), 56px);
+        margin-top: 0;
+        width: 100%;
+        border-top: 1px solid #a7a7a7;
     }
 
     body.page-template-page-get-started #counter-offer .hero__lenders-logos {
-        border-top: 1px solid #a7a7a7;
-        padding: clamp(16px, calc(28px * var(--home-fluid-scale)), 28px) var(--home-card-inline-pad) clamp(16px, calc(30px * var(--home-fluid-scale)), 30px);
-        margin-left: calc((-1 * var(--home-card-inline-pad)) - 1px);
-        margin-right: calc((-1 * var(--home-card-inline-pad)) - 1px);
-        width: calc(100% + (2 * var(--home-card-inline-pad)) + 2px);
+        padding: clamp(16px, calc(28px * var(--home-fluid-scale)), 28px) var(--gs-counter-inline-pad) clamp(16px, calc(30px * var(--home-fluid-scale)), 30px);
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
         gap: clamp(16px, calc(28px * var(--home-fluid-scale)), 28px);
     }
 
@@ -7701,7 +7698,12 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
 
     body.page-template-page-get-started #counter-offer .hero__lenders-logos img.hide-mobile {
         display: block;
-        height: clamp(54px, calc(115px * var(--home-fluid-scale)), 115px);
+        height: clamp(58px, calc(115px * var(--home-fluid-scale)), 115px);
+    }
+
+    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
+        height: clamp(88px, calc(172px * var(--home-fluid-scale)), 172px);
+        width: auto;
     }
 
     body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--prmg {
@@ -7718,6 +7720,11 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
 
     body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
         order: 4;
+    }
+
+    body.page-template-page-get-started #counter-offer .card__inner--counter-offer {
+        --gs-counter-inline-pad: clamp(26px, calc(56px * var(--home-fluid-scale)), 56px);
+        padding: clamp(32px, calc(86px * var(--home-fluid-scale)), 86px) var(--gs-counter-inline-pad) clamp(32px, calc(94px * var(--home-fluid-scale)), 94px);
     }
 }
 
@@ -7896,19 +7903,10 @@ body.page-template-page-get-started .card--step > .schedule-call {
 
 /* 2) Match step-card inner spacing with Home (desktop fluid scale) */
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.page-template-page-get-started #counter-offer > .card {
-        padding: clamp(32px, calc(86px * var(--home-fluid-scale)), 86px) clamp(26px, calc(56px * var(--home-fluid-scale)), 56px) clamp(24px, calc(62px * var(--home-fluid-scale)), 62px);
-    }
-
     body.page-template-page-get-started .section:nth-of-type(3) .card--step,
     body.page-template-page-get-started .section:nth-of-type(4) .card--step {
         padding: clamp(36px, calc(88px * var(--home-fluid-scale)), 88px) clamp(26px, calc(56px * var(--home-fluid-scale)), 56px) clamp(30px, calc(72px * var(--home-fluid-scale)), 72px);
     }
-}
-
-/* Counter-offer card keeps bottom flush with logos strip */
-body.page-template-page-get-started #counter-offer > .card {
-    padding-bottom: 0;
 }
 
 /* 3) Card 3 (New Offer) paragraph uses same family/scale as Home step copy */
@@ -9145,7 +9143,7 @@ body .step__seal-img {
     }
 
     body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__brand {
-        margin-left: 49px;
+        margin-left: 0;
     }
 
     body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__brand img {
@@ -9168,7 +9166,7 @@ body .step__seal-img {
 
     body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__nav {
         display: block;
-        margin-right: 49px;
+        margin-right: 0;
         min-width: 0;
     }
 
@@ -9591,19 +9589,30 @@ body .step__seal-img {
 
     body.page-template-page-get-started #counter-offer .hero__lenders {
         margin-top: 82.72px; /* 94 * 0.88 */
+        margin-top: 0;
+        width: 100%;
+        border-top: 1px solid #a7a7a7;
     }
 
     body.page-template-page-get-started #counter-offer .hero__lenders-logos {
-        border-top: 1px solid #a7a7a7;
         padding: 24.64px 49px 26.4px;
-        margin-left: -50px;
-        margin-right: -50px;
-        width: calc(100% + 100px);
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
         gap: 24.64px;
     }
 
     body.page-template-page-get-started #counter-offer .hero__lenders-logos img {
         height: 72.16px; /* 82 * 0.88 */
+    }
+
+    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
+        height: 109px;
+        width: auto;
+    }
+
+    body.page-template-page-get-started #counter-offer .card__inner--counter-offer {
+        padding: 75.68px 49px 82.72px;
     }
 }
 
@@ -9698,9 +9707,9 @@ body .step__seal-img {
    Keep left-aligned text blocks aligned to navbar gutter across shell pages.
 ======================================== */
 
-/* Wider logos strip content box on Get Started card 2 (line stays edge-to-edge) */
-body.page-template-page-get-started #counter-offer .hero__lenders-logos {
-    padding-inline: clamp(8px, calc(var(--home-card-inline-pad, 16px) * 0.5), 28px);
+/* Keep divider paint clipped to card edges on Get Started card 2 */
+body.page-template-page-get-started #counter-offer .hero__lenders {
+    overflow: hidden;
 }
 
 /* Keep Get Started card 1 using the same dynamic left/right gutter as Home/Research
@@ -9715,16 +9724,16 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
 /* Ultra-wide / zoom-out continuity:
    keep navbar title aligned to the same card/text grid used in the page content. */
 @media (min-width: 2201px) {
-    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__container {
+    body:not(.has-bankirr-header):is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__container {
         padding-left: var(--home-inline-pad) !important;
         padding-right: var(--home-inline-pad) !important;
     }
 
-    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__brand {
+    body:not(.has-bankirr-header):is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__brand {
         margin-left: var(--home-card-inline-pad) !important;
     }
 
-    body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__nav {
+    body:not(.has-bankirr-header):is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) .navbar__nav {
         margin-right: var(--home-card-inline-pad) !important;
     }
 }
@@ -9764,13 +9773,6 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
         padding-right: var(--home-card-inline-pad) !important;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos {
-        /* Preserve wider strip in the >2200 continuity block */
-        padding-inline: 22px;
-        margin-left: -50px;
-        margin-right: -50px;
-        width: calc(100% + 100px);
-    }
 }
 
 /* Desktop zoom safety: when a desktop browser zooms in and falls into mobile rules,
@@ -9843,16 +9845,16 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
 /* FINAL NAVBAR GRID PARITY FOR EXTREME ZOOM-OUT (<67% browser zoom equivalent)
    Match navbar title alignment with the same outer+inner gutter used by cards. */
 @media (min-width: 2201px) {
-    html body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) nav.navbar > .navbar__container {
+    html body:not(.has-bankirr-header):is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) nav.navbar > .navbar__container {
         padding-left: clamp(20px, calc(68px * var(--home-fluid-scale, 0.88)), 68px) !important;
         padding-right: clamp(20px, calc(68px * var(--home-fluid-scale, 0.88)), 68px) !important;
     }
 
-    html body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) nav.navbar > .navbar__container > .navbar__brand {
+    html body:not(.has-bankirr-header):is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) nav.navbar > .navbar__container > .navbar__brand {
         margin-left: clamp(28px, calc(56px * var(--home-fluid-scale, 0.88)), 56px) !important;
     }
 
-    html body:is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) nav.navbar > .navbar__container > .navbar__nav {
+    html body:not(.has-bankirr-header):is(.home, .page-template-page-get-started, .is-research-context, .page-template-page-about) nav.navbar > .navbar__container > .navbar__nav {
         margin-right: clamp(28px, calc(56px * var(--home-fluid-scale, 0.88)), 56px) !important;
     }
 }
@@ -10080,5 +10082,535 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
 
     .footer-subscribe-modal__title {
         font-size: clamp(20px, 7vw, 30px);
+    }
+}
+
+/* ========================================
+   BANKIRR HEADER (DESKTOP + MOBILE)
+======================================== */
+body.has-bankirr-header {
+    padding-top: 136px !important;
+    --bankirr-border-color: #a7a7a7;
+    --bankirr-scale: var(--home-fluid-scale, min(calc((100vw / 1536px) * 0.88), 0.88));
+    --bankirr-card-gutter: clamp(32px, calc(56px * var(--bankirr-scale)), 56px);
+    --bankirr-inline-pad: var(--home-inline-pad, clamp(24px, calc(68px * var(--bankirr-scale)), 68px));
+    --bankirr-content-gutter: var(--home-card-inline-pad, var(--bankirr-card-gutter));
+    --bankirr-shell-width: clamp(
+        320px,
+        calc((1500px * var(--bankirr-scale)) - (2 * var(--bankirr-inline-pad))),
+        1436px
+    );
+}
+
+.bankirr-desktop {
+    display: block;
+}
+
+.bankirr-mobile-wrap {
+    display: none;
+}
+
+.bankirr-header .bankirr-top-row,
+.bankirr-header .bankirr-board,
+.bankirr-header .navbar--bankirr {
+    width: min(var(--bankirr-shell-width), calc(100vw - 24px));
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+}
+
+.bankirr-header .bankirr-top-row {
+    height: 5px;
+    position: fixed;
+    top: 0;
+    background: #f0eef0;
+    z-index: 1002;
+}
+
+.bankirr-header .bankirr-board {
+    position: fixed;
+    top: 5px;
+    display: flex;
+    border: 1px solid var(--bankirr-border-color);
+    border-color: var(--bankirr-border-color);
+    border-bottom: 0;
+    background: #000;
+    color: #eaeaea;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+    letter-spacing: 0.05em;
+    z-index: 1001;
+}
+
+.bankirr-header .bankirr-board__date {
+    flex: 0 0 auto;
+    padding: 12px 24px;
+    border-right: 1px solid var(--bankirr-border-color);
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.bankirr-header .bankirr-board__viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.bankirr-header .bankirr-board__track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: bankirr-scroll 30s linear infinite;
+}
+
+.bankirr-header .bankirr-board:hover .bankirr-board__track {
+    animation-play-state: paused;
+}
+
+.bankirr-header .bankirr-board__row {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 14px;
+}
+
+.bankirr-header .metric {
+    margin-right: 42px;
+}
+
+.bankirr-header .up {
+    color: #ff3b30;
+}
+
+.bankirr-header .down {
+    color: #34c759;
+}
+
+.bankirr-header .flat {
+    color: #eaeaea;
+}
+
+@keyframes bankirr-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-30%);
+    }
+}
+
+.bankirr-header .navbar--bankirr {
+    position: fixed;
+    top: 45px;
+    border: 1px solid var(--bankirr-border-color);
+    border-top: 1px solid var(--bankirr-border-color);
+    border-bottom: 1px solid var(--bankirr-border-color);
+    background: #fff;
+    z-index: 1000;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__container--bankirr {
+    width: 100%;
+    max-width: none !important;
+    height: 90px;
+    margin: 0 !important;
+    padding: 0 var(--bankirr-content-gutter) !important;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    justify-content: normal;
+    position: relative;
+    box-sizing: border-box;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__brand--bankirr {
+    display: block;
+    font-family: 'EB Garamond', Georgia, serif !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #111 !important;
+    white-space: nowrap;
+    width: auto;
+    max-width: 374px;
+    min-width: 0;
+    word-spacing: 0.22em;
+    letter-spacing: 0.2em;
+    text-align: left;
+    margin-left: 0 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__logo--bankirr {
+    grid-column: 2;
+    position: static;
+    inset: auto;
+    left: auto;
+    top: auto !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    text-decoration: none;
+    color: #111;
+    margin: 0 !important;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__wordmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__dot:first-child {
+    margin-right: 40px;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__dot:last-child {
+    margin-left: 30px;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__dot {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__word {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    line-height: 1;
+    padding-left: 0.28em;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__nav--bankirr {
+    grid-column: 3;
+    justify-self: end;
+    display: block !important;
+    margin-right: 0 !important;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 28px !important;
+    margin: 0;
+    padding: 0;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-link {
+    font-family: 'EB Garamond', Georgia, serif !important;
+    font-size: 14px !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #111 !important;
+}
+
+body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-link:hover {
+    opacity: 0.7;
+}
+
+/* Tablet/Desktop stabilization to avoid header overlap in search/research views */
+@media (min-width: 769px) and (max-width: 1360px) {
+    body.has-bankirr-header {
+        --bankirr-content-gutter: clamp(18px, 2.2vw, 28px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__container--bankirr {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: center;
+        justify-content: normal;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__brand--bankirr {
+        width: auto;
+        min-width: 0;
+        max-width: clamp(220px, 30vw, 320px);
+        font-size: clamp(10px, 0.9vw, 12.5px) !important;
+        letter-spacing: 0.11em;
+        word-spacing: 0.08em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__logo--bankirr {
+        grid-column: 2;
+        position: static !important;
+        inset: auto !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        justify-self: center;
+        align-self: center;
+        margin: 0 !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot {
+        font-size: clamp(10px, 0.95vw, 14px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__word {
+        font-size: clamp(22px, 2.1vw, 30px);
+        letter-spacing: 0.14em;
+        padding-left: 0.14em;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav--bankirr {
+        grid-column: 3;
+        justify-self: end;
+        min-width: 0;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr {
+        gap: clamp(8px, 1vw, 14px) !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-link {
+        font-size: clamp(11px, 0.95vw, 12.8px) !important;
+        letter-spacing: 0.03em;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:first-child {
+        margin-right: 18px;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:last-child {
+        margin-left: 14px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    body.has-bankirr-header .bankirr-header .navbar__dot {
+        display: none;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__word {
+        padding-left: 0;
+        letter-spacing: 0.1em;
+    }
+}
+
+@media (min-width: 769px) {
+    body.has-bankirr-header {
+        padding-top: 136px !important;
+    }
+
+    .bankirr-desktop {
+        display: block;
+    }
+
+    .bankirr-mobile-wrap {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    body.has-bankirr-header {
+        padding-top: 0 !important;
+        background: #fff;
+        --bankirr-shell-width: calc(100vw - 16px);
+        --bankirr-content-gutter: 8px;
+    }
+
+    .bankirr-desktop {
+        display: none;
+    }
+
+    .bankirr-mobile-wrap {
+        display: block;
+    }
+
+    .bankirr-mobile {
+        width: var(--bankirr-shell-width);
+        max-width: calc(100vw - 16px);
+        margin: 0 auto;
+        border: 1px solid var(--bankirr-border-color);
+        box-sizing: border-box;
+        background: #fff;
+    }
+
+    .bankirr-mobile .ticker {
+        background: #000;
+        color: #eaeaea;
+        display: flex;
+        border-bottom: 1px solid var(--bankirr-border-color);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+        letter-spacing: 0.04em;
+    }
+
+    .bankirr-mobile .ticker__date {
+        flex: 0 0 auto;
+        padding: 6.5px 8px;
+        border-right: 1px solid var(--bankirr-border-color);
+        white-space: nowrap;
+        font-size: 9px;
+        background: #000;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .bankirr-mobile .ticker__viewport {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .bankirr-mobile .ticker__track {
+        display: inline-block;
+        white-space: nowrap;
+        animation: ticker-scroll 16s linear infinite;
+    }
+
+    .bankirr-mobile .ticker__row {
+        display: inline-block;
+        padding: 4px 10px;
+        font-size: 9px;
+    }
+
+    .bankirr-mobile .metric {
+        margin-right: 16px;
+    }
+
+    @keyframes ticker-scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-30%);
+        }
+    }
+
+    .bankirr-mobile .mast {
+        background: #fff;
+        min-height: 72px;
+        padding: 6px 8px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bankirr-mobile .mast__top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: #111;
+        font-family: 'EB Garamond', Georgia, serif;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding-left: 0.18em;
+        line-height: 1;
+    }
+
+    .bankirr-mobile .mast__dot {
+        font-size: 10px;
+    }
+
+    .bankirr-mobile .mast__sub {
+        margin-top: 6px;
+        font-family: 'EB Garamond', Georgia, serif;
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding-left: 0.14em;
+        color: #111;
+        text-decoration: none;
+    }
+
+    .bankirr-mobile .rect-nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--bankirr-border-color);
+        background: #fff;
+    }
+
+    .bankirr-mobile .rect-nav a {
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #111;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-size: 8px;
+        border-right: 1px solid var(--bankirr-border-color);
+    }
+
+    .bankirr-mobile .rect-nav a:last-child {
+        border-right: 0;
+    }
+
+    .bankirr-mobile .rect-nav a:active {
+        background: #f2f2f2;
+    }
+}
+
+/* Search + archives: keep footer pinned to page bottom when there are few/no results */
+body.search.has-bankirr-header,
+body:is(.tag, .author, .category, .archive).has-bankirr-header {
+    min-height: 100dvh;
+}
+
+body.search.has-bankirr-header .main.main--full-height,
+body:is(.tag, .author, .category, .archive).has-bankirr-header .main.main--full-height {
+    min-height: calc(100dvh - 136px);
+    padding-bottom: 0 !important;
+}
+
+body.search.has-bankirr-header .main > .footer--home.footer--fullwidth,
+body:is(.tag, .author, .category, .archive).has-bankirr-header .main > .footer--home.footer--fullwidth {
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+    body.search.has-bankirr-header .main.main--full-height,
+    body:is(.tag, .author, .category, .archive).has-bankirr-header .main.main--full-height {
+        min-height: calc(100dvh - 0px);
+    }
+}
+
+/* Extra stability on extreme zoom-out widths */
+@media (min-width: 2201px) {
+    body:is(.tag, .author, .category, .archive).has-bankirr-header .main.main--full-height {
+        padding-bottom: 0 !important;
+    }
+
+    body:is(.tag, .author, .category, .archive).has-bankirr-header .main > .footer--home.footer--fullwidth {
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* BANKIRR desktop zoom-out parity (>2200px)
+   Keep navbar text axis aligned with card content axis under heavy zoom-out. */
+@media (min-width: 2201px) {
+    body.has-bankirr-header .bankirr-header .navbar__container--bankirr {
+        padding-left: var(--bankirr-content-gutter) !important;
+        padding-right: var(--bankirr-content-gutter) !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__brand--bankirr {
+        margin-left: 0 !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav--bankirr {
+        margin-right: 0 !important;
     }
 }
