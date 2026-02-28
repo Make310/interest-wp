@@ -10320,7 +10320,7 @@ body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-
 /* Tablet/Desktop stabilization to avoid header overlap in search/research views */
 @media (min-width: 769px) and (max-width: 1360px) {
     body.has-bankirr-header {
-        --bankirr-content-gutter: clamp(18px, 2.2vw, 28px);
+        --bankirr-content-gutter: clamp(12px, calc(12px + (10 * ((100vw - 768px) / 592))), 22px);
     }
 
     body.has-bankirr-header .bankirr-header .navbar__container--bankirr {
@@ -10333,10 +10333,10 @@ body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-
     body.has-bankirr-header .bankirr-header .navbar__brand--bankirr {
         width: auto;
         min-width: 0;
-        max-width: clamp(220px, 30vw, 320px);
-        font-size: clamp(10px, 0.9vw, 12.5px) !important;
-        letter-spacing: 0.11em;
-        word-spacing: 0.08em;
+        max-width: clamp(170px, calc(170px + (100 * ((100vw - 768px) / 592))), 270px);
+        font-size: clamp(10.6px, calc(10.6px + (2.6 * ((100vw - 768px) / 592))), 13.2px) !important;
+        letter-spacing: 0.1em;
+        word-spacing: 0.06em;
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -10354,13 +10354,13 @@ body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-
     }
 
     body.has-bankirr-header .bankirr-header .navbar__dot {
-        font-size: clamp(10px, 0.95vw, 14px);
+        font-size: clamp(11.5px, calc(11.5px + (2.8 * ((100vw - 768px) / 592))), 14.3px);
     }
 
     body.has-bankirr-header .bankirr-header .navbar__word {
-        font-size: clamp(22px, 2.1vw, 30px);
-        letter-spacing: 0.14em;
-        padding-left: 0.14em;
+        font-size: clamp(28.5px, calc(28.5px + (7 * ((100vw - 768px) / 592))), 35.5px);
+        letter-spacing: 0.16em;
+        padding-left: 0.16em;
     }
 
     body.has-bankirr-header .bankirr-header .navbar__nav--bankirr {
@@ -10372,31 +10372,145 @@ body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-
     }
 
     body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr {
-        gap: clamp(8px, 1vw, 14px) !important;
+        gap: clamp(8px, calc(8px + (4 * ((100vw - 768px) / 592))), 12px) !important;
     }
 
     body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-link {
-        font-size: clamp(11px, 0.95vw, 12.8px) !important;
+        font-size: clamp(11.4px, calc(11.4px + (2.4 * ((100vw - 768px) / 592))), 13.8px) !important;
         letter-spacing: 0.03em;
     }
 
     body.has-bankirr-header .bankirr-header .navbar__dot:first-child {
-        margin-right: 18px;
+        margin-right: clamp(14px, calc(14px + (4 * ((100vw - 768px) / 592))), 18px);
     }
 
     body.has-bankirr-header .bankirr-header .navbar__dot:last-child {
-        margin-left: 14px;
+        margin-left: clamp(12px, calc(12px + (4 * ((100vw - 768px) / 592))), 16px);
     }
 }
 
-@media (min-width: 769px) and (max-width: 1100px) {
-    body.has-bankirr-header .bankirr-header .navbar__dot {
-        display: none;
+/* Narrow desktop balance (e.g. 1350x720 effective width):
+   keep all navbar blocks proportional without center/right overlap. */
+@media (min-width: 769px) and (max-width: 1120px) {
+    body.has-bankirr-header {
+        --bankirr-content-gutter: clamp(10px, 1.4vw, 14px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__brand--bankirr {
+        max-width: clamp(150px, 22vw, 230px);
+        font-size: clamp(10.2px, 0.95vw, 12px) !important;
+        letter-spacing: 0.085em;
+        word-spacing: 0.05em;
     }
 
     body.has-bankirr-header .bankirr-header .navbar__word {
-        padding-left: 0;
-        letter-spacing: 0.1em;
+        font-size: clamp(26.5px, 2.5vw, 30px);
+        letter-spacing: 0.12em;
+        padding-left: 0.12em;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot {
+        font-size: clamp(10.5px, 1.05vw, 12.8px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:first-child {
+        margin-right: clamp(10px, 1vw, 14px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:last-child {
+        margin-left: clamp(9px, 0.9vw, 12px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr {
+        gap: clamp(6px, 0.8vw, 10px) !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-link {
+        font-size: clamp(10.8px, 0.95vw, 12.6px) !important;
+        letter-spacing: 0.02em;
+    }
+}
+
+/* Continuity above 1360px:
+   avoid abrupt jump between "small" and "large" 100% views. */
+@media (min-width: 1361px) and (max-width: 2200px) {
+    body.has-bankirr-header {
+        --bankirr-content-gutter: clamp(22px, calc(22px + (6 * ((100vw - 1360px) / 840))), 28px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__brand--bankirr {
+        max-width: clamp(290px, calc(290px + (84 * ((100vw - 1360px) / 840))), 374px);
+        font-size: clamp(13.2px, calc(13.2px + (1.8 * ((100vw - 1360px) / 840))), 15px) !important;
+        letter-spacing: 0.14em;
+        word-spacing: 0.12em;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot {
+        font-size: clamp(14.3px, calc(14.3px + (2.7 * ((100vw - 1360px) / 840))), 17px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__word {
+        font-size: clamp(35.5px, calc(35.5px + (4.5 * ((100vw - 1360px) / 840))), 40px);
+        letter-spacing: 0.18em;
+        padding-left: 0.18em;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr {
+        gap: clamp(12px, calc(12px + (3 * ((100vw - 1360px) / 840))), 15px) !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-link {
+        font-size: clamp(13.8px, calc(13.8px + (1.7 * ((100vw - 1360px) / 840))), 15.5px) !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:first-child {
+        margin-right: clamp(18px, calc(18px + (3 * ((100vw - 1360px) / 840))), 21px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:last-child {
+        margin-left: clamp(16px, calc(16px + (3 * ((100vw - 1360px) / 840))), 19px);
+    }
+}
+
+/* Short-height desktop (e.g. 720px tall screens):
+   keep full navbar proportional while preventing center/right collisions. */
+@media (max-height: 760px) and (min-width: 769px) {
+    body.has-bankirr-header {
+        --bankirr-content-gutter: clamp(10px, 1.2vw, 16px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__brand--bankirr {
+        max-width: clamp(150px, 18vw, 230px);
+        font-size: clamp(10.4px, 0.85vw, 12.4px) !important;
+        letter-spacing: 0.085em;
+        word-spacing: 0.05em;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__word {
+        font-size: clamp(26.5px, 2.2vw, 33px);
+        letter-spacing: 0.13em;
+        padding-left: 0.13em;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot {
+        font-size: clamp(10.8px, 0.95vw, 13.4px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:first-child {
+        margin-right: clamp(10px, 0.95vw, 16px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:last-child {
+        margin-left: clamp(9px, 0.85vw, 14px);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr {
+        gap: clamp(6px, 0.7vw, 10px) !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-link {
+        font-size: clamp(10.8px, 0.82vw, 12.8px) !important;
+        letter-spacing: 0.02em;
     }
 }
 
@@ -10561,6 +10675,79 @@ body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-
     }
 }
 
+/* Desktop zoom continuity:
+   Keep BANKIRR desktop header fluid when desktop browser zoom pushes CSS width below 768px. */
+@media (hover: hover) and (pointer: fine) and (min-width: 641px) and (max-width: 768px) {
+    body.has-bankirr-header {
+        padding-top: 120px !important;
+        --bankirr-shell-width: calc(100vw - 10px);
+        --bankirr-content-gutter: clamp(8px, 1.6vw, 12px);
+    }
+
+    .bankirr-desktop {
+        display: block !important;
+    }
+
+    .bankirr-mobile-wrap {
+        display: none !important;
+    }
+
+    .bankirr-header .bankirr-board__date {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+
+    .bankirr-header .bankirr-board__row {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+
+    .bankirr-header .navbar--bankirr {
+        top: 37px;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__container--bankirr {
+        height: 82px;
+        padding: 0 10px !important;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__brand--bankirr {
+        max-width: 180px;
+        font-size: 9.8px !important;
+        letter-spacing: 0.09em;
+        word-spacing: 0.06em;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__word {
+        font-size: clamp(26.5px, 3.2vw, 28.5px);
+        letter-spacing: 0.14em;
+        padding-left: 0.14em;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot {
+        display: inline-block;
+        font-size: 10.5px;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:first-child {
+        margin-right: 8px;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__dot:last-child {
+        margin-left: 8px;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr {
+        gap: 6px !important;
+    }
+
+    body.has-bankirr-header .bankirr-header .navbar__nav-list--bankirr .navbar__nav-link {
+        font-size: 10px !important;
+        letter-spacing: 0.02em;
+    }
+}
+
 /* Search + archives: keep footer pinned to page bottom when there are few/no results */
 body.search.has-bankirr-header,
 body:is(.tag, .author, .category, .archive).has-bankirr-header {
@@ -10612,5 +10799,123 @@ body:is(.tag, .author, .category, .archive).has-bankirr-header .main > .footer--
 
     body.has-bankirr-header .bankirr-header .navbar__nav--bankirr {
         margin-right: 0 !important;
+    }
+}
+
+/* ========================================
+   404 HOME LAYOUT PARITY
+   Match home shell/card widths so BANKIRR header aligns identically.
+======================================== */
+body.error404 .main.main--404 .card,
+body.error404 .main.main--404 .btn,
+body.error404 .main.main--404 .footer--home,
+body.error404 .main.main--404 .footer--home *,
+body.error404 .main.main--404 input,
+body.error404 .main.main--404 button {
+    border-radius: 0 !important;
+}
+
+body.error404 .error-page,
+body.error404 .error-page__code,
+body.error404 .error-page__title,
+body.error404 .error-page__subtitle {
+    color: #111;
+}
+
+body.error404 .error-page__actions .btn--primary {
+    background: #111 !important;
+    color: #fff !important;
+    border: 1px solid #111 !important;
+}
+
+body.error404 .error-page__actions .btn--primary:hover {
+    background: #111 !important;
+}
+
+body.error404 .error-page__actions .btn--outline {
+    border: 1px solid #111;
+    color: #111;
+    background: #fff;
+}
+
+body.error404 .error-page__actions .btn--outline:hover {
+    background: #f5f5f5;
+    border-color: #111;
+}
+
+body.error404 .main.main--404 > .footer--home {
+    border: 1px solid #a7a7a7;
+    box-sizing: border-box;
+}
+
+body.error404 .main.main--404 > .footer--home .footer__container--home {
+    align-items: flex-start;
+}
+
+@media (max-width: 759px) {
+    body.error404 .main.main--404 {
+        padding: 8px;
+    }
+
+    body.error404 .main.main--404 > .footer--home .footer__right {
+        text-align: left;
+    }
+}
+
+@media (min-width: 760px) and (max-width: 2200px) {
+    body.error404 {
+        --home-prop-scale: 0.88;
+        --home-fluid-scale: min(calc((100vw / 1536px) * var(--home-prop-scale)), 0.88);
+        --home-inline-pad: clamp(24px, calc(68px * var(--home-fluid-scale)), 68px);
+        --home-card-inline-pad: clamp(32px, calc(56px * var(--home-fluid-scale)), 56px);
+        padding-top: clamp(56px, calc(120px * var(--home-fluid-scale)), 120px);
+    }
+
+    body.error404 .main.main--404 {
+        max-width: calc(1500px * var(--home-fluid-scale));
+        padding: clamp(20px, calc(34px * var(--home-fluid-scale)), 34px) var(--home-inline-pad);
+    }
+
+    body.error404 .main.main--404 > .section {
+        margin-bottom: clamp(20px, calc(30px * var(--home-fluid-scale)), 30px);
+    }
+
+    body.error404 .main.main--404 > .section > .card {
+        border: 1px solid #a7a7a7;
+        border-radius: 0;
+    }
+
+    body.error404 .main.main--404 > .footer--home .footer__right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    body.error404 .main.main--404 > .footer--home .footer__form {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+}
+
+@media (min-width: 2201px) {
+    body.error404 {
+        --home-prop-scale: 1;
+        --home-fluid-scale: clamp(
+            0.88,
+            calc(0.88 + ((100vw - 2200px) / 4200px) * 0.12),
+            1
+        );
+        --home-inline-pad: clamp(60px, calc(68px * var(--home-fluid-scale)), 68px);
+        padding-top: clamp(106px, calc(120px * var(--home-fluid-scale)), 120px);
+    }
+
+    body.error404 .main.main--404 {
+        max-width: calc(1500px * var(--home-fluid-scale));
+        padding: clamp(30px, calc(34px * var(--home-fluid-scale)), 34px) var(--home-inline-pad);
+    }
+
+    body.error404 .main.main--404 > .section {
+        margin-bottom: clamp(23px, calc(30px * var(--home-fluid-scale)), 30px);
     }
 }

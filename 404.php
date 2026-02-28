@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-<main class="main">
+<main class="main main--full-height main--404">
     <section class="section">
         <div class="card">
             <div class="error-page">
@@ -20,6 +20,8 @@ get_header();
             </div>
         </div>
     </section>
+
+    <?php get_template_part('template-parts/footers/home'); ?>
 </main>
 
 <?php get_footer(); ?>
