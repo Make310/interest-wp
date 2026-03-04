@@ -21,18 +21,21 @@ $counter_offer_href = !empty($args['counter_offer_href']) ? $args['counter_offer
                 <h2 class="footer-v2__brand bankirr-font">BANKIRR</h2>
                 <p class="footer-v2__subtitle bankirr-font">BANK INTEREST RATE RESEARCH</p>
 
-                <nav class="footer-v2__nav" aria-label="Footer links">
+                <nav class="footer-v2__nav footer-v2__nav--desktop" aria-label="Footer links">
                     <a href="<?php echo esc_url(home_url('/about')); ?>" class="footer-v2__link bankirr-font">ABOUT</a>
                     <a href="<?php echo esc_url(home_url('/research')); ?>" class="footer-v2__link footer-v2__link--research bankirr-font">
                         <span class="footer-v2__link-desktop">RESEARCH</span>
                         <span class="footer-v2__link-mobile">THE RESEARCH (How we do it)</span>
                     </a>
                     <a href="<?php echo esc_url($counter_offer_href); ?>" class="footer-v2__link bankirr-font">COUNTER OFFER</a>
-                    <a href="<?php echo esc_url(home_url('/get-started')); ?>" class="footer-v2__link bankirr-font">MORTGAGE APPLICATION</a>
+                    <a href="<?php echo esc_url(home_url('/get-started')); ?>" class="footer-v2__link bankirr-font">
+                        <span class="footer-v2__link-desktop">MORTGAGE APPLICATION</span>
+                        <span class="footer-v2__link-mobile">MORTGAGE APP</span>
+                    </a>
                 </nav>
 
-                <p class="footer-v2__email bankirr-font">E. INFO@IRR.PRO</p>
-                <p class="footer-v2__copyright footer-v2__copyright--mobile bankirr-font"><?php echo esc_html(date('Y')); ?> All rights reserved</p>
+                <p class="footer-v2__email footer-v2__email--desktop bankirr-font">E. INFO@IRR.PRO</p>
+                <p class="footer-v2__copyright footer-v2__copyright--mobile footer-v2__copyright--mobile-legacy bankirr-font"><?php echo esc_html(date('Y')); ?> All rights reserved</p>
             </div>
 
             <div class="footer-v2__seal-wrap" aria-hidden="true">
@@ -69,6 +72,17 @@ $counter_offer_href = !empty($args['counter_offer_href']) ? $args['counter_offer
                     </label>
                     <p class="footer-v2__copyright bankirr-font"><?php echo esc_html(date('Y')); ?> All rights reserved</p>
                 </div>
+            </div>
+
+            <div class="footer-v2__links-mobile">
+                <nav class="footer-v2__nav footer-v2__nav--mobile" aria-label="Footer links mobile">
+                    <a href="<?php echo esc_url(home_url('/about')); ?>" class="footer-v2__link bankirr-font">ABOUT</a>
+                    <a href="<?php echo esc_url(home_url('/research')); ?>" class="footer-v2__link footer-v2__link--research bankirr-font">THE RESEARCH (How we do it)</a>
+                    <a href="<?php echo esc_url($counter_offer_href); ?>" class="footer-v2__link bankirr-font">COUNTER OFFER</a>
+                    <a href="<?php echo esc_url(home_url('/get-started')); ?>" class="footer-v2__link bankirr-font">MORTGAGE APP</a>
+                </nav>
+                <p class="footer-v2__email footer-v2__email--mobile bankirr-font">E. INFO@IRR.PRO</p>
+                <p class="footer-v2__copyright footer-v2__copyright--mobile bankirr-font"><?php echo esc_html(date('Y')); ?> All rights reserved</p>
             </div>
         </div>
     </div>
