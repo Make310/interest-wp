@@ -6918,6 +6918,7 @@ article {
     margin-bottom: 40px;
     padding-bottom: 30px;
     border-bottom: 1px solid #eee;
+    scroll-margin-top: 16px;
 }
 
 .about-section:last-child {
@@ -6985,6 +6986,20 @@ article {
 
     .about-section p {
         font-size: 16px;
+    }
+}
+
+/* Keep About TOC anchor targets visible under fixed BANKIRR desktop header */
+@media (min-width: 769px) {
+    body.page-template-page-about .about-section {
+        scroll-margin-top: 72px;
+    }
+}
+
+/* Desktop-zoom continuity range where desktop BANKIRR header is still active */
+@media (hover: hover) and (pointer: fine) and (min-width: 641px) and (max-width: 768px) {
+    body.page-template-page-about .about-section {
+        scroll-margin-top: 64px;
     }
 }
 
@@ -10937,6 +10952,7 @@ body.error404 .main.main--404 > .footer--home .footer__container--home {
             1
         );
         --home-inline-pad: clamp(60px, calc(68px * var(--home-fluid-scale)), 68px);
+        --home-card-inline-pad: clamp(49px, calc(56px * var(--home-fluid-scale)), 56px);
         padding-top: clamp(106px, calc(120px * var(--home-fluid-scale)), 120px);
     }
 
@@ -10952,6 +10968,16 @@ body.error404 .main.main--404 > .footer--home .footer__container--home {
     body.error404 .main.main--404 > .footer--home .footer__container--home {
         padding-left: clamp(32px, calc(56px * var(--home-fluid-scale)), 56px) !important;
         padding-right: clamp(32px, calc(56px * var(--home-fluid-scale)), 56px) !important;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1535px) and (max-height: 620px) and (max-resolution: 2.1dppx) {
+    body.error404 {
+        --home-prop-scale: 0.8;
+        --home-fluid-base: min(calc(100vw / 1536px), calc(100vh / 920px));
+        --home-fluid-scale: clamp(0.62, calc(var(--home-fluid-base) * var(--home-prop-scale)), 0.8);
+        --home-inline-pad: clamp(20px, calc(68px * var(--home-fluid-scale)), 68px);
+        --home-card-inline-pad: clamp(28px, calc(56px * var(--home-fluid-scale)), 56px);
     }
 }
 
