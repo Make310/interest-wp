@@ -9960,8 +9960,8 @@ body.page-template-page-get-started #counter-offer .hero__lenders {
     body.is-research-context .blog-posts,
     body.is-research-context .pagination,
     body.single-post.is-research-context .article {
-        width: min(100%, var(--research-content-max-width, 100%)) !important;
-        max-width: var(--research-content-max-width, 100%) !important;
+        width: 100% !important;
+        max-width: none !important;
         box-sizing: border-box;
     }
 }

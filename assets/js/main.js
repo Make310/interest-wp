@@ -137,6 +137,21 @@
             body.style.setProperty('--bankirr-shell-width', `${shellWidth}px`);
         }
 
+        // Keep header horizontal axis identical across pages that share the same shell.
+        // Using the shared CSS gutter prevents sub-pixel drift between Home/Research.
+        const gutterProbe = document.createElement('div');
+        gutterProbe.style.position = 'absolute';
+        gutterProbe.style.visibility = 'hidden';
+        gutterProbe.style.pointerEvents = 'none';
+        gutterProbe.style.paddingLeft = 'var(--home-card-inline-pad)';
+        body.appendChild(gutterProbe);
+        const sharedGutter = parseFloat(window.getComputedStyle(gutterProbe).paddingLeft);
+        gutterProbe.remove();
+        if (Number.isFinite(sharedGutter) && sharedGutter > 0) {
+            body.style.setProperty('--bankirr-content-gutter', `${sharedGutter}px`);
+            return;
+        }
+
         const textAnchor = document.querySelector(
             'main .hero__title, main .guarantee__title, main .step__title, ' +
             'main .research-header__title, main .post__title, main .article__title, ' +
