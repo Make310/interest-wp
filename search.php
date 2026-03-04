@@ -99,7 +99,7 @@ $search_query = get_search_query();
     <?php endif; ?>
 
     <!-- Footer Section -->
-    <?php get_template_part('template-parts/footers/home', null, array('fullwidth' => true)); ?>
+    <?php get_template_part('template-parts/footers/home'); ?>
 </main>
 
 <?php get_footer(); ?>

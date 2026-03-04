@@ -116,7 +116,7 @@ if (is_tag()) {
     <?php endif; ?>
 
     <!-- Footer Section -->
-    <?php get_template_part('template-parts/footers/home', null, array('fullwidth' => true)); ?>
+    <?php get_template_part('template-parts/footers/home'); ?>
 </main>
 
 <?php get_footer(); ?>

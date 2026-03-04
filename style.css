@@ -4745,6 +4745,10 @@ body.is-research-context .main > .footer--home {
     margin-top: 44px;
 }
 
+body.is-research-context .footer--home {
+    border-radius: 0 !important;
+}
+
 /* Research footer should use Home/Get-Started desktop scale */
 @media (min-width: 1024px) {
     body.is-research-context .footer--home {

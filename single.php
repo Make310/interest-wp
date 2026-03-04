@@ -54,7 +54,7 @@ get_header();
         </nav>
     </article>
 
-    <?php get_template_part('template-parts/footers/home', null, array('fullwidth' => true)); ?>
+    <?php get_template_part('template-parts/footers/home'); ?>
 </main>
 <?php endwhile; ?>
 
