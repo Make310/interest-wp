@@ -22,6 +22,7 @@ if (!trim(wp_strip_all_tags($tag_description))) {
 
 // Pagination
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
 ?>
 
 <main class="main main--full-height">
@@ -62,7 +63,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     <?php
     global $wp_query;
     $total_pages = $wp_query->max_num_pages;
-    if ($total_pages > 1) :
+    if ($total_pages > 0) :
         $current_page = max(1, $paged);
     ?>
     <nav class="pagination">

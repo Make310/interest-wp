@@ -5774,16 +5774,18 @@ body.is-research-context .pagination__dots {
     color: #222;
 }
 
-body.tag .research-header {
-    padding-bottom: 8px;
-}
-
 body.tag .research-header__tag-description {
-    margin-bottom: 0;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #111111;
+}
+
+@media (min-width: 768px) {
+    body.tag .research-header__tag-description {
+        max-width: clamp(560px, 75%, 980px);
+        margin-right: auto;
+    }
 }
 
 body.tag .research-header__tag-description p {
@@ -5792,18 +5794,6 @@ body.tag .research-header__tag-description p {
     font-weight: inherit;
     font-style: inherit;
     color: inherit;
-}
-
-@media (min-width: 768px) {
-    body.tag .research-header {
-        padding-bottom: 10px;
-    }
-}
-
-@media (min-width: 1024px) {
-    body.tag .research-header {
-        padding-bottom: 12px;
-    }
 }
 
 .archive-author .avatar {
@@ -9978,6 +9968,21 @@ body.page-template-page-get-started #counter-offer .hero__lenders {
         width: 100% !important;
         max-width: none !important;
         box-sizing: border-box;
+    }
+
+    /* Research page only: narrow post text block without shrinking chart card */
+    body.is-research-context .main--research-page .blog-posts .post {
+        max-width: clamp(560px, 75%, 980px);
+        margin-right: auto;
+    }
+
+    /* Search/Tag/Author archives: match the same post text narrowing */
+    body.search .blog-posts .post,
+    body.tag .blog-posts .post,
+    body.author .blog-posts .post,
+    body.archive .blog-posts .post {
+        max-width: clamp(560px, 75%, 980px);
+        margin-right: auto;
     }
 }
 

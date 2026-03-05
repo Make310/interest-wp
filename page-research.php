@@ -18,7 +18,7 @@ $blog_query = new WP_Query(array(
 $all_tags = get_tags(array('hide_empty' => true));
 ?>
 
-<main class="main main--full-height">
+<main class="main main--full-height main--research-page">
     <!-- Page Header -->
     <section class="research-header">
         <h1 class="research-header__title"><span class="underline">The Research</span></h1>

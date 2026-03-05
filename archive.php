@@ -86,7 +86,7 @@ if (is_tag()) {
     <?php
     global $wp_query;
     $total_pages = $wp_query->max_num_pages;
-    if ($total_pages > 1) :
+    if ($total_pages > 1 || ($archive_type === 'author' && $total_pages > 0)) :
         $current_page = max(1, get_query_var('paged'));
     ?>
     <nav class="pagination">
