@@ -80,14 +80,14 @@
                 <h1 class="step__title">Counter Offer</h1>
 
                 <div class="step__upload">
-                    <div class="upload-box">
-                        <svg class="upload-box__icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="17 8 12 3 7 8"></polyline>
-                            <line x1="12" y1="3" x2="12" y2="15"></line>
-                        </svg>
-                        <span class="upload-box__text">CLICK TO UPLOAD</span>
+                    
+                    <!-- EZ File Drop Embed Form -->
+                    <div class="ezfd-embed-form">
+                        <div data-form-uuid="282a5b5f-e5b4-4060-87ba-e69535b04775" data-options="" class="ezfd-form"></div>
+                        <script type="text/javascript" src="//app.ezfiledrop.com/js/embed-form.js"></script>
                     </div>
+                    <!-- /EZ File Drop Embed Form -->
+
                 </div>
 
                 <h2 class="step__subtitle">
@@ -187,88 +187,7 @@
     </section>
 
     <!-- Research Excerpts Section -->
-    <section class="section">
-        <div class="card">
-            <div class="research">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/house low 2.png" alt="House" class="research__house">
-                <h1 class="research__title">
-                    <span class="research__title-line research__title-line--desktop">Benefits of shopping around</span><br class="research__break research__break--desktop">
-                    <span class="research__title-line research__title-line--desktop">when buying a home</span>
-                    <span class="research__title-line research__title-line--mobile">Benefits of shopping around</span>
-                    <span class="research__title-line research__title-line--mobile">when buying a home</span>
-                </h1>
-                <p class="research__subtitle">
-                    <span class="research__subtitle-line research__subtitle-line--desktop">A center-aligned collection of statements from neutral, authoritative institutions.</span>
-                    <span class="research__subtitle-line research__subtitle-line--mobile">A collection of statements from neutral,</span>
-                    <span class="research__subtitle-line research__subtitle-line--mobile">authoritative institutions.</span>
-                </p>
-
-                <div class="research__divider"></div>
-
-                <div class="research__quotes">
-                    <div class="quote">
-                        <p class="quote__text">
-                            <span class="research__quote-line research__quote-line--desktop">"Shopping for a mortgage could save you thousands of dollars."</span>
-                            <span class="research__quote-line research__quote-line--mobile">“Shopping for a mortgage could save you</span>
-                            <span class="research__quote-line research__quote-line--mobile">thousands of dollars.”</span>
-                        </p>
-                        <span class="quote__source">Consumer Financial Protection Bureau</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cfpb.png" alt="CFPB" class="quote__logo">
-                    </div>
-
-                    <div class="quote">
-                        <p class="quote__text">
-                            <span class="research__quote-line research__quote-line--desktop">"Consumers who shop around for rates and fees may save</span><br class="research__break research__break--desktop">
-                            <span class="research__quote-line research__quote-line--desktop">thousands of dollars over the life of a loan."</span>
-                            <span class="research__quote-line research__quote-line--mobile">“Consumers who shop around for rates and fees</span>
-                            <span class="research__quote-line research__quote-line--mobile">may save thousands of dollars over the life of a</span>
-                            <span class="research__quote-line research__quote-line--mobile">loan.”</span>
-                        </p>
-                        <span class="quote__source">Federal Trade Commission</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ftc.png" alt="FTC" class="quote__logo">
-                    </div>
-
-                    <div class="quote">
-                        <p class="quote__text">
-                            <span class="research__quote-line research__quote-line--desktop">"You are not required to use the lender or settlement service</span><br class="research__break research__break--desktop">
-                            <span class="research__quote-line research__quote-line--desktop">providers recommended by your real estate agent."</span>
-                            <span class="research__quote-line research__quote-line--mobile">“You are not required to use the lender or</span>
-                            <span class="research__quote-line research__quote-line--mobile">settlement service providers recommended by</span>
-                            <span class="research__quote-line research__quote-line--mobile">your real estate agent.”</span>
-                        </p>
-                        <span class="quote__source">U.S. Department of Housing and Urban Development</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hud.png" alt="HUD" class="quote__logo">
-                    </div>
-
-                    <div class="quote">
-                        <p class="quote__text">
-                            <span class="research__quote-line research__quote-line--desktop">"Comparing loan offers from multiple lenders can help borrowers find the mortgage that best meets their needs."</span>
-                            <span class="research__quote-line research__quote-line--mobile">“Comparing loan offers from multiple lenders can</span>
-                            <span class="research__quote-line research__quote-line--mobile">help borrowers find the mortgage that best meets</span>
-                            <span class="research__quote-line research__quote-line--mobile">their needs.”</span>
-                        </p>
-                        <span class="quote__source">Federal Reserve</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fed.png" alt="Federal Reserve" class="quote__logo">
-                    </div>
-                </div>
-
-                <div class="research__divider"></div>
-
-                <div class="research__guides">
-                    <span class="guides__title">Guides:</span>
-                    <div class="guides__links">
-                        <a href="#">First home loan</a>
-                        <span>|</span>
-                        <a href="#">Mortgage Advisors</a>
-                        <span>|</span>
-                        <a href="#">Mortgage Comparison</a>
-                        <span>|</span>
-                        <a href="#">Refinance</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- (unchanged) -->
 
     <!-- Footer Section -->
     <?php get_template_part('template-parts/footers/home', null, array('counter_offer_href' => '#step-one')); ?>

@@ -5,7 +5,7 @@
 get_header();
 
 // Pagination
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$paged = max(1, (int) get_query_var('paged'), (int) get_query_var('page'));
 
 // Query for blog posts
 $blog_query = new WP_Query(array(
@@ -125,13 +125,12 @@ $all_tags = get_tags(array('hide_empty' => true));
     $total_pages = $blog_query->max_num_pages;
     if ($total_pages > 0) :
         $current_page = max(1, $paged);
-        $research_page_url = get_permalink();
     ?>
     <nav class="pagination">
         <?php
         // Page numbers
         for ($i = 1; $i <= $total_pages; $i++) :
-            $page_url = ($i == 1) ? $research_page_url : $research_page_url . 'page/' . $i . '/';
+            $page_url = get_pagenum_link($i);
 
             if ($i == $current_page) :
                 echo '<span class="pagination__item pagination__item--active">' . $i . '</span>';

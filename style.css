@@ -2054,7 +2054,7 @@ body {
    Keeps 1366x768 visually aligned with the desktop reference.
 ======================================== */
 
-@media (min-width: 1024px) and (max-width: 1535px) and (max-height: 620px) and (max-resolution: 2.1dppx) {
+@media (min-width: 1024px) and (max-width: 1535px) and (max-height: 500px) and (max-resolution: 2.1dppx) {
     body.home {
         --home-prop-scale: 0.8;
         --home-fluid-base: min(calc(100vw / 1536px), calc(100vh / 920px));
