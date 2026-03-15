@@ -190,7 +190,6 @@
     <!-- (unchanged) -->
 
     <!-- Footer Section -->
-    <?php get_template_part('template-parts/footers/home', null, array('counter_offer_href' => '#step-one')); ?>
 </main>
 
 <?php get_footer(); ?>

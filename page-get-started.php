@@ -402,7 +402,6 @@ get_header();
     </section>
 
     <!-- Footer Section -->
-    <?php get_template_part('template-parts/footers/home'); ?>
 </main>
 
 <?php get_footer(); ?>

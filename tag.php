@@ -93,7 +93,6 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     <?php endif; ?>
 
     <!-- Footer Section -->
-    <?php get_template_part('template-parts/footers/home'); ?>
 </main>
 
 <?php get_footer(); ?>

@@ -54,7 +54,6 @@ get_header();
         </nav>
     </article>
 
-    <?php get_template_part('template-parts/footers/home'); ?>
 </main>
 <?php endwhile; ?>
 

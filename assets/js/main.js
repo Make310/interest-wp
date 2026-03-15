@@ -143,7 +143,7 @@
         gutterProbe.style.position = 'absolute';
         gutterProbe.style.visibility = 'hidden';
         gutterProbe.style.pointerEvents = 'none';
-        gutterProbe.style.paddingLeft = 'var(--home-card-inline-pad)';
+        gutterProbe.style.paddingLeft = 'var(--bankirr-content-gutter)';
         body.appendChild(gutterProbe);
         const sharedGutter = parseFloat(window.getComputedStyle(gutterProbe).paddingLeft);
         gutterProbe.remove();

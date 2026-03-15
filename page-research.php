@@ -147,7 +147,6 @@ $all_tags = get_tags(array('hide_empty' => true));
     <?php wp_reset_postdata(); ?>
 
     <!-- Footer Section -->
-    <?php get_template_part('template-parts/footers/home'); ?>
 </main>
 
 <?php get_footer(); ?>
