@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+$GLOBALS['irr_body_context_classes'] = array('template-home');
+get_header();
+?>
 
 <main class="main">
     <!-- Hero Section -->

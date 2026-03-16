@@ -33,6 +33,12 @@ body {
     min-width: 100%;
 }
 
+:root {
+    --irr-accent: #111111;
+    --irr-accent-hover: #4f4f4f;
+    --irr-accent-subtle: #707070;
+}
+
 body {
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -53,7 +59,7 @@ body.category,
 body.author,
 body.archive,
 body.search,
-body.home,
+body.template-home,
 body.page {
     background-color: #f0eef0 !important;
 }
@@ -172,142 +178,6 @@ body.has-bankirr-header > main:not([class]) {
     top: -1px;
     left: 50%;
     transform: translateX(-50%);
-}
-
-/* ========================================
-   NAVBAR
-======================================== */
-
-body:not(.has-bankirr-header) .navbar {
-    background-color: #ffffff;
-    border-bottom: 1px solid #eee;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-
-body:not(.has-bankirr-header) .navbar__container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 52px;
-}
-
-/* Logo izquierdo - imagen */
-body:not(.has-bankirr-header) .navbar__brand {
-    display: flex;
-    align-items: center;
-}
-
-body:not(.has-bankirr-header) .navbar__brand img {
-    height: 9px;
-    width: auto;
-}
-
-/* Logo centro - IRR PRO (oculto en mobile) */
-body:not(.has-bankirr-header) .navbar__logo {
-    display: none;
-}
-
-body:not(.has-bankirr-header) .navbar__logo img {
-    height: 26px;
-    width: auto;
-}
-
-/* Navegación derecha (oculta en mobile) */
-body:not(.has-bankirr-header) .navbar__nav {
-    display: none;
-}
-
-body:not(.has-bankirr-header) .navbar__nav-list {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-body:not(.has-bankirr-header) .navbar__nav-link {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #555;
-    transition: color 0.2s;
-}
-
-body:not(.has-bankirr-header) .navbar__nav-link:hover {
-    color: #111;
-}
-
-/* Flecha de navegación */
-body:not(.has-bankirr-header) .navbar__nav-arrow {
-    display: flex;
-    align-items: center;
-    margin-left: 8px;
-}
-
-body:not(.has-bankirr-header) .navbar__nav-arrow img {
-    height: 12px;
-    width: auto;
-}
-
-/* Botón menú móvil */
-body:not(.has-bankirr-header) .navbar__menu-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-}
-
-body:not(.has-bankirr-header) .navbar__menu-icon {
-    width: 32px;
-    height: auto;
-}
-
-/* ========================================
-   MOBILE MENU
-======================================== */
-
-body:not(.has-bankirr-header) .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 52px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ffffff;
-    z-index: 999;
-    padding: 24px 16px;
-    overflow-y: auto;
-}
-
-body:not(.has-bankirr-header) .mobile-menu.is-active {
-    display: block;
-}
-
-body:not(.has-bankirr-header) .mobile-menu__list {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-}
-
-body:not(.has-bankirr-header) .mobile-menu__link {
-    font-size: 14px;
-    font-weight: 500;
-    color: #111;
-}
-
-body:not(.has-bankirr-header).menu-open {
-    overflow: hidden;
-}
-
-/* Spacer para compensar el navbar fixed */
-body:not(.has-bankirr-header) {
-    padding-top: 52px;
 }
 
 /* ========================================
@@ -444,33 +314,6 @@ body:not(.has-bankirr-header) {
     border-radius: 50% 50% 50% 0;
 }
 
-.hero__badge {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 32px;
-    height: 32px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.hero__badge img {
-    width: 22px;
-    height: auto;
-}
-
-.hero__caption {
-    margin-top: 8px;
-    font-size: 12px;
-    color: #666;
-    text-align: center;
-    line-height: 1.4;
-}
-
 /* Lenders Section */
 .hero__lenders {
     margin-top: 24px;
@@ -525,44 +368,6 @@ body:not(.has-bankirr-header) {
         padding: 40px 32px;
     }
 
-    body:not(.has-bankirr-header) .navbar__container {
-        height: 56px;
-        padding: 0 24px;
-    }
-
-    body:not(.has-bankirr-header) .navbar__brand img {
-        height: 11px;
-    }
-
-    /* Mostrar logo centro en tablet+ */
-    body:not(.has-bankirr-header) .navbar__logo {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    body:not(.has-bankirr-header) .navbar__logo img {
-        height: 28px;
-    }
-
-    body:not(.has-bankirr-header) .navbar__nav {
-        display: block;
-    }
-
-    body:not(.has-bankirr-header) .navbar__menu-btn {
-        display: none;
-    }
-
-    body:not(.has-bankirr-header) .mobile-menu {
-        display: none !important;
-    }
-
-    body:not(.has-bankirr-header) .navbar__nav-link {
-        font-size: 12px;
-    }
-
     /* Hero tablet */
     .hero {
         flex-direction: row;
@@ -592,19 +397,6 @@ body:not(.has-bankirr-header) {
     .hero__image-wrapper {
         width: 160px;
         height: 160px;
-    }
-
-    .hero__badge {
-        width: 36px;
-        height: 36px;
-    }
-
-    .hero__badge img {
-        width: 24px;
-    }
-
-    .hero__caption {
-        font-size: 13px;
     }
 
     .hero__lenders {
@@ -645,31 +437,6 @@ body:not(.has-bankirr-header) {
         padding: 48px 40px;
     }
 
-    body:not(.has-bankirr-header) .navbar__container {
-        height: 60px;
-        padding: 0 40px;
-    }
-
-    body:not(.has-bankirr-header) .navbar__brand img {
-        height: 12px;
-    }
-
-    body:not(.has-bankirr-header) .navbar__logo img {
-        height: 32px;
-    }
-
-    body:not(.has-bankirr-header) .navbar__nav-list {
-        gap: 28px;
-    }
-
-    body:not(.has-bankirr-header) .navbar__nav-link {
-        font-size: 13px;
-    }
-
-    body:not(.has-bankirr-header) .navbar__nav-arrow img {
-        height: 14px;
-    }
-
     /* Hero desktop */
     .hero {
         gap: 32px;
@@ -688,19 +455,6 @@ body:not(.has-bankirr-header) {
         height: 180px;
     }
 
-    .hero__badge {
-        width: 40px;
-        height: 40px;
-    }
-
-    .hero__badge img {
-        width: 28px;
-    }
-
-    .hero__caption {
-        font-size: 14px;
-    }
-
     .hero__lenders {
         margin-top: 40px;
     }
@@ -715,75 +469,33 @@ body:not(.has-bankirr-header) {
 ======================================== */
 
 @media (min-width: 1024px) {
-    body:not(.has-bankirr-header).home {
-        padding-top: 120px;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__container {
-        max-width: 1500px;
-        height: 120px;
-        padding: 0 52px;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__brand {
-        margin-left: 56px;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__brand img {
-        height: 24px;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__logo img {
-        height: 72px;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__nav-list {
-        gap: 22px;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__nav-link {
-        font-family: 'EB Garamond', Georgia, serif;
-        font-size: 22px;
-        font-weight: 500;
-        letter-spacing: 0.04em;
-        color: #111;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__nav-arrow img {
-        height: 19px;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__nav {
-        margin-right: 56px;
-    }
-
-    body.home .main {
+    body.template-home .main {
         max-width: 1500px;
         padding: 34px 68px;
     }
 
-    body.home .section {
+    body.template-home .section {
         margin-bottom: 30px;
     }
 
-    body.home main .section:first-of-type .card {
+    body.template-home main .section:first-of-type .card {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: 96px 56px 0;
         background-color: #ffffff;
     }
 
-    body.home main .section:first-of-type .hero {
+    body.template-home main .section:first-of-type .hero {
         align-items: flex-start;
         gap: 36px;
     }
 
-    body.home main .section:first-of-type .hero__content {
+    body.template-home main .section:first-of-type .hero__content {
         flex: 1 1 58%;
         max-width: 780px;
     }
 
-    body.home main .section:first-of-type .hero__title {
+    body.template-home main .section:first-of-type .hero__title {
         font-size: 62px;
         line-height: 1.1;
         letter-spacing: 0;
@@ -791,41 +503,41 @@ body:not(.has-bankirr-header) {
         margin-bottom: 46px;
     }
 
-    body.home main .section:first-of-type .hero__text {
+    body.template-home main .section:first-of-type .hero__text {
         font-size: 34px;
         line-height: 1.28;
         color: #1f1f1f;
     }
 
-    body.home main .section:first-of-type .hero__image {
+    body.template-home main .section:first-of-type .hero__image {
         flex: 0 0 auto;
         padding-top: 10px;
     }
 
-    body.home main .section:first-of-type .hero__image-wrapper {
+    body.template-home main .section:first-of-type .hero__image-wrapper {
         width: 392px;
         height: 264px;
     }
 
-    body.home main .section:first-of-type .hero__image-wrapper img {
+    body.template-home main .section:first-of-type .hero__image-wrapper img {
         object-fit: contain;
         border-radius: 0;
     }
 
-    body.home main .section:first-of-type .hero__lenders {
+    body.template-home main .section:first-of-type .hero__lenders {
         margin-top: 94px;
         border-top: 0;
         padding-top: 0;
     }
 
-    body.home main .section:first-of-type .hero__lenders-title {
+    body.template-home main .section:first-of-type .hero__lenders-title {
         font-size: 19px;
         line-height: 1.3;
         color: #2f2f2f;
         margin-bottom: 32px;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos {
+    body.template-home main .section:first-of-type .hero__lenders-logos {
         border-top: 1px solid #a7a7a7;
         padding: 28px 56px 30px;
         margin-left: -56px;
@@ -835,71 +547,71 @@ body:not(.has-bankirr-header) {
         gap: 28px;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos img {
+    body.template-home main .section:first-of-type .hero__lenders-logos img {
         height: 82px;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos img.hide-mobile {
+    body.template-home main .section:first-of-type .hero__lenders-logos img.hide-mobile {
         height: 115px;
     }
 
-    body.home main .section:nth-of-type(2) .card--guarantee {
+    body.template-home main .section:nth-of-type(2) .card--guarantee {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: 84px 56px 74px;
         background-color: #ffffff;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee {
+    body.template-home main .section:nth-of-type(2) .guarantee {
         gap: 0;
         padding-right: 0;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__content {
+    body.template-home main .section:nth-of-type(2) .guarantee__content {
         padding-right: 280px;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__title {
+    body.template-home main .section:nth-of-type(2) .guarantee__title {
         font-size: 62px;
         line-height: 1.08;
         font-weight: 600;
         margin-bottom: 44px;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__text {
+    body.template-home main .section:nth-of-type(2) .guarantee__text {
         font-size: 31px;
         line-height: 1.28;
         color: #1f1f1f;
         margin-bottom: 62px;
     }
 
-    body.home main .section:nth-of-type(2) .btn--bordered {
+    body.template-home main .section:nth-of-type(2) .btn--bordered {
         font-size: 30px;
         font-weight: 400;
         letter-spacing: 0.05em;
         padding: 18px 28px;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__badge {
+    body.template-home main .section:nth-of-type(2) .guarantee__badge {
         top: -1px;
         right: 58px;
         transform: none;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__badge img {
+    body.template-home main .section:nth-of-type(2) .guarantee__badge img {
         width: 214px;
         transform: scaleY(1.12);
         transform-origin: top center;
     }
 
-    body.home main .section:nth-of-type(3) .card--step {
+    body.template-home main .section:nth-of-type(3) .card--step {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: 86px 56px 62px;
         background-color: #ffffff;
     }
 
-    body.home main .section:nth-of-type(3) .step__label {
+    body.template-home main .section:nth-of-type(3) .step__label {
         top: 0;
         transform: translate(-50%, 0);
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -913,7 +625,7 @@ body:not(.has-bankirr-header) {
         background-color: #d8d8d8;
     }
 
-    body.home main .section:nth-of-type(3) .step__title {
+    body.template-home main .section:nth-of-type(3) .step__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 54px;
         line-height: 1.04;
@@ -923,11 +635,11 @@ body:not(.has-bankirr-header) {
         text-transform: uppercase;
     }
 
-    body.home main .section:nth-of-type(3) .step__upload {
+    body.template-home main .section:nth-of-type(3) .step__upload {
         margin-bottom: 42px;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box {
+    body.template-home main .section:nth-of-type(3) .upload-box {
         width: min(100%, 710px);
         max-width: 100%;
         height: 240px;
@@ -938,7 +650,7 @@ body:not(.has-bankirr-header) {
         box-sizing: border-box;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box::before {
+    body.template-home main .section:nth-of-type(3) .upload-box::before {
         top: 11px;
         left: 14px;
         right: 14px;
@@ -947,13 +659,13 @@ body:not(.has-bankirr-header) {
         border-radius: 0;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box__icon {
+    body.template-home main .section:nth-of-type(3) .upload-box__icon {
         width: 58px;
         height: 58px;
         color: #7c7c7c;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box__text {
+    body.template-home main .section:nth-of-type(3) .upload-box__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 30px;
         font-weight: 400;
@@ -961,7 +673,7 @@ body:not(.has-bankirr-header) {
         color: #8a8a8a;
     }
 
-    body.home main .section:nth-of-type(3) .step__subtitle {
+    body.template-home main .section:nth-of-type(3) .step__subtitle {
         display: block;
         width: max-content;
         max-width: 100%;
@@ -974,19 +686,19 @@ body:not(.has-bankirr-header) {
         margin-bottom: 14px;
     }
 
-    body.home main .section:nth-of-type(3) .step__text {
+    body.template-home main .section:nth-of-type(3) .step__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 34px;
         line-height: 1.28;
         color: #1f1f1f;
     }
 
-    body.home main .section:nth-of-type(3) .step__text em {
+    body.template-home main .section:nth-of-type(3) .step__text em {
         font-style: normal;
         color: inherit;
     }
 
-    body.home main .section:nth-of-type(3) .step__faq-link {
+    body.template-home main .section:nth-of-type(3) .step__faq-link {
         margin-top: 18px;
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 20px;
@@ -995,14 +707,14 @@ body:not(.has-bankirr-header) {
         text-underline-offset: 4px;
     }
 
-    body.home main .section:nth-of-type(4) .card--step {
+    body.template-home main .section:nth-of-type(4) .card--step {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: 88px 56px 72px;
         background-color: #ffffff;
     }
 
-    body.home main .section:nth-of-type(4) .step__label {
+    body.template-home main .section:nth-of-type(4) .step__label {
         top: 0;
         transform: translate(-50%, 0);
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -1016,7 +728,7 @@ body:not(.has-bankirr-header) {
         background-color: #d8d8d8;
     }
 
-    body.home main .section:nth-of-type(4) .step__title {
+    body.template-home main .section:nth-of-type(4) .step__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 54px;
         line-height: 1.04;
@@ -1026,7 +738,7 @@ body:not(.has-bankirr-header) {
         margin-bottom: 42px;
     }
 
-    body.home main .section:nth-of-type(4) .step__intro {
+    body.template-home main .section:nth-of-type(4) .step__intro {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 34px;
         line-height: 1.28;
@@ -1035,16 +747,16 @@ body:not(.has-bankirr-header) {
         margin: 0 auto 42px;
     }
 
-    body.home main .section:nth-of-type(4) .step__features {
+    body.template-home main .section:nth-of-type(4) .step__features {
         gap: 56px;
     }
 
-    body.home main .section:nth-of-type(4) .feature__icon {
+    body.template-home main .section:nth-of-type(4) .feature__icon {
         width: 220px;
         margin: 0 auto 14px;
     }
 
-    body.home main .section:nth-of-type(4) .feature__title {
+    body.template-home main .section:nth-of-type(4) .feature__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 44px;
         line-height: 1.14;
@@ -1052,7 +764,7 @@ body:not(.has-bankirr-header) {
         margin-bottom: 14px;
     }
 
-    body.home main .section:nth-of-type(4) .feature__text {
+    body.template-home main .section:nth-of-type(4) .feature__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 34px;
         line-height: 1.28;
@@ -1061,14 +773,14 @@ body:not(.has-bankirr-header) {
         margin: 0 auto;
     }
 
-    body.home main .section:nth-of-type(5) .card--step {
+    body.template-home main .section:nth-of-type(5) .card--step {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: 88px 56px 72px;
         background-color: #ffffff;
     }
 
-    body.home main .section:nth-of-type(5) .step__label {
+    body.template-home main .section:nth-of-type(5) .step__label {
         top: 0;
         transform: translate(-50%, 0);
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -1082,7 +794,7 @@ body:not(.has-bankirr-header) {
         background-color: #d8d8d8;
     }
 
-    body.home main .section:nth-of-type(5) .step__title {
+    body.template-home main .section:nth-of-type(5) .step__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 54px;
         line-height: 1.04;
@@ -1092,7 +804,7 @@ body:not(.has-bankirr-header) {
         text-transform: uppercase;
     }
 
-    body.home main .section:nth-of-type(5) .step__subtitle {
+    body.template-home main .section:nth-of-type(5) .step__subtitle {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 44px;
         line-height: 1.14;
@@ -1100,52 +812,52 @@ body:not(.has-bankirr-header) {
         margin-bottom: 14px;
     }
 
-    body.home main .section:nth-of-type(5) .step__text {
+    body.template-home main .section:nth-of-type(5) .step__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 34px;
         line-height: 1.28;
         color: #1f1f1f;
     }
 
-    body.home main .section:nth-of-type(5) .step__tagline {
+    body.template-home main .section:nth-of-type(5) .step__tagline {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 34px;
         line-height: 1.28;
         font-weight: 650;
     }
 
-    body.home main .section:nth-of-type(5) .step__tagline em {
+    body.template-home main .section:nth-of-type(5) .step__tagline em {
         font-style: normal;
         font-weight: 650;
     }
 
-    body.home main .section:nth-of-type(5) .step__seal {
+    body.template-home main .section:nth-of-type(5) .step__seal {
         margin-left: -56px;
         margin-right: -56px;
         margin-bottom: 24px;
         padding: 16px 56px;
     }
 
-    body.home main .section:nth-of-type(5) .step__seal-line {
+    body.template-home main .section:nth-of-type(5) .step__seal-line {
         height: 62.72px;
         background-color: #333;
     }
 
-    body.home main .section:nth-of-type(5) .step__seal-img {
+    body.template-home main .section:nth-of-type(5) .step__seal-img {
         width: 248px;
         height: auto;
     }
 
-    body.home main .section:nth-of-type(6) .research {
+    body.template-home main .section:nth-of-type(6) .research {
         padding: 0 46px;
     }
 
-    body.home main .section:nth-of-type(6) .research__house {
+    body.template-home main .section:nth-of-type(6) .research__house {
         width: 400px;
         margin: 0 auto 28px;
     }
 
-    body.home main .section:nth-of-type(6) .research__title {
+    body.template-home main .section:nth-of-type(6) .research__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 45px;
         line-height: 1.1;
@@ -1157,7 +869,7 @@ body:not(.has-bankirr-header) {
         margin: 0 auto 24px;
     }
 
-    body.home main .section:nth-of-type(6) .research__subtitle {
+    body.template-home main .section:nth-of-type(6) .research__subtitle {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 22px;
         line-height: 1.36;
@@ -1166,24 +878,24 @@ body:not(.has-bankirr-header) {
         margin: 0 auto 34px;
     }
 
-    body.home main .section:nth-of-type(6) .research__divider {
+    body.template-home main .section:nth-of-type(6) .research__divider {
         margin: 52px auto;
         max-width: 60%;
         background-color: #d4ddeb;
     }
 
-    body.home main .section:nth-of-type(6) .research__quotes {
+    body.template-home main .section:nth-of-type(6) .research__quotes {
         gap: 76px;
         align-items: center;
     }
 
-    body.home main .section:nth-of-type(6) .quote {
+    body.template-home main .section:nth-of-type(6) .quote {
         width: min(100%, 1160px);
         max-width: 1160px;
         margin: 0 auto;
     }
 
-    body.home main .section:nth-of-type(6) .quote__text {
+    body.template-home main .section:nth-of-type(6) .quote__text {
         font-family: "EB Garamond", Georgia, serif;
         font-size: 42px;
         line-height: 1.25;
@@ -1196,7 +908,7 @@ body:not(.has-bankirr-header) {
         text-wrap: balance;
     }
 
-    body.home main .section:nth-of-type(6) .quote__source {
+    body.template-home main .section:nth-of-type(6) .quote__source {
         font-family: "EB Garamond", Georgia, serif;
         font-size: 26px;
         font-weight: 500;
@@ -1206,12 +918,12 @@ body:not(.has-bankirr-header) {
         margin-bottom: 16px;
     }
 
-    body.home main .section:nth-of-type(6) .quote__logo {
+    body.template-home main .section:nth-of-type(6) .quote__logo {
         width: 74px;
         opacity: 0.62;
     }
 
-    body.home main .section:nth-of-type(6) .guides__title {
+    body.template-home main .section:nth-of-type(6) .guides__title {
         font-size: 20px;
         line-height: 1.2;
     }
@@ -1223,7 +935,7 @@ body:not(.has-bankirr-header) {
 ======================================== */
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.home {
+    body.template-home {
         --home-prop-scale: 0.88;
         --home-fluid-scale: min(calc((100vw / 1536px) * var(--home-prop-scale)), 0.88);
         --home-inline-pad: clamp(24px, calc(68px * var(--home-fluid-scale)), 68px);
@@ -1231,82 +943,23 @@ body:not(.has-bankirr-header) {
         font-size: 15px;
     }
 
-    body:not(.has-bankirr-header).home {
-        padding-top: clamp(56px, calc(120px * var(--home-fluid-scale)), 120px);
-    }
-
-    body:not(.has-bankirr-header).home .navbar__container {
-        max-width: calc(1500px * var(--home-fluid-scale));
-        height: clamp(56px, calc(120px * var(--home-fluid-scale)), 120px);
-        padding: 0 var(--home-inline-pad);
-    }
-
-    body:not(.has-bankirr-header).home .navbar__brand {
-        margin-left: var(--home-card-inline-pad);
-    }
-
-    body:not(.has-bankirr-header).home .navbar__brand img {
-        height: clamp(10px, calc(24px * var(--home-fluid-scale)), 24px);
-    }
-
-    body:not(.has-bankirr-header).home .navbar__logo {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    body:not(.has-bankirr-header).home .navbar__logo img {
-        height: clamp(28px, calc(72px * var(--home-fluid-scale)), 72px);
-    }
-
-    body:not(.has-bankirr-header).home .navbar__nav {
-        display: block;
-        margin-right: var(--home-card-inline-pad);
-    }
-
-    body:not(.has-bankirr-header).home .navbar__menu-btn {
-        display: none;
-    }
-
-    body:not(.has-bankirr-header).home .mobile-menu {
-        display: none !important;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__nav-list {
-        gap: clamp(14px, calc(22px * var(--home-fluid-scale)), 22px);
-    }
-
-    body:not(.has-bankirr-header).home .navbar__nav-link {
-        font-family: 'EB Garamond', Georgia, serif;
-        font-size: clamp(12px, calc(22px * var(--home-fluid-scale)), 22px);
-        font-weight: 500;
-        letter-spacing: 0.04em;
-        color: #111;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__nav-arrow img {
-        height: clamp(12px, calc(19px * var(--home-fluid-scale)), 19px);
-    }
-
-    body.home .main {
+    body.template-home .main {
         max-width: calc(1500px * var(--home-fluid-scale));
         padding: clamp(20px, calc(34px * var(--home-fluid-scale)), 34px) var(--home-inline-pad);
     }
 
-    body.home .section {
+    body.template-home .section {
         margin-bottom: clamp(20px, calc(30px * var(--home-fluid-scale)), 30px);
     }
 
-    body.home main .section:first-of-type .card {
+    body.template-home main .section:first-of-type .card {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: clamp(40px, calc(96px * var(--home-fluid-scale)), 96px) var(--home-card-inline-pad) 0;
         background-color: #ffffff;
     }
 
-    body.home main .section:first-of-type .hero {
+    body.template-home main .section:first-of-type .hero {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -1314,13 +967,13 @@ body:not(.has-bankirr-header) {
         gap: clamp(24px, calc(36px * var(--home-fluid-scale)), 36px);
     }
 
-    body.home main .section:first-of-type .hero__content {
+    body.template-home main .section:first-of-type .hero__content {
         order: 1;
         flex: 1 1 58%;
         max-width: clamp(420px, calc(780px * var(--home-fluid-scale)), 780px);
     }
 
-    body.home main .section:first-of-type .hero__title {
+    body.template-home main .section:first-of-type .hero__title {
         font-size: clamp(32px, calc(62px * var(--home-fluid-scale)), 62px);
         line-height: 1.1;
         letter-spacing: 0;
@@ -1328,42 +981,42 @@ body:not(.has-bankirr-header) {
         margin-bottom: clamp(12px, calc(46px * var(--home-fluid-scale)), 46px);
     }
 
-    body.home main .section:first-of-type .hero__text {
+    body.template-home main .section:first-of-type .hero__text {
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.28;
         color: #1f1f1f;
     }
 
-    body.home main .section:first-of-type .hero__image {
+    body.template-home main .section:first-of-type .hero__image {
         order: 2;
         flex: 0 0 auto;
         padding-top: clamp(0px, calc(10px * var(--home-fluid-scale)), 10px);
     }
 
-    body.home main .section:first-of-type .hero__image-wrapper {
+    body.template-home main .section:first-of-type .hero__image-wrapper {
         width: clamp(180px, calc(392px * var(--home-fluid-scale)), 392px);
         height: clamp(160px, calc(264px * var(--home-fluid-scale)), 264px);
     }
 
-    body.home main .section:first-of-type .hero__image-wrapper img {
+    body.template-home main .section:first-of-type .hero__image-wrapper img {
         object-fit: contain;
         border-radius: 0;
     }
 
-    body.home main .section:first-of-type .hero__lenders {
+    body.template-home main .section:first-of-type .hero__lenders {
         margin-top: clamp(32px, calc(94px * var(--home-fluid-scale)), 94px);
         border-top: 0;
         padding-top: 0;
     }
 
-    body.home main .section:first-of-type .hero__lenders-title {
+    body.template-home main .section:first-of-type .hero__lenders-title {
         font-size: clamp(12px, calc(19px * var(--home-fluid-scale)), 19px);
         line-height: 1.3;
         color: #2f2f2f;
         margin-bottom: clamp(16px, calc(32px * var(--home-fluid-scale)), 32px);
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos {
+    body.template-home main .section:first-of-type .hero__lenders-logos {
         border-top: 1px solid #a7a7a7;
         padding: clamp(16px, calc(28px * var(--home-fluid-scale)), 28px) var(--home-card-inline-pad) clamp(16px, calc(30px * var(--home-fluid-scale)), 30px);
         margin-left: calc(-1 * var(--home-card-inline-pad));
@@ -1373,72 +1026,72 @@ body:not(.has-bankirr-header) {
         gap: clamp(16px, calc(28px * var(--home-fluid-scale)), 28px);
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos img {
+    body.template-home main .section:first-of-type .hero__lenders-logos img {
         height: clamp(40px, calc(82px * var(--home-fluid-scale)), 82px);
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos img.hide-mobile {
+    body.template-home main .section:first-of-type .hero__lenders-logos img.hide-mobile {
         display: block;
         height: clamp(54px, calc(115px * var(--home-fluid-scale)), 115px);
     }
 
-    body.home main .section:nth-of-type(2) .card--guarantee {
+    body.template-home main .section:nth-of-type(2) .card--guarantee {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: clamp(36px, calc(84px * var(--home-fluid-scale)), 84px) var(--home-card-inline-pad) clamp(32px, calc(74px * var(--home-fluid-scale)), 74px);
         background-color: #ffffff;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee {
+    body.template-home main .section:nth-of-type(2) .guarantee {
         gap: 0;
         padding-right: 0;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__content {
+    body.template-home main .section:nth-of-type(2) .guarantee__content {
         padding-right: clamp(140px, calc(280px * var(--home-fluid-scale)), 280px);
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__title {
+    body.template-home main .section:nth-of-type(2) .guarantee__title {
         font-size: clamp(30px, calc(62px * var(--home-fluid-scale)), 62px);
         line-height: 1.08;
         font-weight: 600;
         margin-bottom: clamp(20px, calc(44px * var(--home-fluid-scale)), 44px);
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__text {
+    body.template-home main .section:nth-of-type(2) .guarantee__text {
         font-size: clamp(16px, calc(31px * var(--home-fluid-scale)), 31px);
         line-height: 1.28;
         color: #1f1f1f;
         margin-bottom: clamp(24px, calc(62px * var(--home-fluid-scale)), 62px);
     }
 
-    body.home main .section:nth-of-type(2) .btn--bordered {
+    body.template-home main .section:nth-of-type(2) .btn--bordered {
         font-size: clamp(16px, calc(30px * var(--home-fluid-scale)), 30px);
         font-weight: 400;
         letter-spacing: 0.05em;
         padding: clamp(9px, calc(18px * var(--home-fluid-scale)), 18px) clamp(13px, calc(28px * var(--home-fluid-scale)), 28px);
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__badge {
+    body.template-home main .section:nth-of-type(2) .guarantee__badge {
         top: -1px;
         right: clamp(20px, calc(58px * var(--home-fluid-scale)), 58px);
         transform: none;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__badge img {
+    body.template-home main .section:nth-of-type(2) .guarantee__badge img {
         width: clamp(100px, calc(214px * var(--home-fluid-scale)), 214px);
         transform: scaleY(1.12);
         transform-origin: top center;
     }
 
-    body.home main .section:nth-of-type(3) .card--step {
+    body.template-home main .section:nth-of-type(3) .card--step {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: clamp(32px, calc(86px * var(--home-fluid-scale)), 86px) clamp(26px, calc(56px * var(--home-fluid-scale)), 56px) clamp(24px, calc(62px * var(--home-fluid-scale)), 62px);
         background-color: #ffffff;
     }
 
-    body.home main .section:nth-of-type(3) .step__label {
+    body.template-home main .section:nth-of-type(3) .step__label {
         top: 0;
         transform: translate(-50%, 0);
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -1452,7 +1105,7 @@ body:not(.has-bankirr-header) {
         background-color: #d8d8d8;
     }
 
-    body.home main .section:nth-of-type(3) .step__title {
+    body.template-home main .section:nth-of-type(3) .step__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(25px, calc(54px * var(--home-fluid-scale)), 54px);
         line-height: 1.04;
@@ -1462,11 +1115,11 @@ body:not(.has-bankirr-header) {
         margin-bottom: clamp(14px, calc(42px * var(--home-fluid-scale)), 42px);
     }
 
-    body.home main .section:nth-of-type(3) .step__upload {
+    body.template-home main .section:nth-of-type(3) .step__upload {
         margin-bottom: clamp(14px, calc(42px * var(--home-fluid-scale)), 42px);
     }
 
-    body.home main .section:nth-of-type(3) .upload-box {
+    body.template-home main .section:nth-of-type(3) .upload-box {
         width: min(100%, clamp(300px, calc(710px * var(--home-fluid-scale)), 710px));
         max-width: 100%;
         height: clamp(138px, calc(240px * var(--home-fluid-scale)), 240px);
@@ -1477,7 +1130,7 @@ body:not(.has-bankirr-header) {
         box-sizing: border-box;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box::before {
+    body.template-home main .section:nth-of-type(3) .upload-box::before {
         top: clamp(7px, calc(11px * var(--home-fluid-scale)), 11px);
         left: clamp(9px, calc(14px * var(--home-fluid-scale)), 14px);
         right: clamp(9px, calc(14px * var(--home-fluid-scale)), 14px);
@@ -1486,13 +1139,13 @@ body:not(.has-bankirr-header) {
         border-radius: 0;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box__icon {
+    body.template-home main .section:nth-of-type(3) .upload-box__icon {
         width: clamp(32px, calc(58px * var(--home-fluid-scale)), 58px);
         height: clamp(32px, calc(58px * var(--home-fluid-scale)), 58px);
         color: #7c7c7c;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box__text {
+    body.template-home main .section:nth-of-type(3) .upload-box__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(14px, calc(30px * var(--home-fluid-scale)), 30px);
         font-weight: 400;
@@ -1500,7 +1153,7 @@ body:not(.has-bankirr-header) {
         color: #8a8a8a;
     }
 
-    body.home main .section:nth-of-type(3) .step__subtitle {
+    body.template-home main .section:nth-of-type(3) .step__subtitle {
         display: block;
         width: max-content;
         max-width: 100%;
@@ -1513,19 +1166,19 @@ body:not(.has-bankirr-header) {
         margin-bottom: clamp(6px, calc(14px * var(--home-fluid-scale)), 14px);
     }
 
-    body.home main .section:nth-of-type(3) .step__text {
+    body.template-home main .section:nth-of-type(3) .step__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.28;
         color: #1f1f1f;
     }
 
-    body.home main .section:nth-of-type(3) .step__text em {
+    body.template-home main .section:nth-of-type(3) .step__text em {
         font-style: normal;
         color: inherit;
     }
 
-    body.home main .section:nth-of-type(3) .step__faq-link {
+    body.template-home main .section:nth-of-type(3) .step__faq-link {
         margin-top: clamp(10px, calc(18px * var(--home-fluid-scale)), 18px);
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(13px, calc(20px * var(--home-fluid-scale)), 20px);
@@ -1534,14 +1187,14 @@ body:not(.has-bankirr-header) {
         text-underline-offset: 4px;
     }
 
-    body.home main .section:nth-of-type(4) .card--step {
+    body.template-home main .section:nth-of-type(4) .card--step {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: clamp(36px, calc(88px * var(--home-fluid-scale)), 88px) clamp(26px, calc(56px * var(--home-fluid-scale)), 56px) clamp(30px, calc(72px * var(--home-fluid-scale)), 72px);
         background-color: #ffffff;
     }
 
-    body.home main .section:nth-of-type(4) .step__label {
+    body.template-home main .section:nth-of-type(4) .step__label {
         top: 0;
         transform: translate(-50%, 0);
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -1555,7 +1208,7 @@ body:not(.has-bankirr-header) {
         background-color: #d8d8d8;
     }
 
-    body.home main .section:nth-of-type(4) .step__title {
+    body.template-home main .section:nth-of-type(4) .step__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(25px, calc(54px * var(--home-fluid-scale)), 54px);
         line-height: 1.04;
@@ -1565,7 +1218,7 @@ body:not(.has-bankirr-header) {
         margin-bottom: clamp(14px, calc(42px * var(--home-fluid-scale)), 42px);
     }
 
-    body.home main .section:nth-of-type(4) .step__intro {
+    body.template-home main .section:nth-of-type(4) .step__intro {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.28;
@@ -1574,16 +1227,16 @@ body:not(.has-bankirr-header) {
         margin: 0 auto clamp(14px, calc(42px * var(--home-fluid-scale)), 42px);
     }
 
-    body.home main .section:nth-of-type(4) .step__features {
+    body.template-home main .section:nth-of-type(4) .step__features {
         gap: clamp(24px, calc(56px * var(--home-fluid-scale)), 56px);
     }
 
-    body.home main .section:nth-of-type(4) .feature__icon {
+    body.template-home main .section:nth-of-type(4) .feature__icon {
         width: clamp(104px, calc(220px * var(--home-fluid-scale)), 220px);
         margin: 0 auto clamp(8px, calc(14px * var(--home-fluid-scale)), 14px);
     }
 
-    body.home main .section:nth-of-type(4) .feature__title {
+    body.template-home main .section:nth-of-type(4) .feature__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(22px, calc(44px * var(--home-fluid-scale)), 44px);
         line-height: 1.14;
@@ -1591,7 +1244,7 @@ body:not(.has-bankirr-header) {
         margin-bottom: clamp(6px, calc(14px * var(--home-fluid-scale)), 14px);
     }
 
-    body.home main .section:nth-of-type(4) .feature__text {
+    body.template-home main .section:nth-of-type(4) .feature__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.28;
@@ -1600,14 +1253,14 @@ body:not(.has-bankirr-header) {
         margin: 0 auto;
     }
 
-    body.home main .section:nth-of-type(5) .card--step {
+    body.template-home main .section:nth-of-type(5) .card--step {
         border: 1px solid #a7a7a7;
         border-radius: 0;
         padding: clamp(34px, calc(88px * var(--home-fluid-scale)), 88px) clamp(26px, calc(56px * var(--home-fluid-scale)), 56px) clamp(26px, calc(72px * var(--home-fluid-scale)), 72px);
         background-color: #ffffff;
     }
 
-    body.home main .section:nth-of-type(5) .step__label {
+    body.template-home main .section:nth-of-type(5) .step__label {
         top: 0;
         transform: translate(-50%, 0);
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -1621,7 +1274,7 @@ body:not(.has-bankirr-header) {
         background-color: #d8d8d8;
     }
 
-    body.home main .section:nth-of-type(5) .step__title {
+    body.template-home main .section:nth-of-type(5) .step__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(25px, calc(54px * var(--home-fluid-scale)), 54px);
         line-height: 1.04;
@@ -1631,7 +1284,7 @@ body:not(.has-bankirr-header) {
         margin-bottom: clamp(14px, calc(42px * var(--home-fluid-scale)), 42px);
     }
 
-    body.home main .section:nth-of-type(5) .step__subtitle {
+    body.template-home main .section:nth-of-type(5) .step__subtitle {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(22px, calc(44px * var(--home-fluid-scale)), 44px);
         line-height: 1.14;
@@ -1639,52 +1292,52 @@ body:not(.has-bankirr-header) {
         margin-bottom: clamp(6px, calc(14px * var(--home-fluid-scale)), 14px);
     }
 
-    body.home main .section:nth-of-type(5) .step__text {
+    body.template-home main .section:nth-of-type(5) .step__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.28;
         color: #1f1f1f;
     }
 
-    body.home main .section:nth-of-type(5) .step__tagline {
+    body.template-home main .section:nth-of-type(5) .step__tagline {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.28;
         font-weight: 650;
     }
 
-    body.home main .section:nth-of-type(5) .step__tagline em {
+    body.template-home main .section:nth-of-type(5) .step__tagline em {
         font-style: normal;
         font-weight: 650;
     }
 
-    body.home main .section:nth-of-type(5) .step__seal {
+    body.template-home main .section:nth-of-type(5) .step__seal {
         margin-left: calc(-1 * clamp(26px, calc(56px * var(--home-fluid-scale)), 56px));
         margin-right: calc(-1 * clamp(26px, calc(56px * var(--home-fluid-scale)), 56px));
         margin-bottom: clamp(10px, calc(24px * var(--home-fluid-scale)), 24px);
         padding: clamp(8px, calc(16px * var(--home-fluid-scale)), 16px) clamp(26px, calc(56px * var(--home-fluid-scale)), 56px);
     }
 
-    body.home main .section:nth-of-type(5) .step__seal-line {
+    body.template-home main .section:nth-of-type(5) .step__seal-line {
         height: clamp(35.28px, calc(62.72px * var(--home-fluid-scale)), 62.72px);
         background-color: #333;
     }
 
-    body.home main .section:nth-of-type(5) .step__seal-img {
+    body.template-home main .section:nth-of-type(5) .step__seal-img {
         width: clamp(124px, calc(248px * var(--home-fluid-scale)), 248px);
         height: auto;
     }
 
-    body.home main .section:nth-of-type(6) .research {
+    body.template-home main .section:nth-of-type(6) .research {
         padding: 0 clamp(24px, calc(46px * var(--home-fluid-scale)), 46px);
     }
 
-    body.home main .section:nth-of-type(6) .research__house {
+    body.template-home main .section:nth-of-type(6) .research__house {
         width: clamp(190px, calc(400px * var(--home-fluid-scale)), 400px);
         margin: 0 auto clamp(14px, calc(28px * var(--home-fluid-scale)), 28px);
     }
 
-    body.home main .section:nth-of-type(6) .research__title {
+    body.template-home main .section:nth-of-type(6) .research__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(23px, calc(45px * var(--home-fluid-scale)), 45px);
         line-height: 1.1;
@@ -1696,7 +1349,7 @@ body:not(.has-bankirr-header) {
         margin: 0 auto clamp(12px, calc(24px * var(--home-fluid-scale)), 24px);
     }
 
-    body.home main .section:nth-of-type(6) .research__subtitle {
+    body.template-home main .section:nth-of-type(6) .research__subtitle {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(13px, calc(22px * var(--home-fluid-scale)), 22px);
         line-height: 1.36;
@@ -1705,24 +1358,24 @@ body:not(.has-bankirr-header) {
         margin: 0 auto clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
     }
 
-    body.home main .section:nth-of-type(6) .research__divider {
+    body.template-home main .section:nth-of-type(6) .research__divider {
         margin: clamp(22px, calc(52px * var(--home-fluid-scale)), 52px) auto;
         max-width: 60%;
         background-color: #d4ddeb;
     }
 
-    body.home main .section:nth-of-type(6) .research__quotes {
+    body.template-home main .section:nth-of-type(6) .research__quotes {
         gap: clamp(34px, calc(76px * var(--home-fluid-scale)), 76px);
         align-items: center;
     }
 
-    body.home main .section:nth-of-type(6) .quote {
+    body.template-home main .section:nth-of-type(6) .quote {
         width: min(100%, clamp(560px, calc(1160px * var(--home-fluid-scale)), 1160px));
         max-width: clamp(560px, calc(1160px * var(--home-fluid-scale)), 1160px);
         margin: 0 auto;
     }
 
-    body.home main .section:nth-of-type(6) .quote__text {
+    body.template-home main .section:nth-of-type(6) .quote__text {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(22px, calc(42px * var(--home-fluid-scale)), 42px);
         line-height: 1.25;
@@ -1735,7 +1388,7 @@ body:not(.has-bankirr-header) {
         text-wrap: balance;
     }
 
-    body.home main .section:nth-of-type(6) .quote__source {
+    body.template-home main .section:nth-of-type(6) .quote__source {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(14px, calc(26px * var(--home-fluid-scale)), 26px);
         font-weight: 500;
@@ -1745,12 +1398,12 @@ body:not(.has-bankirr-header) {
         margin-bottom: clamp(8px, calc(16px * var(--home-fluid-scale)), 16px);
     }
 
-    body.home main .section:nth-of-type(6) .quote__logo {
+    body.template-home main .section:nth-of-type(6) .quote__logo {
         width: clamp(38px, calc(74px * var(--home-fluid-scale)), 74px);
         opacity: 0.62;
     }
 
-    body.home main .section:nth-of-type(6) .guides__title {
+    body.template-home main .section:nth-of-type(6) .guides__title {
         font-size: clamp(12px, calc(20px * var(--home-fluid-scale)), 20px);
         line-height: 1.2;
     }
@@ -1763,7 +1416,7 @@ body:not(.has-bankirr-header) {
 ======================================== */
 
 @media (min-width: 1024px) and (max-width: 1535px) and (max-height: 500px) and (max-resolution: 2.1dppx) {
-    body.home {
+    body.template-home {
         --home-prop-scale: 0.8;
         --home-fluid-base: min(calc(100vw / 1536px), calc(100vh / 920px));
         --home-fluid-scale: clamp(0.62, calc(var(--home-fluid-base) * var(--home-prop-scale)), 0.8);
@@ -1771,23 +1424,23 @@ body:not(.has-bankirr-header) {
         --home-card-inline-pad: clamp(28px, calc(56px * var(--home-fluid-scale)), 56px);
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__content {
+    body.template-home main .section:nth-of-type(2) .guarantee__content {
         padding-right: clamp(120px, calc(250px * var(--home-fluid-scale)), 250px);
     }
 }
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.home main .section:nth-of-type(1) .hero__text,
-    body.home main .section:nth-of-type(2) .guarantee__text,
-    body.home main .section:nth-of-type(3) .step__text,
-    body.home main .section:nth-of-type(4) .step__intro,
-    body.home main .section:nth-of-type(4) .feature__text,
-    body.home main .section:nth-of-type(5) .step__text,
-    body.home main .section:nth-of-type(6) .research__subtitle {
+    body.template-home main .section:nth-of-type(1) .hero__text,
+    body.template-home main .section:nth-of-type(2) .guarantee__text,
+    body.template-home main .section:nth-of-type(3) .step__text,
+    body.template-home main .section:nth-of-type(4) .step__intro,
+    body.template-home main .section:nth-of-type(4) .feature__text,
+    body.template-home main .section:nth-of-type(5) .step__text,
+    body.template-home main .section:nth-of-type(6) .research__subtitle {
         line-height: 1.24;
     }
 
-    body.home main .section:nth-of-type(6) .quote__text {
+    body.template-home main .section:nth-of-type(6) .quote__text {
         line-height: 1.22;
     }
 }
@@ -1798,21 +1451,21 @@ body:not(.has-bankirr-header) {
 ======================================== */
 
 @media (min-width: 760px) and (max-width: 900px) {
-    body.home main .section:nth-of-type(2) .guarantee__content {
+    body.template-home main .section:nth-of-type(2) .guarantee__content {
         padding-right: 118px;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__text {
+    body.template-home main .section:nth-of-type(2) .guarantee__text {
         font-size: clamp(15px, calc(29px * var(--home-fluid-scale)), 18px);
         line-height: 1.28;
     }
 
-    body.home main .section:nth-of-type(2) .btn--bordered {
+    body.template-home main .section:nth-of-type(2) .btn--bordered {
         font-size: clamp(15px, calc(26px * var(--home-fluid-scale)), 24px);
         padding: clamp(8px, calc(14px * var(--home-fluid-scale)), 14px) clamp(12px, calc(22px * var(--home-fluid-scale)), 22px);
     }
 
-    body.home main .section:nth-of-type(4) .step__title {
+    body.template-home main .section:nth-of-type(4) .step__title {
         letter-spacing: 0.01em;
     }
 }
@@ -1833,12 +1486,34 @@ body:not(.has-bankirr-header) {
 }
 
 .btn--primary {
-    background-color: #588986;
+    background-color: var(--irr-accent);
     color: #ffffff;
 }
 
 .btn--primary:hover {
-    background-color: #4a7572;
+    background-color: var(--irr-accent-hover);
+}
+
+.btn--dark {
+    background-color: #111;
+    color: #fff;
+    border: 1px solid #111;
+}
+
+.btn--dark:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+.btn--outline {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #111;
+}
+
+.btn--outline:hover {
+    background-color: #f5f5f5;
+    border-color: #111;
 }
 
 .btn--bordered {
@@ -1958,22 +1633,15 @@ body:not(.has-bankirr-header) {
 }
 
 .guarantee__buttons .btn--dark {
-    background-color: #111;
-    color: #fff;
+    padding: 14px 20px;
+    font-size: 11px;
+    font-weight: 600;
 }
 
 .guarantee__buttons .btn--outline {
     padding: 14px 20px;
     font-size: 11px;
     font-weight: 600;
-    background-color: #fff;
-    color: #111;
-    border: 1px solid #111;
-}
-
-.guarantee__buttons .btn--outline:hover {
-    background-color: #f5f5f5;
-    border-color: #111;
 }
 
 .guarantee__buttons .btn--link {
@@ -1992,13 +1660,13 @@ body:not(.has-bankirr-header) {
 }
 
 .guarantee__buttons .btn--link:hover {
-    color: #588986;
+    color: var(--irr-accent-subtle);
 }
 
-/* Highlight text - underlined in green */
+/* Highlight text - underlined in gray */
 .guarantee__text .highlight {
     text-decoration: underline;
-    text-decoration-color: #588986;
+    text-decoration-color: var(--irr-accent-subtle);
     text-underline-offset: 3px;
 }
 
@@ -2597,7 +2265,7 @@ body:not(.has-bankirr-header) {
 }
 
 .guides__links a:hover {
-    color: #588986;
+    color: var(--irr-accent-subtle);
 }
 
 .guides__links span {
@@ -2773,51 +2441,22 @@ body:not(.has-bankirr-header) {
 }
 
 @media (max-width: 767px) {
-    body.home {
+    body.template-home {
         font-size: 14px;
         --home-mobile-p-size: clamp(14px, 6vw, 20px);
         --home-mobile-p-lh: 1.18;
         --home-mobile-card-padding: 20px 16px 24px;
     }
 
-    body:not(.has-bankirr-header).home {
-        padding-top: 56px;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__container {
-        padding-top: 0;
-        padding-right: 10px;
-        padding-bottom: 0;
-        padding-left: 30px;
-        gap: 4px;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__brand {
-        flex: 1 1 auto;
-        min-width: 0;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__brand img {
-        width: min(272px, calc(100vw - 98px));
-        height: auto;
-        max-width: 100%;
-    }
-
-    body:not(.has-bankirr-header).home .navbar__menu-btn {
-        margin-left: auto;
-        padding: 6px 2px;
-        flex: 0 0 auto;
-    }
-
-    body.home .main {
+    body.template-home .main {
         padding: 8px;
     }
 
-    body.home .section {
+    body.template-home .section {
         margin-bottom: 10px;
     }
 
-    body.home .card {
+    body.template-home .card {
         padding: var(--home-mobile-card-padding);
         border: 1px solid #a7a7a7;
         border-radius: 0 !important;
@@ -2825,43 +2464,43 @@ body:not(.has-bankirr-header) {
         box-shadow: none;
     }
 
-    body.home .card--guarantee {
+    body.template-home .card--guarantee {
         padding: var(--home-mobile-card-padding);
         border-radius: 0 !important;
     }
 
-    body.home .card--step {
+    body.template-home .card--step {
         padding: 44px 16px 24px;
         border-radius: 0 !important;
     }
 
-    body.home main .section:first-of-type .card {
+    body.template-home main .section:first-of-type .card {
         padding-bottom: 0;
     }
 
-    body.home .main > .section:last-of-type .card {
+    body.template-home .main > .section:last-of-type .card {
         border-radius: 0 !important;
     }
 
     /* Home mobile - first card alignment must match reference */
-    body.home main .section:first-of-type .hero {
+    body.template-home main .section:first-of-type .hero {
         align-items: flex-start;
         gap: 10px;
     }
 
-    body.home main .section:first-of-type .hero__image {
+    body.template-home main .section:first-of-type .hero__image {
         order: 1;
         width: 100%;
         align-items: flex-start;
         margin-bottom: 2px;
     }
 
-    body.home main .section:first-of-type .hero__content {
+    body.template-home main .section:first-of-type .hero__content {
         order: 2;
         width: 100%;
     }
 
-    body.home main .section:first-of-type .hero__title {
+    body.template-home main .section:first-of-type .hero__title {
         font-size: clamp(24px, 9vw, 36px);
         line-height: 1.1;
         font-weight: 600;
@@ -2869,14 +2508,14 @@ body:not(.has-bankirr-header) {
         max-width: none;
     }
 
-    body.home main .section:first-of-type .hero__text {
+    body.template-home main .section:first-of-type .hero__text {
         font-size: var(--home-mobile-p-size);
         line-height: var(--home-mobile-p-lh);
         color: #1f1f1f;
         max-width: none;
     }
 
-    body.home main .section:first-of-type .hero__image-wrapper {
+    body.template-home main .section:first-of-type .hero__image-wrapper {
         width: clamp(120px, 36vw, 170px);
         height: auto;
         aspect-ratio: auto;
@@ -2884,7 +2523,7 @@ body:not(.has-bankirr-header) {
         margin: 0;
     }
 
-    body.home main .section:first-of-type .hero__image-wrapper img {
+    body.template-home main .section:first-of-type .hero__image-wrapper img {
         display: block;
         width: 100%;
         height: auto;
@@ -2892,35 +2531,35 @@ body:not(.has-bankirr-header) {
         border-radius: 0;
     }
 
-    body.home main .section:first-of-type .hero__title .underline {
+    body.template-home main .section:first-of-type .hero__title .underline {
         background: linear-gradient(to top, #c1c2c2 18%, transparent 22%);
     }
 
-    body.home main .section:first-of-type .hero__title-line--desktop,
-    body.home main .section:first-of-type .hero__text-line--desktop,
-    body.home main .section:first-of-type .hero__break--desktop {
+    body.template-home main .section:first-of-type .hero__title-line--desktop,
+    body.template-home main .section:first-of-type .hero__text-line--desktop,
+    body.template-home main .section:first-of-type .hero__break--desktop {
         display: none;
     }
 
-    body.home main .section:first-of-type .hero__title-line--mobile,
-    body.home main .section:first-of-type .hero__text-line--mobile {
+    body.template-home main .section:first-of-type .hero__title-line--mobile,
+    body.template-home main .section:first-of-type .hero__text-line--mobile {
         display: block;
     }
 
-    body.home main .section:first-of-type .hero__lenders {
+    body.template-home main .section:first-of-type .hero__lenders {
         margin-top: 22px;
         border-top: 0;
         padding-top: 0;
     }
 
-    body.home main .section:first-of-type .hero__lenders-title {
+    body.template-home main .section:first-of-type .hero__lenders-title {
         font-size: clamp(11px, 3.4vw, 14px);
         line-height: 1.3;
         color: #2f2f2f;
         margin-bottom: 12px;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos {
+    body.template-home main .section:first-of-type .hero__lenders-logos {
         border-top: 1px solid #a7a7a7;
         padding: 18px 16px 18px;
         margin-left: -16px;
@@ -2930,20 +2569,20 @@ body:not(.has-bankirr-header) {
         gap: 12px;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos img {
+    body.template-home main .section:first-of-type .hero__lenders-logos img {
         height: clamp(24px, 8vw, 36px);
     }
 
-    body.home main .section:nth-of-type(2) .guarantee {
+    body.template-home main .section:nth-of-type(2) .guarantee {
         gap: 0;
         padding-right: 0;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__content {
+    body.template-home main .section:nth-of-type(2) .guarantee__content {
         padding-right: 0;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__title {
+    body.template-home main .section:nth-of-type(2) .guarantee__title {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(24px, 9vw, 36px);
         line-height: 1.1;
@@ -2954,7 +2593,7 @@ body:not(.has-bankirr-header) {
         margin-right: 0;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__text {
+    body.template-home main .section:nth-of-type(2) .guarantee__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: var(--home-mobile-p-size);
         line-height: var(--home-mobile-p-lh);
@@ -2963,17 +2602,17 @@ body:not(.has-bankirr-header) {
         max-width: none;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__title-line--desktop,
-    body.home main .section:nth-of-type(2) .guarantee__text-line--desktop {
+    body.template-home main .section:nth-of-type(2) .guarantee__title-line--desktop,
+    body.template-home main .section:nth-of-type(2) .guarantee__text-line--desktop {
         display: none;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__title-line--mobile,
-    body.home main .section:nth-of-type(2) .guarantee__text-line--mobile {
+    body.template-home main .section:nth-of-type(2) .guarantee__title-line--mobile,
+    body.template-home main .section:nth-of-type(2) .guarantee__text-line--mobile {
         display: block;
     }
 
-    body.home main .section:nth-of-type(2) .btn--bordered {
+    body.template-home main .section:nth-of-type(2) .btn--bordered {
         font-size: clamp(12px, 3.9vw, 16px);
         font-weight: 500;
         letter-spacing: 0.04em;
@@ -2982,18 +2621,18 @@ body:not(.has-bankirr-header) {
         border-color: #c7c7c7;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__badge {
+    body.template-home main .section:nth-of-type(2) .guarantee__badge {
         top: 0;
         right: 0;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__badge img {
+    body.template-home main .section:nth-of-type(2) .guarantee__badge img {
         width: clamp(78px, 30vw, 104px);
         transform: scaleY(0.94);
         transform-origin: top center;
     }
 
-    body.home .step__label {
+    body.template-home .step__label {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(10px, 2.7vw, 12px);
         line-height: 1;
@@ -3006,7 +2645,7 @@ body:not(.has-bankirr-header) {
         padding: 6px 10px;
     }
 
-    body.home .step__title {
+    body.template-home .step__title {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(24px, 9vw, 36px);
         line-height: 1.1;
@@ -3015,16 +2654,16 @@ body:not(.has-bankirr-header) {
         text-transform: none;
     }
 
-    body.home .step__subtitle {
+    body.template-home .step__subtitle {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(24px, 9vw, 36px);
         line-height: 1.1;
         font-weight: 600;
     }
 
-    body.home .step__text,
-    body.home .step__intro,
-    body.home .feature__text {
+    body.template-home .step__text,
+    body.template-home .step__intro,
+    body.template-home .feature__text {
         font-family: inherit;
         font-size: clamp(16px, 5.1vw, 22px);
         line-height: 1.24;
@@ -3034,79 +2673,79 @@ body:not(.has-bankirr-header) {
         margin-right: auto;
     }
 
-    body.home .step__text em {
+    body.template-home .step__text em {
         font-style: normal;
         color: inherit;
     }
 
-    body.home main .section:nth-of-type(3) .step-one__subtitle-line--desktop,
-    body.home main .section:nth-of-type(3) .step-one__text-line--desktop,
-    body.home main .section:nth-of-type(3) .step-one__break--desktop {
+    body.template-home main .section:nth-of-type(3) .step-one__subtitle-line--desktop,
+    body.template-home main .section:nth-of-type(3) .step-one__text-line--desktop,
+    body.template-home main .section:nth-of-type(3) .step-one__break--desktop {
         display: none;
     }
 
-    body.home main .section:nth-of-type(3) .step-one__subtitle-line--mobile,
-    body.home main .section:nth-of-type(3) .step-one__text-line--mobile {
+    body.template-home main .section:nth-of-type(3) .step-one__subtitle-line--mobile,
+    body.template-home main .section:nth-of-type(3) .step-one__text-line--mobile {
         display: block;
     }
 
-    body.home main .section:nth-of-type(3) .step__title,
-    body.home main .section:nth-of-type(3) .step__subtitle {
+    body.template-home main .section:nth-of-type(3) .step__title,
+    body.template-home main .section:nth-of-type(3) .step__subtitle {
         font-size: clamp(24px, 9vw, 36px);
         line-height: 1.1;
     }
 
-    body.home main .section:nth-of-type(3) .step__text {
+    body.template-home main .section:nth-of-type(3) .step__text {
         font-size: var(--home-mobile-p-size);
         line-height: var(--home-mobile-p-lh);
         max-width: none;
     }
 
-    body.home main .section:nth-of-type(4) .step-two__intro-line--desktop,
-    body.home main .section:nth-of-type(4) .step-two__feature-line--desktop,
-    body.home main .section:nth-of-type(4) .step-two__break--desktop {
+    body.template-home main .section:nth-of-type(4) .step-two__intro-line--desktop,
+    body.template-home main .section:nth-of-type(4) .step-two__feature-line--desktop,
+    body.template-home main .section:nth-of-type(4) .step-two__break--desktop {
         display: none;
     }
 
-    body.home main .section:nth-of-type(4) .step-two__intro-line--mobile,
-    body.home main .section:nth-of-type(4) .step-two__feature-line--mobile {
+    body.template-home main .section:nth-of-type(4) .step-two__intro-line--mobile,
+    body.template-home main .section:nth-of-type(4) .step-two__feature-line--mobile {
         display: block;
     }
 
-    body.home main .section:nth-of-type(4) .step__title {
+    body.template-home main .section:nth-of-type(4) .step__title {
         font-size: clamp(24px, 9vw, 36px);
         line-height: 1.1;
     }
 
-    body.home main .section:nth-of-type(4) .step__intro,
-    body.home main .section:nth-of-type(4) .feature__text {
+    body.template-home main .section:nth-of-type(4) .step__intro,
+    body.template-home main .section:nth-of-type(4) .feature__text {
         font-size: var(--home-mobile-p-size);
         line-height: var(--home-mobile-p-lh);
         max-width: none;
     }
 
-    body.home main .section:nth-of-type(5) .step-three__text-line--desktop,
-    body.home main .section:nth-of-type(5) .step-three__break--desktop {
+    body.template-home main .section:nth-of-type(5) .step-three__text-line--desktop,
+    body.template-home main .section:nth-of-type(5) .step-three__break--desktop {
         display: none;
     }
 
-    body.home main .section:nth-of-type(5) .step-three__text-line--mobile {
+    body.template-home main .section:nth-of-type(5) .step-three__text-line--mobile {
         display: block;
     }
 
-    body.home main .section:nth-of-type(5) .step__title,
-    body.home main .section:nth-of-type(5) .step__subtitle {
+    body.template-home main .section:nth-of-type(5) .step__title,
+    body.template-home main .section:nth-of-type(5) .step__subtitle {
         font-size: clamp(24px, 9vw, 36px);
         line-height: 1.1;
     }
 
-    body.home main .section:nth-of-type(5) .step__text {
+    body.template-home main .section:nth-of-type(5) .step__text {
         font-size: var(--home-mobile-p-size);
         line-height: var(--home-mobile-p-lh);
         max-width: none;
     }
 
-    body.home .feature__title {
+    body.template-home .feature__title {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(24px, 9vw, 36px);
         line-height: 1.1;
@@ -3114,7 +2753,7 @@ body:not(.has-bankirr-header) {
         color: #111;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box {
+    body.template-home main .section:nth-of-type(3) .upload-box {
         width: min(100%, 340px);
         height: 156px;
         background-color: #e4e4e4;
@@ -3122,25 +2761,25 @@ body:not(.has-bankirr-header) {
         gap: 10px;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box::before {
+    body.template-home main .section:nth-of-type(3) .upload-box::before {
         border: 2px dashed #c8c8c8;
         border-radius: 0;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box__icon {
+    body.template-home main .section:nth-of-type(3) .upload-box__icon {
         width: 38px;
         height: 38px;
         color: #7c7c7c;
     }
 
-    body.home main .section:nth-of-type(3) .upload-box__text {
+    body.template-home main .section:nth-of-type(3) .upload-box__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(12px, 4vw, 16px);
         font-weight: 400;
         color: #8a8a8a;
     }
 
-    body.home main .section:nth-of-type(3) .step__faq-link {
+    body.template-home main .section:nth-of-type(3) .step__faq-link {
         margin-top: 10px;
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(12px, 3.8vw, 14px);
@@ -3149,57 +2788,57 @@ body:not(.has-bankirr-header) {
         text-underline-offset: 3px;
     }
 
-    body.home main .section:nth-of-type(5) .step__tagline {
+    body.template-home main .section:nth-of-type(5) .step__tagline {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(15px, 4.6vw, 20px);
         line-height: 1.24;
         font-weight: 600;
     }
 
-    body.home main .section:nth-of-type(5) .step__tagline em {
+    body.template-home main .section:nth-of-type(5) .step__tagline em {
         font-style: normal;
         font-weight: 650;
     }
 
-    body.home main .section:nth-of-type(5) .step__seal {
+    body.template-home main .section:nth-of-type(5) .step__seal {
         margin-left: -16px;
         margin-right: -16px;
         padding: 10px 16px;
         margin-bottom: 14px;
     }
 
-    body.home main .section:nth-of-type(5) .step__seal-line {
+    body.template-home main .section:nth-of-type(5) .step__seal-line {
         background-color: #333;
         height: 28px;
     }
 
-    body.home main .section:nth-of-type(5) .step__seal-img {
+    body.template-home main .section:nth-of-type(5) .step__seal-img {
         width: clamp(86px, 29vw, 120px);
     }
 
-    body.home .research {
+    body.template-home .research {
         padding: 0 16px;
     }
 
-    body.home main .section:nth-of-type(6) .research__title-line--desktop,
-    body.home main .section:nth-of-type(6) .research__subtitle-line--desktop,
-    body.home main .section:nth-of-type(6) .research__quote-line--desktop,
-    body.home main .section:nth-of-type(6) .research__break--desktop {
+    body.template-home main .section:nth-of-type(6) .research__title-line--desktop,
+    body.template-home main .section:nth-of-type(6) .research__subtitle-line--desktop,
+    body.template-home main .section:nth-of-type(6) .research__quote-line--desktop,
+    body.template-home main .section:nth-of-type(6) .research__break--desktop {
         display: none;
     }
 
-    body.home main .section:nth-of-type(6) .research__title-line--mobile,
-    body.home main .section:nth-of-type(6) .research__subtitle-line--mobile,
-    body.home main .section:nth-of-type(6) .research__quote-line--mobile {
+    body.template-home main .section:nth-of-type(6) .research__title-line--mobile,
+    body.template-home main .section:nth-of-type(6) .research__subtitle-line--mobile,
+    body.template-home main .section:nth-of-type(6) .research__quote-line--mobile {
         display: block;
     }
 
-    body.home main .section:nth-of-type(6) .research__house {
+    body.template-home main .section:nth-of-type(6) .research__house {
         width: clamp(108px, 35vw, 170px);
         margin: 0 auto 14px;
     }
 
-    body.home main .section:nth-of-type(6) .research__title {
+    body.template-home main .section:nth-of-type(6) .research__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(17px, 5.2vw, 24px);
         line-height: 1.12;
@@ -3209,11 +2848,11 @@ body:not(.has-bankirr-header) {
         margin: 0 auto 10px;
     }
 
-    body.home main .section:nth-of-type(6) .research__title-line--mobile {
+    body.template-home main .section:nth-of-type(6) .research__title-line--mobile {
         white-space: nowrap;
     }
 
-    body.home main .section:nth-of-type(6) .research__subtitle {
+    body.template-home main .section:nth-of-type(6) .research__subtitle {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(10px, 2.8vw, 12px);
         line-height: 1.28;
@@ -3222,23 +2861,23 @@ body:not(.has-bankirr-header) {
         margin: 0 auto 12px;
     }
 
-    body.home main .section:nth-of-type(6) .research__divider {
+    body.template-home main .section:nth-of-type(6) .research__divider {
         margin: 18px auto;
         max-width: 86%;
         background-color: #d4ddeb;
     }
 
-    body.home main .section:nth-of-type(6) .research__quotes {
+    body.template-home main .section:nth-of-type(6) .research__quotes {
         gap: 24px;
     }
 
-    body.home main .section:nth-of-type(6) .quote {
+    body.template-home main .section:nth-of-type(6) .quote {
         width: 100%;
         max-width: 338px;
         margin: 0 auto;
     }
 
-    body.home main .section:nth-of-type(6) .quote__text {
+    body.template-home main .section:nth-of-type(6) .quote__text {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(13px, 3.9vw, 17px);
         line-height: 1.2;
@@ -3248,7 +2887,7 @@ body:not(.has-bankirr-header) {
         text-wrap: balance;
     }
 
-    body.home main .section:nth-of-type(6) .quote__source {
+    body.template-home main .section:nth-of-type(6) .quote__source {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(9px, 2.6vw, 11px);
         line-height: 1.18;
@@ -3257,19 +2896,19 @@ body:not(.has-bankirr-header) {
         margin-bottom: 6px;
     }
 
-    body.home main .section:nth-of-type(6) .quote__logo {
+    body.template-home main .section:nth-of-type(6) .quote__logo {
         width: clamp(30px, 9.4vw, 38px);
         opacity: 0.62;
     }
 
-    body.home main .section:nth-of-type(6) .guides__title {
+    body.template-home main .section:nth-of-type(6) .guides__title {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(11px, 3vw, 13px);
         line-height: 1.2;
         color: #111;
     }
 
-    body.home main .section:nth-of-type(6) .guides__links {
+    body.template-home main .section:nth-of-type(6) .guides__links {
         font-size: clamp(8px, 2.3vw, 9.5px);
         color: #666;
     }
@@ -3375,7 +3014,7 @@ body:not(.has-bankirr-header) {
 }
 
 /* Research-only search bar style */
-body.is-research-context .research-header .search-box,
+body.research-context .research-header .search-box,
 body.search .research-header .search-box {
     padding: 10px 12px 8px;
     background: #fff;
@@ -3520,8 +3159,8 @@ body.search .research-header .search-box {
 }
 
 /* Research chart block should keep hard corners (no rounded edges) */
-body.is-research-context .section > .card,
-body.is-research-context .chart-section__card {
+body.research-context .section > .card,
+body.research-context .chart-section__card {
     border-radius: 0;
 }
 
@@ -3591,7 +3230,7 @@ body.is-research-context .chart-section__card {
 }
 
 .pagination__item--active {
-    background-color: #588986;
+    background-color: var(--irr-accent);
     color: #fff;
 }
 
@@ -3605,49 +3244,49 @@ body.is-research-context .chart-section__card {
    RESEARCH PAGE - TYPOGRAPHY + PAGINATION TUNING
 ======================================== */
 
-body.is-research-context .post__category {
+body.research-context .post__category {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.04em;
     color: #111111;
 }
 
-body.is-research-context .post__title {
+body.research-context .post__title {
     font-size: 26px;
     line-height: 1.28;
     color: #111111;
 }
 
-body.is-research-context .post__title a {
+body.research-context .post__title a {
     color: #111111;
 }
 
-body.is-research-context .post__title a:hover {
+body.research-context .post__title a:hover {
     color: #111111;
 }
 
-body.is-research-context .post__excerpt {
+body.research-context .post__excerpt {
     font-size: 16px;
     line-height: 1.58;
     color: #111111;
 }
 
-body.is-research-context .research-header__subtitle {
+body.research-context .research-header__subtitle {
     font-size: 17px;
     color: #111111;
 }
 
-body.is-research-context .chart-section__subtitle,
-body.is-research-context .chart-section__source {
+body.research-context .chart-section__subtitle,
+body.research-context .chart-section__source {
     color: #111111;
 }
 
-body.is-research-context .post {
+body.research-context .post {
     border-bottom: 0;
     position: relative;
 }
 
-body.is-research-context .post::after {
+body.research-context .post::after {
     content: "";
     display: block;
     width: 100%;
@@ -3668,7 +3307,7 @@ body.is-research-context .post::after {
 @media (max-width: 767px) {
 }
 
-body.is-research-context .pagination {
+body.research-context .pagination {
     justify-content: flex-start !important;
     gap: 18px;
     width: 100%;
@@ -3678,11 +3317,11 @@ body.is-research-context .pagination {
     border-top: 0;
 }
 
-body.is-research-context .blog-posts {
+body.research-context .blog-posts {
     margin-bottom: 8px;
 }
 
-body.is-research-context .pagination__item {
+body.research-context .pagination__item {
     min-width: auto;
     height: auto;
     padding: 0;
@@ -3693,7 +3332,7 @@ body.is-research-context .pagination__item {
     border-radius: 0;
 }
 
-body.is-research-context .pagination__item:hover {
+body.research-context .pagination__item:hover {
     background: transparent;
     color: #111111;
 }
@@ -3711,7 +3350,7 @@ body.is-research-context .pagination__item:hover {
 @media (hover: hover) and (pointer: fine) and (max-width: 767px) {
 }
 
-body.is-research-context .pagination__item--active {
+body.research-context .pagination__item--active {
     width: 54px;
     height: 54px;
     padding: 0;
@@ -3721,7 +3360,7 @@ body.is-research-context .pagination__item--active {
     font-weight: 700;
 }
 
-body.is-research-context .pagination__dots {
+body.research-context .pagination__dots {
     color: #586174;
     font-size: 22px;
     line-height: 1;
@@ -3780,28 +3419,28 @@ body.is-research-context .pagination__dots {
         font-size: 15px;
     }
 
-    body.is-research-context .post__category {
+    body.research-context .post__category {
         font-size: 13px;
     }
 
-    body.is-research-context .post__title {
+    body.research-context .post__title {
         font-size: 28px;
     }
 
-    body.is-research-context .post__excerpt {
+    body.research-context .post__excerpt {
         font-size: 18px;
     }
 
-    body.is-research-context .research-header__subtitle {
+    body.research-context .research-header__subtitle {
         font-size: 19px;
     }
 
-    body.is-research-context .pagination {
+    body.research-context .pagination {
         gap: 22px;
         padding: 10px 24px 0;
     }
 
-    body.is-research-context .pagination__item {
+    body.research-context .pagination__item {
         font-size: 18px;
     }
 }
@@ -3862,36 +3501,36 @@ body.is-research-context .pagination__dots {
         font-size: 16px;
     }
 
-    body.is-research-context .post__category {
+    body.research-context .post__category {
         font-size: 14px;
         margin-bottom: 12px;
     }
 
-    body.is-research-context .post__title {
+    body.research-context .post__title {
         font-size: 30px;
         margin-bottom: 14px;
     }
 
-    body.is-research-context .post__excerpt {
+    body.research-context .post__excerpt {
         font-size: 19px;
         line-height: 1.62;
     }
 
-    body.is-research-context .research-header__subtitle {
+    body.research-context .research-header__subtitle {
         font-size: 20px;
     }
 
-    body.is-research-context .pagination {
+    body.research-context .pagination {
         margin-top: 0 !important;
         gap: 24px;
         padding: 10px 32px 0;
     }
 
-    body.is-research-context .pagination__item {
+    body.research-context .pagination__item {
         font-size: 20px;
     }
 
-    body.is-research-context .pagination__item--active {
+    body.research-context .pagination__item--active {
         width: 58px;
         height: 58px;
     }
@@ -3960,7 +3599,7 @@ body.is-research-context .pagination__dots {
 }
 
 .article__author-name a:hover {
-    color: #588986;
+    color: var(--irr-accent-subtle);
 }
 
 .article__author-bio {
@@ -4066,7 +3705,7 @@ body.is-research-context .pagination__dots {
 }
 
 .article__content blockquote {
-    border-left: 3px solid #588986;
+    border-left: 3px solid var(--irr-accent-subtle);
     padding-left: 20px;
     margin: 24px 0;
     font-style: italic;
@@ -4074,12 +3713,12 @@ body.is-research-context .pagination__dots {
 }
 
 .article__content a {
-    color: #588986;
+    color: var(--irr-accent);
     text-decoration: underline;
 }
 
 .article__content a:hover {
-    color: #4a7572;
+    color: var(--irr-accent-subtle);
 }
 
 .article__content img {
@@ -4110,13 +3749,13 @@ body.is-research-context .pagination__dots {
 
 .article__nav a {
     font-size: 14px;
-    color: #588986;
+    color: var(--irr-accent);
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .article__nav a:hover {
-    color: #4a7572;
+    color: var(--irr-accent-subtle);
     text-decoration: underline;
 }
 
@@ -4308,25 +3947,6 @@ body.tag .research-header__tag-description p {
     object-fit: cover;
 }
 
-/* Blog posts inside card */
-.blog-posts--card {
-    padding: 0;
-    margin-bottom: 0;
-}
-
-/* Pagination inside card */
-.pagination--card {
-    padding: 24px 0 0 0;
-    border-top: 1px solid #e0e0e0;
-    margin-top: 20px;
-}
-
-/* Active tag */
-.tag--active {
-    background-color: #588986;
-    color: #ffffff;
-}
-
 .no-posts {
     text-align: center;
     padding: 40px 20px;
@@ -4363,7 +3983,7 @@ html:root body.search {
     background-color: #f0eef0 !important;
 }
 
-/* Disable any accidental green background on containers */
+/* Disable any accidental accent background on containers */
 .main,
 .main--full-height,
 .research-header,
@@ -4374,11 +3994,10 @@ article {
     background: transparent !important;
 }
 
-/* Only allow green on buttons and specific elements */
+/* Only allow dark accent on buttons and specific elements */
 .btn--primary,
-.tag--active,
 .pagination__item--active {
-    background-color: #588986 !important;
+    background-color: var(--irr-accent) !important;
 }
 
 /* ========================================
@@ -4417,12 +4036,12 @@ article {
     margin-bottom: 20px;
 }
 
-/* Highlight text - underlined in green */
+/* Highlight text - underlined in gray */
 .confidence__text .highlight {
     color: inherit;
     font-weight: 400;
     text-decoration: underline;
-    text-decoration-color: #588986;
+    text-decoration-color: var(--irr-accent-subtle);
     text-underline-offset: 3px;
 }
 
@@ -4457,12 +4076,12 @@ article {
     padding: 14px 20px;
     font-size: 12px;
     background-color: transparent;
-    color: #588986;
-    border: 2px solid #588986;
+    color: var(--irr-accent);
+    border: 2px solid var(--irr-accent);
 }
 
 .confidence__buttons .btn--outline:hover {
-    background-color: #588986;
+    background-color: var(--irr-accent);
     color: #ffffff;
 }
 
@@ -4477,7 +4096,7 @@ article {
 }
 
 .confidence__buttons .btn--link:hover {
-    color: #588986;
+    color: var(--irr-accent-subtle);
 }
 
 /* ========================================
@@ -4637,89 +4256,6 @@ article {
     padding-top: 16px;
 }
 
-.counter-offer__lenders-title {
-    font-size: 12px;
-    font-style: italic;
-    color: #888;
-    margin: 0;
-}
-
-/* File Upload Dropdown */
-.file-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.file-dropdown__btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 24px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #333;
-    cursor: pointer;
-    transition: border-color 0.2s;
-}
-
-.file-dropdown__btn:hover {
-    border-color: #999;
-}
-
-.file-dropdown__arrow {
-    margin-left: 8px;
-    opacity: 0.6;
-    transition: transform 0.2s;
-}
-
-.file-dropdown.is-open .file-dropdown__arrow {
-    transform: rotate(180deg);
-}
-
-.file-dropdown__menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-    display: none;
-    z-index: 10;
-}
-
-.file-dropdown.is-open .file-dropdown__menu {
-    display: block;
-}
-
-.file-dropdown__item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    padding: 12px 16px;
-    background: none;
-    border: none;
-    font-size: 12px;
-    font-weight: 500;
-    color: #555;
-    cursor: pointer;
-    text-align: left;
-    transition: background-color 0.2s;
-}
-
-.file-dropdown__item:hover {
-    background-color: #f5f5f5;
-}
-
-.file-dropdown__item svg {
-    color: #888;
-}
-
 /* ========================================
    NEW OFFER FORM CARD
 ======================================== */
@@ -4817,7 +4353,7 @@ article {
 }
 
 .offer-form__input:focus {
-    border-bottom-color: #588986;
+    border-bottom-color: var(--irr-accent-subtle);
 }
 
 .offer-form__input--currency {
@@ -4864,7 +4400,7 @@ article {
 
 .offer-form__option input[type="radio"]:checked + span {
     font-weight: 600;
-    color: #588986;
+    color: var(--irr-accent);
 }
 
 /* Pagination */
@@ -4897,8 +4433,8 @@ article {
 }
 
 .offer-form__page--active {
-    border-color: #588986;
-    color: #588986;
+    border-color: var(--irr-accent);
+    color: var(--irr-accent);
     font-weight: 600;
 }
 
@@ -4929,7 +4465,7 @@ article {
 }
 
 .offer-form__select:focus {
-    border-color: #588986;
+    border-color: var(--irr-accent-subtle);
 }
 
 /* Hint text */
@@ -5192,6 +4728,7 @@ article {
 
 .thank-you__icon {
     margin-bottom: 24px;
+    color: var(--irr-accent);
 }
 
 .thank-you__icon svg {
@@ -5208,7 +4745,7 @@ article {
 
 .thank-you__subtitle {
     font-size: 18px;
-    color: #588986;
+    color: #333;
     font-weight: 600;
     margin-bottom: 24px;
 }
@@ -5269,7 +4806,7 @@ article {
 .error-page__code {
     font-size: 100px;
     font-weight: 700;
-    color: #588986;
+    color: var(--irr-accent);
     line-height: 1;
     margin-bottom: 16px;
 }
@@ -5293,48 +4830,6 @@ article {
     gap: 12px;
     max-width: 300px;
     margin: 0 auto 40px;
-}
-
-.error-page__search {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.error-page__search p {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 12px;
-}
-
-.error-page__search-form {
-    display: flex;
-    gap: 8px;
-}
-
-.error-page__search-input {
-    flex: 1;
-    padding: 12px 16px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-}
-
-.error-page__search-input:focus {
-    border-color: #588986;
-}
-
-.error-page__search-btn {
-    padding: 12px 16px;
-    background-color: #588986;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #fff;
-}
-
-.error-page__search-btn:hover {
-    background-color: #4a7573;
 }
 
 @media (min-width: 768px) {
@@ -5486,56 +4981,56 @@ article {
 
 /* Keep About TOC anchor targets visible under fixed BANKIRR desktop header */
 @media (min-width: 769px) {
-    body.page-template-page-about .about-section {
+    body.template-about .about-section {
         scroll-margin-top: 72px;
     }
 }
 
 /* Desktop-zoom continuity range where desktop BANKIRR header is still active */
 @media (hover: hover) and (pointer: fine) and (min-width: 641px) and (max-width: 768px) {
-    body.page-template-page-about .about-section {
+    body.template-about .about-section {
         scroll-margin-top: 64px;
     }
 }
 
 /* Mobile-only lender logo sequence for card 1 */
 @media (max-width: 767px) {
-    body.home main .section:first-of-type .hero__lenders-logos {
+    body.template-home main .section:first-of-type .hero__lenders-logos {
         display: flex;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--prmg {
+    body.template-home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--prmg {
         order: 1;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--rocket {
+    body.template-home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--rocket {
         order: 2;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--freedom {
+    body.template-home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--freedom {
         order: 3;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--pennymac {
+    body.template-home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--pennymac {
         order: 4;
     }
 }
 
 /* Desktop/tablet lender logo sequence for card 1 */
 @media (min-width: 768px) {
-    body.home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--prmg {
+    body.template-home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--prmg {
         order: 1;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--freedom {
+    body.template-home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--freedom {
         order: 2;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--rocket {
+    body.template-home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--rocket {
         order: 3;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--pennymac {
+    body.template-home main .section:first-of-type .hero__lenders-logos .hero__lender-logo--pennymac {
         order: 4;
     }
 }
@@ -5545,7 +5040,7 @@ article {
    Header/Footer parity with Home + uniform card width
 ======================================== */
 
-body.page-template-page-get-started .section > .card {
+body.template-get-started .section > .card {
     width: 100%;
     max-width: none;
     margin-left: 0;
@@ -5556,21 +5051,21 @@ body.page-template-page-get-started .section > .card {
     box-sizing: border-box;
 }
 
-body.page-template-page-get-started .main > .section:last-of-type .card {
+body.template-get-started .main > .section:last-of-type .card {
     margin-bottom: 0;
 }
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.page-template-page-get-started {
+    body.template-get-started {
         font-size: 15px;
     }
 
-    body.page-template-page-get-started .main {
+    body.template-get-started .main {
         max-width: calc(1500px * var(--home-fluid-scale));
         padding: clamp(20px, calc(34px * var(--home-fluid-scale)), 34px) var(--home-inline-pad);
     }
 
-    body.page-template-page-get-started .section {
+    body.template-get-started .section {
         margin-bottom: clamp(20px, calc(30px * var(--home-fluid-scale)), 30px);
     }
 }
@@ -5591,20 +5086,20 @@ body.page-template-page-get-started .main > .section:last-of-type .card {
 }
 
 @media (max-width: 767px) {
-    body.page-template-page-get-started {
+    body.template-get-started {
         font-size: 14px;
         --home-mobile-card-padding: 20px 16px 24px;
     }
 
-    body.page-template-page-get-started .main {
+    body.template-get-started .main {
         padding: 8px;
     }
 
-    body.page-template-page-get-started .section {
+    body.template-get-started .section {
         margin-bottom: 10px;
     }
 
-    body.page-template-page-get-started .card {
+    body.template-get-started .card {
         padding: var(--home-mobile-card-padding);
         border: 1px solid #a7a7a7;
         border-radius: 0 !important;
@@ -5612,7 +5107,7 @@ body.page-template-page-get-started .main > .section:last-of-type .card {
         box-shadow: none;
     }
 
-    body.page-template-page-get-started .card--step {
+    body.template-get-started .card--step {
         padding: 44px 16px 24px;
     }
 }
@@ -5623,66 +5118,66 @@ body.page-template-page-get-started .main > .section:last-of-type .card {
 ======================================== */
 
 @media (max-width: 767px) {
-    body.page-template-page-get-started {
+    body.template-get-started {
         --home-mobile-p-size: clamp(14px, 6vw, 20px);
         --home-mobile-p-lh: 1.18;
     }
 
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__title,
-    body.page-template-page-get-started .step__title,
-    body.page-template-page-get-started .step__subtitle,
-    body.page-template-page-get-started .new-offer__title,
-    body.page-template-page-get-started .schedule-call__title {
+    body.template-get-started .guarantee--getstarted .guarantee__title,
+    body.template-get-started .step__title,
+    body.template-get-started .step__subtitle,
+    body.template-get-started .new-offer__title,
+    body.template-get-started .schedule-call__title {
         font-size: clamp(24px, 9vw, 36px);
         line-height: 1.1;
     }
 
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__text,
-    body.page-template-page-get-started .step__text,
-    body.page-template-page-get-started .step__intro,
-    body.page-template-page-get-started .feature__text,
-    body.page-template-page-get-started .new-offer__subtitle,
-    body.page-template-page-get-started .schedule-call__subtitle {
+    body.template-get-started .guarantee--getstarted .guarantee__text,
+    body.template-get-started .step__text,
+    body.template-get-started .step__intro,
+    body.template-get-started .feature__text,
+    body.template-get-started .new-offer__subtitle,
+    body.template-get-started .schedule-call__subtitle {
         font-size: var(--home-mobile-p-size);
         line-height: var(--home-mobile-p-lh);
     }
 
-    body.page-template-page-get-started .step__text em {
+    body.template-get-started .step__text em {
         font-style: normal;
         color: inherit;
     }
 }
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__title,
-    body.page-template-page-get-started .step__title,
-    body.page-template-page-get-started .new-offer__title,
-    body.page-template-page-get-started .schedule-call__title {
+    body.template-get-started .guarantee--getstarted .guarantee__title,
+    body.template-get-started .step__title,
+    body.template-get-started .new-offer__title,
+    body.template-get-started .schedule-call__title {
         font-size: clamp(25px, calc(54px * var(--home-fluid-scale)), 54px);
         line-height: 1.04;
     }
 
-    body.page-template-page-get-started .step__subtitle {
+    body.template-get-started .step__subtitle {
         font-size: clamp(22px, calc(44px * var(--home-fluid-scale)), 44px);
         line-height: 1.14;
     }
 
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__text,
-    body.page-template-page-get-started .step__text,
-    body.page-template-page-get-started .step__intro,
-    body.page-template-page-get-started .feature__text,
-    body.page-template-page-get-started .new-offer__subtitle,
-    body.page-template-page-get-started .schedule-call__subtitle {
+    body.template-get-started .guarantee--getstarted .guarantee__text,
+    body.template-get-started .step__text,
+    body.template-get-started .step__intro,
+    body.template-get-started .feature__text,
+    body.template-get-started .new-offer__subtitle,
+    body.template-get-started .schedule-call__subtitle {
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.24;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__title {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__title {
         font-size: clamp(32px, calc(62px * var(--home-fluid-scale)), 62px);
         line-height: 1.1;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__text {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__text {
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.24;
     }
@@ -5693,26 +5188,26 @@ body.page-template-page-get-started .main > .section:last-of-type .card {
    Typography + lender logos strip
 ======================================== */
 
-body.page-template-page-get-started #counter-offer .hero__lenders {
+body.template-get-started #counter-offer .hero__lenders {
     text-align: center;
     border-top: 0;
     padding-top: 0;
     overflow: hidden;
 }
 
-body.page-template-page-get-started #counter-offer > .card {
+body.template-get-started #counter-offer > .card {
     padding: 0;
 }
 
-body.page-template-page-get-started #counter-offer .card__inner--counter-offer {
+body.template-get-started #counter-offer .card__inner--counter-offer {
     position: relative;
 }
 
-body.page-template-page-get-started #counter-offer .hero__lenders-title {
+body.template-get-started #counter-offer .hero__lenders-title {
     display: none;
 }
 
-body.page-template-page-get-started #counter-offer .hero__lenders-logos {
+body.template-get-started #counter-offer .hero__lenders-logos {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -5720,27 +5215,27 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
 }
 
 @media (max-width: 767px) {
-    body.page-template-page-get-started #counter-offer .step__subtitle {
+    body.template-get-started #counter-offer .step__subtitle {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(24px, 7vw, 36px);
         line-height: 1.1;
         font-weight: 600;
     }
 
-    body.page-template-page-get-started #counter-offer .step__text {
+    body.template-get-started #counter-offer .step__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: var(--home-mobile-p-size);
         line-height: var(--home-mobile-p-lh);
         color: #1f1f1f;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders {
+    body.template-get-started #counter-offer .hero__lenders {
         margin-top: 0;
         width: 100%;
         border-top: 1px solid #a7a7a7;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos {
+    body.template-get-started #counter-offer .hero__lenders-logos {
         padding: 18px 16px 18px;
         margin-left: 0;
         margin-right: 0;
@@ -5748,54 +5243,54 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
         gap: 12px;
     }
 
-    body.page-template-page-get-started #counter-offer .card__inner--counter-offer {
+    body.template-get-started #counter-offer .card__inner--counter-offer {
         padding: 44px 16px 22px;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos img {
+    body.template-get-started #counter-offer .hero__lenders-logos img {
         height: clamp(24px, 8vw, 36px);
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--prmg {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--prmg {
         order: 1;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--rocket {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--rocket {
         order: 2;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--freedom {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--freedom {
         order: 3;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
         order: 4;
     }
 }
 
 @media (min-width: 768px) and (max-width: 2200px) {
-    body.page-template-page-get-started #counter-offer .step__subtitle {
+    body.template-get-started #counter-offer .step__subtitle {
         font-family: "EB Garamond", Georgia, serif;
         font-size: clamp(32px, calc(62px * var(--home-fluid-scale)), 62px);
         line-height: 1.1;
         font-weight: 600;
     }
 
-    body.page-template-page-get-started #counter-offer .step__text {
+    body.template-get-started #counter-offer .step__text {
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.24;
         color: #1f1f1f;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders {
+    body.template-get-started #counter-offer .hero__lenders {
         --gs-counter-inline-pad: clamp(26px, calc(56px * var(--home-fluid-scale)), 56px);
         margin-top: 0;
         width: 100%;
         border-top: 1px solid #a7a7a7;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos {
+    body.template-get-started #counter-offer .hero__lenders-logos {
         padding: clamp(16px, calc(28px * var(--home-fluid-scale)), 28px) var(--gs-counter-inline-pad) clamp(16px, calc(30px * var(--home-fluid-scale)), 30px);
         margin-left: 0;
         margin-right: 0;
@@ -5803,37 +5298,37 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
         gap: clamp(16px, calc(28px * var(--home-fluid-scale)), 28px);
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos img {
+    body.template-get-started #counter-offer .hero__lenders-logos img {
         height: clamp(40px, calc(82px * var(--home-fluid-scale)), 82px);
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos img.hide-mobile {
+    body.template-get-started #counter-offer .hero__lenders-logos img.hide-mobile {
         display: block;
         height: clamp(58px, calc(115px * var(--home-fluid-scale)), 115px);
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
         height: clamp(88px, calc(172px * var(--home-fluid-scale)), 172px);
         width: auto;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--prmg {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--prmg {
         order: 1;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--freedom {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--freedom {
         order: 2;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--rocket {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--rocket {
         order: 3;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
         order: 4;
     }
 
-    body.page-template-page-get-started #counter-offer .card__inner--counter-offer {
+    body.template-get-started #counter-offer .card__inner--counter-offer {
         --gs-counter-inline-pad: clamp(26px, calc(56px * var(--home-fluid-scale)), 56px);
         padding: clamp(32px, calc(86px * var(--home-fluid-scale)), 86px) var(--gs-counter-inline-pad) clamp(32px, calc(94px * var(--home-fluid-scale)), 94px);
     }
@@ -5843,7 +5338,7 @@ body.page-template-page-get-started #counter-offer .hero__lenders-logos {
    GET STARTED - STEP LABEL BOXES (HOME PARITY)
 ======================================== */
 
-body.page-template-page-get-started .card--step .step__label {
+body.template-get-started .card--step .step__label {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1;
     font-weight: 500;
@@ -5855,7 +5350,7 @@ body.page-template-page-get-started .card--step .step__label {
 }
 
 @media (max-width: 767px) {
-    body.page-template-page-get-started .card--step .step__label {
+    body.template-get-started .card--step .step__label {
         font-size: clamp(10px, 2.7vw, 12px);
         padding: 6px 10px;
         top: -1px;
@@ -5864,7 +5359,7 @@ body.page-template-page-get-started .card--step .step__label {
 }
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.page-template-page-get-started .card--step .step__label {
+    body.template-get-started .card--step .step__label {
         top: 0;
         transform: translate(-50%, 0);
         font-size: clamp(13px, calc(26px * var(--home-fluid-scale)), 26px);
@@ -5883,7 +5378,7 @@ body.page-template-page-get-started .card--step .step__label {
 }
 
 @media (min-width: 1024px) {
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__buttons {
+    body.template-get-started .guarantee--getstarted .guarantee__buttons {
         flex-wrap: nowrap;
     }
 }
@@ -5892,13 +5387,13 @@ body.page-template-page-get-started .card--step .step__label {
    GET STARTED - BADGE SIZE PARITY (HOME CARD 2)
 ======================================== */
 
-body.page-template-page-get-started .guarantee--getstarted .guarantee__badge {
+body.template-get-started .guarantee--getstarted .guarantee__badge {
     top: 0;
     right: 0;
     transform: none;
 }
 
-body.page-template-page-get-started .guarantee--getstarted .guarantee__badge img {
+body.template-get-started .guarantee--getstarted .guarantee__badge img {
     width: clamp(78px, 30vw, 104px);
     height: calc(clamp(78px, 30vw, 104px) * 333 / 214);
     object-fit: contain;
@@ -5907,13 +5402,13 @@ body.page-template-page-get-started .guarantee--getstarted .guarantee__badge img
 }
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__badge {
+    body.template-get-started .guarantee--getstarted .guarantee__badge {
         top: -1px;
         right: clamp(20px, calc(58px * var(--home-fluid-scale)), 58px);
         transform: none;
     }
 
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__badge img {
+    body.template-get-started .guarantee--getstarted .guarantee__badge img {
         width: clamp(100px, calc(214px * var(--home-fluid-scale)), 214px);
         height: calc(clamp(100px, calc(214px * var(--home-fluid-scale)), 214px) * 333 / 214);
         max-width: none;
@@ -5928,30 +5423,30 @@ body.page-template-page-get-started .guarantee--getstarted .guarantee__badge img
    GET STARTED - CARD 1 STRUCTURE PARITY (HOME-LIKE)
 ======================================== */
 
-body.page-template-page-get-started .section:first-of-type .guarantee--getstarted {
+body.template-get-started .section:first-of-type .guarantee--getstarted {
     padding-right: 0;
     gap: clamp(10px, calc(18px * var(--home-fluid-scale, 1)), 18px);
 }
 
-body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__content {
+body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__content {
     order: 1;
     padding-right: clamp(48px, 7.2vw, 118px);
 }
 
-body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__title {
+body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__title {
     margin-bottom: clamp(10px, calc(16px * var(--home-fluid-scale, 1)), 16px);
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: 0;
 }
 
-body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__text {
+body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__text {
     max-width: none;
     color: #1f1f1f;
 }
 
-body.page-template-page-get-started .section:first-of-type .guarantee__buttons .btn--dark,
-body.page-template-page-get-started .section:first-of-type .guarantee__buttons .btn--outline {
+body.template-get-started .section:first-of-type .guarantee__buttons .btn--dark,
+body.template-get-started .section:first-of-type .guarantee__buttons .btn--outline {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -5960,36 +5455,36 @@ body.page-template-page-get-started .section:first-of-type .guarantee__buttons .
     line-height: 1;
 }
 
-body.page-template-page-get-started .section:first-of-type .guarantee__title-line--mobile,
-body.page-template-page-get-started .section:first-of-type .guarantee__text-line--mobile {
+body.template-get-started .section:first-of-type .guarantee__title-line--mobile,
+body.template-get-started .section:first-of-type .guarantee__text-line--mobile {
     display: none;
 }
 
-body.page-template-page-get-started .section:first-of-type .guarantee__title-line--desktop,
-body.page-template-page-get-started .section:first-of-type .guarantee__text-line--desktop {
+body.template-get-started .section:first-of-type .guarantee__title-line--desktop,
+body.template-get-started .section:first-of-type .guarantee__text-line--desktop {
     display: inline;
 }
 
 @media (max-width: 767px) {
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__content {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__content {
         padding-right: 0;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee__title-line--desktop,
-    body.page-template-page-get-started .section:first-of-type .guarantee__text-line--desktop,
-    body.page-template-page-get-started .section:first-of-type .gs-break-desktop {
+    body.template-get-started .section:first-of-type .guarantee__title-line--desktop,
+    body.template-get-started .section:first-of-type .guarantee__text-line--desktop,
+    body.template-get-started .section:first-of-type .gs-break-desktop {
         display: none;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee__title-line--mobile,
-    body.page-template-page-get-started .section:first-of-type .guarantee__text-line--mobile {
+    body.template-get-started .section:first-of-type .guarantee__title-line--mobile,
+    body.template-get-started .section:first-of-type .guarantee__text-line--mobile {
         display: block;
     }
 }
 
 @media (min-width: 768px) {
-    body.page-template-page-get-started .section:first-of-type .guarantee__title-line--desktop,
-    body.page-template-page-get-started .section:first-of-type .guarantee__text-line--desktop {
+    body.template-get-started .section:first-of-type .guarantee__title-line--desktop,
+    body.template-get-started .section:first-of-type .guarantee__text-line--desktop {
         white-space: nowrap;
     }
 }
@@ -5999,83 +5494,83 @@ body.page-template-page-get-started .section:first-of-type .guarantee__text-line
 ======================================== */
 
 /* 1) Keep step labels sitting on the card border in every breakpoint */
-body.home main .section:nth-of-type(3) .step__label,
-body.home main .section:nth-of-type(4) .step__label,
-body.home main .section:nth-of-type(5) .step__label,
-body.page-template-page-get-started .card--step .step__label {
+body.template-home main .section:nth-of-type(3) .step__label,
+body.template-home main .section:nth-of-type(4) .step__label,
+body.template-home main .section:nth-of-type(5) .step__label,
+body.template-get-started .card--step .step__label {
     top: -1px;
 }
 
-body.page-template-page-get-started .card--step > .step,
-body.page-template-page-get-started .card--step > .new-offer,
-body.page-template-page-get-started .card--step > .schedule-call {
+body.template-get-started .card--step > .step,
+body.template-get-started .card--step > .new-offer,
+body.template-get-started .card--step > .schedule-call {
     margin-top: clamp(12px, 1.2vw, 18px);
 }
 
 /* 2) Match step-card inner spacing with Home (desktop fluid scale) */
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.page-template-page-get-started .section:nth-of-type(3) .card--step,
-    body.page-template-page-get-started .section:nth-of-type(4) .card--step {
+    body.template-get-started .section:nth-of-type(3) .card--step,
+    body.template-get-started .section:nth-of-type(4) .card--step {
         padding: clamp(36px, calc(88px * var(--home-fluid-scale)), 88px) clamp(26px, calc(56px * var(--home-fluid-scale)), 56px) clamp(30px, calc(72px * var(--home-fluid-scale)), 72px);
     }
 }
 
 /* 3) Card 3 (New Offer) paragraph uses same family/scale as Home step copy */
-body.page-template-page-get-started #new-offer .new-offer__subtitle {
+body.template-get-started #new-offer .new-offer__subtitle {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #1f1f1f;
     font-weight: 400;
 }
 
-body.page-template-page-get-started #new-offer .new-offer__subtitle-line--mobile {
+body.template-get-started #new-offer .new-offer__subtitle-line--mobile {
     display: none;
 }
 
-body.page-template-page-get-started #new-offer .new-offer__subtitle-line--desktop {
+body.template-get-started #new-offer .new-offer__subtitle-line--desktop {
     display: inline;
 }
 
-body.page-template-page-get-started #schedule-call .schedule-call__subtitle-line--mobile {
+body.template-get-started #schedule-call .schedule-call__subtitle-line--mobile {
     display: none;
 }
 
-body.page-template-page-get-started #schedule-call .schedule-call__subtitle-line--desktop {
+body.template-get-started #schedule-call .schedule-call__subtitle-line--desktop {
     display: inline;
 }
 
 @media (max-width: 767px) {
-    body.page-template-page-get-started #new-offer .new-offer__subtitle {
+    body.template-get-started #new-offer .new-offer__subtitle {
         font-size: var(--home-mobile-p-size);
         line-height: var(--home-mobile-p-lh);
     }
 
-    body.page-template-page-get-started #new-offer .new-offer__subtitle-line--desktop {
+    body.template-get-started #new-offer .new-offer__subtitle-line--desktop {
         display: none;
     }
 
-    body.page-template-page-get-started #new-offer .new-offer__subtitle-line--mobile {
+    body.template-get-started #new-offer .new-offer__subtitle-line--mobile {
         display: block;
     }
 
-    body.page-template-page-get-started #schedule-call .schedule-call__subtitle-line--desktop,
-    body.page-template-page-get-started #schedule-call .gs-break-desktop {
+    body.template-get-started #schedule-call .schedule-call__subtitle-line--desktop,
+    body.template-get-started #schedule-call .gs-break-desktop {
         display: none;
     }
 
-    body.page-template-page-get-started #schedule-call .schedule-call__subtitle-line--mobile {
+    body.template-get-started #schedule-call .schedule-call__subtitle-line--mobile {
         display: block;
     }
 }
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.page-template-page-get-started #new-offer .new-offer__subtitle {
+    body.template-get-started #new-offer .new-offer__subtitle {
         font-size: clamp(18px, calc(34px * var(--home-fluid-scale)), 34px);
         line-height: 1.24;
     }
 }
 
 /* 4) Footer parity with Home + flush against last card */
-body.page-template-page-get-started .main > .section:last-of-type {
+body.template-get-started .main > .section:last-of-type {
     margin-bottom: 0;
 }
 
@@ -6095,51 +5590,51 @@ body.page-template-page-get-started .main > .section:last-of-type {
    GET STARTED - CARD 1 MOBILE DISTRIBUTION TUNING
 ======================================== */
 @media (max-width: 767px) {
-    body.page-template-page-get-started .section:first-of-type .card--guarantee {
+    body.template-get-started .section:first-of-type .card--guarantee {
         padding: 24px 20px 22px;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted {
+    body.template-get-started .section:first-of-type .guarantee--getstarted {
         gap: 14px;
         padding-right: 0;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__content {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__content {
         padding-right: clamp(54px, 16vw, 72px);
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__title {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__title {
         font-size: clamp(24px, 7vw, 36px);
         line-height: 1.08;
         margin-bottom: 12px;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__text {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__text {
         font-size: clamp(10.5px, 2.9vw, 11.5px);
         line-height: 1.32;
         color: #1f1f1f;
         margin-bottom: 14px;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__text-line--mobile {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__text-line--mobile {
         display: block;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__text-line--mobile-p2-start {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__text-line--mobile-p2-start {
         margin-top: 0.72em;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__badge {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__badge {
         top: 0;
         right: 8px;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__badge img {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__badge img {
         width: clamp(90px, 24vw, 108px);
         height: calc(clamp(90px, 24vw, 108px) * 333 / 214);
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -6148,8 +5643,8 @@ body.page-template-page-get-started .main > .section:last-of-type {
         row-gap: 8px;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--dark,
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--outline {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--dark,
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--outline {
         flex: 0 0 50%;
         min-width: 0;
         justify-content: center;
@@ -6160,11 +5655,11 @@ body.page-template-page-get-started .main > .section:last-of-type {
         line-height: 1;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--outline {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--outline {
         margin-left: -1px;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--link {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--link {
         flex: 0 0 100%;
         margin-left: 0;
         margin-top: 0;
@@ -6177,50 +5672,46 @@ body.page-template-page-get-started .main > .section:last-of-type {
 /* ========================================
    GET STARTED - MOBILE CARD 1 + CARD 2 FINE TUNING
 ======================================== */
-body.page-template-page-get-started #counter-offer .counter-offer__title-line--mobile,
-body.page-template-page-get-started #counter-offer .counter-offer__text-line--mobile {
+body.template-get-started #counter-offer .counter-offer__title-line--mobile,
+body.template-get-started #counter-offer .counter-offer__text-line--mobile {
     display: none;
 }
 
-body.page-template-page-get-started #counter-offer .counter-offer__title-line--desktop,
-body.page-template-page-get-started #counter-offer .counter-offer__text-line--desktop {
+body.template-get-started #counter-offer .counter-offer__title-line--desktop,
+body.template-get-started #counter-offer .counter-offer__text-line--desktop {
     display: inline;
 }
 
-body.page-template-page-get-started #counter-offer .counter-offer__lenders-note {
-    display: none;
-}
-
 @media (max-width: 767px) {
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--dark,
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--outline {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--dark,
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--outline {
         height: 40px;
         min-height: 40px;
         padding: 0 5px;
         font-size: clamp(8.5px, 2.4vw, 9.5px);
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--link {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__buttons .btn--link {
         margin-top: 10px;
         font-size: clamp(8.5px, 2.4vw, 9.5px);
     }
 
-    body.page-template-page-get-started #counter-offer .counter-offer__title-line--desktop,
-    body.page-template-page-get-started #counter-offer .counter-offer__text-line--desktop,
-    body.page-template-page-get-started #counter-offer .gs-break-desktop {
+    body.template-get-started #counter-offer .counter-offer__title-line--desktop,
+    body.template-get-started #counter-offer .counter-offer__text-line--desktop,
+    body.template-get-started #counter-offer .gs-break-desktop {
         display: none;
     }
 
-    body.page-template-page-get-started #counter-offer .counter-offer__title-line--mobile,
-    body.page-template-page-get-started #counter-offer .counter-offer__text-line--mobile {
+    body.template-get-started #counter-offer .counter-offer__title-line--mobile,
+    body.template-get-started #counter-offer .counter-offer__text-line--mobile {
         display: block;
     }
 
-    body.page-template-page-get-started #counter-offer .step__subtitle {
+    body.template-get-started #counter-offer .step__subtitle {
         margin-bottom: 10px;
     }
 
-    body.page-template-page-get-started #counter-offer .counter-offer__text {
+    body.template-get-started #counter-offer .counter-offer__text {
         font-size: clamp(11px, 3.1vw, 12px);
         line-height: 1.35;
         max-width: 310px;
@@ -6229,54 +5720,45 @@ body.page-template-page-get-started #counter-offer .counter-offer__lenders-note 
         text-align: center;
     }
 
-    body.page-template-page-get-started #counter-offer .step__upload {
+    body.template-get-started #counter-offer .step__upload {
         margin-bottom: 20px;
     }
 
-    body.page-template-page-get-started #counter-offer .upload-box {
+    body.template-get-started #counter-offer .upload-box {
         width: min(100%, 246px);
         height: 108px;
         padding: 12px;
     }
 
-    body.page-template-page-get-started #counter-offer .upload-box::before {
+    body.template-get-started #counter-offer .upload-box::before {
         top: 8px;
         left: 8px;
         right: 8px;
         bottom: 8px;
     }
 
-    body.page-template-page-get-started #counter-offer .upload-box__icon {
+    body.template-get-started #counter-offer .upload-box__icon {
         width: 30px;
         height: 30px;
     }
 
-    body.page-template-page-get-started #counter-offer .upload-box__text {
+    body.template-get-started #counter-offer .upload-box__text {
         font-size: 10px;
     }
 
-    body.page-template-page-get-started #counter-offer .step__faq-link {
+    body.template-get-started #counter-offer .step__faq-link {
         margin-top: 12px;
         font-size: 11px;
         line-height: 1.25;
     }
 
-    body.page-template-page-get-started #counter-offer .counter-offer__lenders-note {
-        display: block;
-        margin: 12px 0 8px;
-        font-size: 10px;
-        line-height: 1.2;
-        font-style: italic;
-        color: #8a8a8a;
-        text-align: center;
-    }
 }
 
 /* ========================================
    ABOUT - MATCH HOME SHELL WITHOUT OVERSCALE
 ======================================== */
 
-body.page-template-page-about .section > .card {
+body.template-about .section > .card {
     width: 100%;
     max-width: none;
     margin-left: 0;
@@ -6289,39 +5771,39 @@ body.page-template-page-about .section > .card {
     box-sizing: border-box;
 }
 
-body.page-template-page-about .main.main--about {
+body.template-about .main.main--about {
     padding-bottom: 0;
 }
 
-body.page-template-page-about .main > .section:last-of-type {
+body.template-about .main > .section:last-of-type {
     margin-bottom: 0 !important;
 }
 
-body.page-template-page-about .about-section:last-child {
+body.template-about .about-section:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.page-template-page-about {
+    body.template-about {
         font-size: 15px;
     }
 
-    body.page-template-page-about .main {
+    body.template-about .main {
         max-width: calc(1500px * var(--home-fluid-scale));
         padding: clamp(20px, calc(34px * var(--home-fluid-scale)), 34px) var(--home-inline-pad);
     }
 
-    body.page-template-page-about .section {
+    body.template-about .section {
         margin-bottom: clamp(20px, calc(30px * var(--home-fluid-scale)), 30px);
     }
 
-    body.page-template-page-about .about-page {
+    body.template-about .about-page {
         gap: clamp(24px, calc(40px * var(--home-fluid-scale)), 40px);
         padding: clamp(18px, calc(40px * var(--home-fluid-scale)), 40px) var(--home-card-inline-pad);
     }
 
-    body.page-template-page-about .about-section {
+    body.template-about .about-section {
         max-width: clamp(520px, calc(800px * var(--home-fluid-scale)), 860px);
         margin-right: auto;
     }
@@ -6340,15 +5822,15 @@ body.page-template-page-about .about-section:last-child {
 }
 
 @media (max-width: 767px) {
-    body.page-template-page-about .main {
+    body.template-about .main {
         padding: 8px;
     }
 
-    body.page-template-page-about .section {
+    body.template-about .section {
         margin-bottom: 10px;
     }
 
-    body.page-template-page-about .card {
+    body.template-about .card {
         padding: var(--home-mobile-card-padding);
         border: 1px solid #a7a7a7;
         border-radius: 0 !important;
@@ -6357,7 +5839,7 @@ body.page-template-page-about .about-section:last-child {
     }
 }
 
-body.page-template-page-about .main.main--about > .section {
+body.template-about .main.main--about > .section {
     margin-bottom: 0 !important;
 }
 
@@ -6381,7 +5863,7 @@ body.page-template-page-about .main.main--about > .section {
    HOME CARD 2 - BADGE RATIO 214x333
 ======================================== */
 
-body.home main .section:nth-of-type(2) .guarantee__badge img {
+body.template-home main .section:nth-of-type(2) .guarantee__badge img {
     width: clamp(78px, 30vw, 104px);
     height: calc(clamp(78px, 30vw, 104px) * 333 / 214);
     max-width: none;
@@ -6392,7 +5874,7 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
 }
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.home main .section:nth-of-type(2) .guarantee__badge img {
+    body.template-home main .section:nth-of-type(2) .guarantee__badge img {
         width: clamp(100px, calc(214px * var(--home-fluid-scale)), 214px);
         height: calc(clamp(100px, calc(214px * var(--home-fluid-scale)), 214px) * 333 / 214);
         max-width: none;
@@ -6405,30 +5887,30 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
 
 /* Keep shell scale continuity when zoom-out pushes CSS viewport > 2200px */
 @media (min-width: 2201px) {
-    body.home .main,
-    body.page-template-page-get-started .main,
-    body.page-template-page-about .main.main--about {
+    body.template-home .main,
+    body.template-get-started .main,
+    body.template-about .main.main--about {
         max-width: calc(1500px * var(--home-fluid-scale));
         padding: clamp(30px, calc(34px * var(--home-fluid-scale)), 34px) var(--home-inline-pad);
     }
 
-    body.home .section,
-    body.page-template-page-get-started .section,
-    body.page-template-page-about .section {
+    body.template-home .section,
+    body.template-get-started .section,
+    body.template-about .section {
         margin-bottom: clamp(23px, calc(30px * var(--home-fluid-scale)), 30px);
     }
 
-    body.home main .section .card {
+    body.template-home main .section .card {
         padding-left: var(--home-card-inline-pad);
         padding-right: var(--home-card-inline-pad);
     }
 
-    body.page-template-page-about .about-page {
+    body.template-about .about-page {
         gap: 35px;
         padding: 35px var(--home-card-inline-pad);
     }
 
-    body.page-template-page-about .about-section {
+    body.template-about .about-section {
         max-width: clamp(520px, calc(800px * var(--home-fluid-scale)), 860px);
         margin-right: auto;
     }
@@ -6440,64 +5922,64 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
 ======================================== */
 
 @media (max-width: 767px) {
-    body.is-research-context .main {
+    body.research-context .main {
         padding: 8px;
         max-width: 100%;
     }
 
-    body.is-research-context .research-header,
-    body.is-research-context .blog-posts,
-    body.is-research-context .pagination,
-    body.is-research-context .section {
+    body.research-context .research-header,
+    body.research-context .blog-posts,
+    body.research-context .pagination,
+    body.research-context .section {
         padding-left: 16px;
         padding-right: 16px;
     }
 
-    body.single-post.is-research-context .article {
+    body.single-post.research-context .article {
         padding-left: 16px;
         padding-right: 16px;
     }
 }
 
 @media (min-width: 760px) and (max-width: 2200px) {
-    body.is-research-context .main {
+    body.research-context .main {
         max-width: calc(1500px * var(--home-fluid-scale));
         padding: clamp(20px, calc(34px * var(--home-fluid-scale)), 34px) var(--home-inline-pad, clamp(24px, calc(68px * var(--home-fluid-scale)), 68px));
     }
 
-    body.is-research-context .research-header {
+    body.research-context .research-header {
         padding-left: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
         padding-right: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
     }
 
-    body.is-research-context .blog-posts {
+    body.research-context .blog-posts {
         padding-left: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
         padding-right: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
     }
 
-    body.is-research-context .pagination {
+    body.research-context .pagination {
         padding-left: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
         padding-right: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
     }
 
-    body.single-post.is-research-context .article,
-    body.is-research-context .section {
+    body.single-post.research-context .article,
+    body.research-context .section {
         padding-left: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
         padding-right: var(--home-card-inline-pad, clamp(32px, calc(56px * var(--home-fluid-scale)), 56px));
     }
 }
 
 @media (min-width: 2201px) {
-    body.is-research-context .main {
+    body.research-context .main {
         max-width: calc(1500px * var(--home-fluid-scale));
         padding: clamp(30px, calc(34px * var(--home-fluid-scale)), 34px) var(--home-inline-pad);
     }
 
-    body.is-research-context .research-header,
-    body.is-research-context .blog-posts,
-    body.is-research-context .pagination,
-    body.single-post.is-research-context .article,
-    body.is-research-context .section {
+    body.research-context .research-header,
+    body.research-context .blog-posts,
+    body.research-context .pagination,
+    body.single-post.research-context .article,
+    body.research-context .section {
         padding-left: var(--home-card-inline-pad);
         padding-right: var(--home-card-inline-pad);
     }
@@ -6519,43 +6001,43 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
    Keep card typography/badges at the same capped scale used by home-like desktop
 ======================================== */
 @media (min-width: 2201px) {
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__title,
-    body.page-template-page-get-started .step__title,
-    body.page-template-page-get-started .new-offer__title,
-    body.page-template-page-get-started .schedule-call__title {
+    body.template-get-started .guarantee--getstarted .guarantee__title,
+    body.template-get-started .step__title,
+    body.template-get-started .new-offer__title,
+    body.template-get-started .schedule-call__title {
         font-size: 47.52px; /* 54 * 0.88 */
         line-height: 1.04;
     }
 
-    body.page-template-page-get-started .step__subtitle {
+    body.template-get-started .step__subtitle {
         font-size: 38.72px; /* 44 * 0.88 */
         line-height: 1.14;
     }
 
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__text,
-    body.page-template-page-get-started .step__text,
-    body.page-template-page-get-started .step__intro,
-    body.page-template-page-get-started .feature__text,
-    body.page-template-page-get-started .new-offer__subtitle,
-    body.page-template-page-get-started .schedule-call__subtitle,
-    body.page-template-page-get-started #counter-offer .step__text {
+    body.template-get-started .guarantee--getstarted .guarantee__text,
+    body.template-get-started .step__text,
+    body.template-get-started .step__intro,
+    body.template-get-started .feature__text,
+    body.template-get-started .new-offer__subtitle,
+    body.template-get-started .schedule-call__subtitle,
+    body.template-get-started #counter-offer .step__text {
         font-size: 29.92px; /* 34 * 0.88 */
         line-height: 1.24;
     }
 
-    body.page-template-page-get-started .section:first-of-type .guarantee--getstarted .guarantee__title,
-    body.page-template-page-get-started #counter-offer .step__subtitle {
+    body.template-get-started .section:first-of-type .guarantee--getstarted .guarantee__title,
+    body.template-get-started #counter-offer .step__subtitle {
         font-size: 54.56px; /* 62 * 0.88 */
         line-height: 1.1;
     }
 
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__badge {
+    body.template-get-started .guarantee--getstarted .guarantee__badge {
         top: -1px;
         right: 51.04px; /* 58 * 0.88 */
         transform: none;
     }
 
-    body.page-template-page-get-started .guarantee--getstarted .guarantee__badge img {
+    body.template-get-started .guarantee--getstarted .guarantee__badge img {
         width: 188.32px; /* 214 * 0.88 */
         height: calc(188.32px * 333 / 214);
         max-width: none;
@@ -6565,14 +6047,14 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
         transform-origin: top center;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders {
+    body.template-get-started #counter-offer .hero__lenders {
         margin-top: 82.72px; /* 94 * 0.88 */
         margin-top: 0;
         width: 100%;
         border-top: 1px solid #a7a7a7;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos {
+    body.template-get-started #counter-offer .hero__lenders-logos {
         padding: 24.64px 49px 26.4px;
         margin-left: 0;
         margin-right: 0;
@@ -6580,16 +6062,16 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
         gap: 24.64px;
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos img {
+    body.template-get-started #counter-offer .hero__lenders-logos img {
         height: 72.16px; /* 82 * 0.88 */
     }
 
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
+    body.template-get-started #counter-offer .hero__lenders-logos .hero__lender-logo--pennymac {
         height: 109px;
         width: auto;
     }
 
-    body.page-template-page-get-started #counter-offer .card__inner--counter-offer {
+    body.template-get-started #counter-offer .card__inner--counter-offer {
         padding: 75.68px 49px 82.72px;
     }
 }
@@ -6599,45 +6081,45 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
    Keep home card typography/seals/logos at the same capped scale as <=2200
 ======================================== */
 @media (min-width: 2201px) {
-    body.home .hero__title {
+    body.template-home .hero__title {
         font-size: 54.56px;
         line-height: 1.1;
     }
 
-    body.home .hero__text {
+    body.template-home .hero__text {
         font-size: 29.92px;
         line-height: 1.24;
     }
 
-    body.home .hero__lenders {
+    body.template-home .hero__lenders {
         margin-top: 82.72px;
     }
 
-    body.home .hero__lenders-logos {
+    body.template-home .hero__lenders-logos {
         padding: 24.64px 49px 26.4px;
     }
 
-    body.home .hero__lenders-logos img {
+    body.template-home .hero__lenders-logos img {
         height: 72.16px;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__title {
+    body.template-home main .section:nth-of-type(2) .guarantee__title {
         font-size: 54.56px;
         line-height: 1.1;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__text {
+    body.template-home main .section:nth-of-type(2) .guarantee__text {
         font-size: 27.28px;
         line-height: 1.22;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__badge {
+    body.template-home main .section:nth-of-type(2) .guarantee__badge {
         right: 51.04px;
         top: -1px;
         transform: none;
     }
 
-    body.home main .section:nth-of-type(2) .guarantee__badge img {
+    body.template-home main .section:nth-of-type(2) .guarantee__badge img {
         width: 188.32px;
         height: calc(188.32px * 333 / 214);
         max-width: none;
@@ -6646,35 +6128,35 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
         transform: none;
     }
 
-    body.home .step__title {
+    body.template-home .step__title {
         font-size: 47.52px;
         line-height: 1.04;
     }
 
-    body.home .step__subtitle,
-    body.home .feature__title {
+    body.template-home .step__subtitle,
+    body.template-home .feature__title {
         font-size: 38.72px;
         line-height: 1.14;
     }
 
-    body.home .step__text,
-    body.home .step__intro,
-    body.home .feature__text {
+    body.template-home .step__text,
+    body.template-home .step__intro,
+    body.template-home .feature__text {
         font-size: 29.92px;
         line-height: 1.24;
     }
 
-    body.home main .section:nth-of-type(5) .step__seal-img {
+    body.template-home main .section:nth-of-type(5) .step__seal-img {
         width: 218.24px;
         height: auto;
     }
 
-    body.home .research__title {
+    body.template-home .research__title {
         font-size: 39.6px;
         line-height: 1.15;
     }
 
-    body.home .research__subtitle {
+    body.template-home .research__subtitle {
         font-size: 19.36px;
         line-height: 1.3;
     }
@@ -6686,21 +6168,21 @@ body.home main .section:nth-of-type(2) .guarantee__badge img {
 ======================================== */
 
 /* Keep divider paint clipped to card edges on Get Started card 2 */
-body.page-template-page-get-started #counter-offer .hero__lenders {
+body.template-get-started #counter-offer .hero__lenders {
     overflow: hidden;
 }
 
 /* Keep Get Started card 1 using the same dynamic left/right gutter as Home/Research
    across desktop + zoom ranges (including <67% zoom scenarios in Chrome desktop). */
 @media (min-width: 760px) {
-    body.page-template-page-get-started .section:first-of-type .card--guarantee {
+    body.template-get-started .section:first-of-type .card--guarantee {
         padding-left: var(--home-card-inline-pad);
         padding-right: var(--home-card-inline-pad);
     }
 }
 
 @media (max-width: 767px) {
-    body.page-template-page-get-started #counter-offer .hero__lenders-logos {
+    body.template-get-started #counter-offer .hero__lenders-logos {
         /* Match home card 1 mobile logo strip geometry */
         padding-inline: 16px;
         margin-left: 0;
@@ -6710,15 +6192,15 @@ body.page-template-page-get-started #counter-offer .hero__lenders {
 }
 
 @media (min-width: 768px) and (max-width: 2200px) {
-    body.is-research-context .research-header,
-    body.is-research-context .blog-posts,
-    body.is-research-context .pagination,
-    body.is-research-context .article {
+    body.research-context .research-header,
+    body.research-context .blog-posts,
+    body.research-context .pagination,
+    body.research-context .article {
         padding-left: var(--home-card-inline-pad);
         padding-right: var(--home-card-inline-pad);
     }
 
-    body.is-research-context .pagination {
+    body.research-context .pagination {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
@@ -6726,10 +6208,10 @@ body.page-template-page-get-started #counter-offer .hero__lenders {
 
 @media (min-width: 2201px) {
     /* Match the same capped gutter used by the shared navbar shell */
-    body.is-research-context .research-header,
-    body.is-research-context .blog-posts,
-    body.is-research-context .pagination,
-    body.is-research-context .article {
+    body.research-context .research-header,
+    body.research-context .blog-posts,
+    body.research-context .pagination,
+    body.research-context .article {
         padding-left: var(--home-card-inline-pad) !important;
         padding-right: var(--home-card-inline-pad) !important;
     }
@@ -6739,7 +6221,7 @@ body.page-template-page-get-started #counter-offer .hero__lenders {
 /* Desktop zoom safety: when a desktop browser zooms in and falls into mobile rules,
    keep Get Started card 1 text aligned with the same left gutter used by Home/Research. */
 @media (hover: hover) and (pointer: fine) and (max-width: 767px) {
-    body.page-template-page-get-started .section:first-of-type .card--guarantee {
+    body.template-get-started .section:first-of-type .card--guarantee {
         padding-left: 16px;
         padding-right: 16px;
     }
@@ -6747,56 +6229,56 @@ body.page-template-page-get-started #counter-offer .hero__lenders {
 
 /* Stronger home >2200 overrides (match section-specific selectors) */
 @media (min-width: 2201px) {
-    body.home main .section:first-of-type .hero__title {
+    body.template-home main .section:first-of-type .hero__title {
         font-size: 54.56px;
         line-height: 1.1;
     }
 
-    body.home main .section:first-of-type .hero__text {
+    body.template-home main .section:first-of-type .hero__text {
         font-size: 29.92px;
         line-height: 1.24;
     }
 
-    body.home main .section:first-of-type .hero__lenders {
+    body.template-home main .section:first-of-type .hero__lenders {
         margin-top: 82.72px;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos {
+    body.template-home main .section:first-of-type .hero__lenders-logos {
         padding: 24.64px 49px 26.4px;
     }
 
-    body.home main .section:first-of-type .hero__lenders-logos img {
+    body.template-home main .section:first-of-type .hero__lenders-logos img {
         height: 72.16px;
     }
 
-    body.home main .section:nth-of-type(3) .step__title,
-    body.home main .section:nth-of-type(4) .step__title,
-    body.home main .section:nth-of-type(5) .step__title {
+    body.template-home main .section:nth-of-type(3) .step__title,
+    body.template-home main .section:nth-of-type(4) .step__title,
+    body.template-home main .section:nth-of-type(5) .step__title {
         font-size: 47.52px;
         line-height: 1.04;
     }
 
-    body.home main .section:nth-of-type(3) .step__subtitle,
-    body.home main .section:nth-of-type(5) .step__subtitle,
-    body.home main .section:nth-of-type(4) .feature__title {
+    body.template-home main .section:nth-of-type(3) .step__subtitle,
+    body.template-home main .section:nth-of-type(5) .step__subtitle,
+    body.template-home main .section:nth-of-type(4) .feature__title {
         font-size: 38.72px;
         line-height: 1.14;
     }
 
-    body.home main .section:nth-of-type(3) .step__text,
-    body.home main .section:nth-of-type(4) .step__intro,
-    body.home main .section:nth-of-type(4) .feature__text,
-    body.home main .section:nth-of-type(5) .step__text {
+    body.template-home main .section:nth-of-type(3) .step__text,
+    body.template-home main .section:nth-of-type(4) .step__intro,
+    body.template-home main .section:nth-of-type(4) .feature__text,
+    body.template-home main .section:nth-of-type(5) .step__text {
         font-size: 29.92px;
         line-height: 1.24;
     }
 
-    body.home main .section:nth-of-type(6) .research__title {
+    body.template-home main .section:nth-of-type(6) .research__title {
         font-size: 39.6px;
         line-height: 1.15;
     }
 
-    body.home main .section:nth-of-type(6) .research__subtitle {
+    body.template-home main .section:nth-of-type(6) .research__subtitle {
         font-size: 19.36px;
         line-height: 1.3;
     }
@@ -6820,11 +6302,11 @@ body.page-template-page-get-started #counter-offer .hero__lenders {
    avoid footer bottom gaps caused by fixed negative margin compensation combined
    with large viewport/subpixel rounding. */
 @media (min-width: 2201px) {
-    body.is-research-context .main.main--full-height {
+    body.research-context .main.main--full-height {
         padding-bottom: 0 !important;
     }
 
-    body.single-post.is-research-context .main {
+    body.single-post.research-context .main {
         padding-bottom: 0 !important;
     }
 }
@@ -6848,17 +6330,17 @@ body.page-template-page-get-started #counter-offer .hero__lenders {
    Keep current left start, cap right edge at navbar "RESEARCH" end.
 ======================================== */
 @media (min-width: 768px) {
-    body.is-research-context .research-header,
-    body.is-research-context .blog-posts,
-    body.is-research-context .pagination,
-    body.single-post.is-research-context .article {
+    body.research-context .research-header,
+    body.research-context .blog-posts,
+    body.research-context .pagination,
+    body.single-post.research-context .article {
         width: 100% !important;
         max-width: none !important;
         box-sizing: border-box;
     }
 
     /* Research page only: narrow post text block without shrinking chart card */
-    body.is-research-context .main--research-page .blog-posts .post {
+    body.research-context .main--research-page .blog-posts .post {
         max-width: clamp(560px, 75%, 980px);
         margin-right: auto;
     }
@@ -7729,27 +7211,6 @@ body.error404 .error-page__code,
 body.error404 .error-page__title,
 body.error404 .error-page__subtitle {
     color: #111;
-}
-
-body.error404 .error-page__actions .btn--primary {
-    background: #111 !important;
-    color: #fff !important;
-    border: 1px solid #111 !important;
-}
-
-body.error404 .error-page__actions .btn--primary:hover {
-    background: #111 !important;
-}
-
-body.error404 .error-page__actions .btn--outline {
-    border: 1px solid #111;
-    color: #111;
-    background: #fff;
-}
-
-body.error404 .error-page__actions .btn--outline:hover {
-    background: #f5f5f5;
-    border-color: #111;
 }
 
 body.error404 .main.main--404 {

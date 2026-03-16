@@ -10,8 +10,16 @@
 </head>
 <?php
 $body_classes = array('has-bankirr-header');
-if (is_page('research') || is_page_template('page-research.php') || is_search() || is_archive() || is_home() || is_singular('post')) {
-    $body_classes[] = 'is-research-context';
+$template_body_classes = array();
+
+if (isset($GLOBALS['irr_body_context_classes']) && is_array($GLOBALS['irr_body_context_classes'])) {
+    $template_body_classes = array_map('sanitize_html_class', $GLOBALS['irr_body_context_classes']);
+}
+
+$body_classes = array_merge($body_classes, $template_body_classes);
+
+if (is_search() || is_archive() || is_home() || is_singular('post')) {
+    $body_classes[] = 'research-context';
 }
 ?>
 <body <?php body_class($body_classes); ?>>

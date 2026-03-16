@@ -2,6 +2,7 @@
 /**
  * Template Name: Research Page
  */
+$GLOBALS['irr_body_context_classes'] = array('template-research', 'research-context');
 get_header();
 
 // Pagination

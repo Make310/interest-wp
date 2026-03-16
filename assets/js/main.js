@@ -57,7 +57,7 @@
     // RESEARCH/BLOG WIDTH CAP TO NAV "RESEARCH"
     // ================================
     function syncResearchContentWidth() {
-        if (!body.classList.contains('is-research-context')) {
+        if (!body.classList.contains('research-context')) {
             return;
         }
 
@@ -68,10 +68,10 @@
 
         const navResearch = document.querySelector('.navbar .navbar__nav .navbar__nav-link[href*="/research"]');
         const contentStart = document.querySelector(
-            'body.is-research-context .research-header, ' +
-            'body.single-post.is-research-context .article, ' +
-            'body.is-research-context .main > .section, ' +
-            'body.is-research-context .blog-posts'
+            'body.research-context .research-header, ' +
+            'body.single-post.research-context .article, ' +
+            'body.research-context .main > .section, ' +
+            'body.research-context .blog-posts'
         );
 
         if (!navResearch || !contentStart) {

@@ -2,6 +2,7 @@
 /**
  * Template Name: Get Started Page
  */
+$GLOBALS['irr_body_context_classes'] = array('template-get-started');
 get_header();
 ?>
 

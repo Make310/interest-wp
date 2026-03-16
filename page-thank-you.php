@@ -2,6 +2,7 @@
 /**
  * Template Name: Thank You Page
  */
+$GLOBALS['irr_body_context_classes'] = array('template-thank-you');
 get_header();
 ?>
 
@@ -10,7 +11,7 @@ get_header();
         <div class="card">
             <div class="thank-you">
                 <div class="thank-you__icon">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#588986" stroke-width="2">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"></circle>
                         <path d="M9 12l2 2 4-4"></path>
                     </svg>

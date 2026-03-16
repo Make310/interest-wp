@@ -2,6 +2,7 @@
 /**
  * Template Name: About Page
  */
+$GLOBALS['irr_body_context_classes'] = array('template-about');
 get_header();
 
 // Helper function to get ACF field with fallback
