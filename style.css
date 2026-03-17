@@ -4869,6 +4869,18 @@ body.template-thank-you .main > .section:last-of-type {
 }
 
 /* ========================================
+   ELEMENTOR PAGE FOOTER JOIN
+======================================== */
+
+body.has-bankirr-header.elementor-page .elementor > .e-parent:last-child {
+    padding-bottom: 0;
+}
+
+body.has-bankirr-header.elementor-page .elementor > .e-parent:last-child .elementor-widget-html .wrap {
+    padding-bottom: 0 !important;
+}
+
+/* ========================================
    404 ERROR PAGE
 ======================================== */
 
