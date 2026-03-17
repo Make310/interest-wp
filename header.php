@@ -29,12 +29,15 @@ if (is_search() || is_archive() || is_home() || is_singular('post')) {
     <div class="bankirr-desktop">
         <div class="bankirr-top-row"></div>
 
-        <div class="bankirr-board" aria-label="Rates ticker">
-            <div class="bankirr-board__date" id="bankirrDate"></div>
-            <div class="bankirr-board__viewport">
-                <div class="bankirr-board__track" id="bankirrTrack"></div>
+        <!-- CLICKABLE TICKER (DESKTOP) -->
+        <a href="https://bankirr.com/ticker" style="display:block;">
+            <div class="bankirr-board" aria-label="Rates ticker">
+                <div class="bankirr-board__date" id="bankirrDate"></div>
+                <div class="bankirr-board__viewport">
+                    <div class="bankirr-board__track" id="bankirrTrack"></div>
+                </div>
             </div>
-        </div>
+        </a>
 
         <nav class="navbar navbar--bankirr">
             <div class="navbar__container navbar__container--bankirr">
@@ -54,7 +57,7 @@ if (is_search() || is_archive() || is_home() || is_singular('post')) {
                     <ul class="navbar__nav-list navbar__nav-list--bankirr">
                         <li><a href="<?php echo esc_url(home_url('/research')); ?>" class="navbar__nav-link">Research</a></li>
                         <li><a href="<?php echo esc_url(home_url('/get-started')); ?>" class="navbar__nav-link">Mortgage</a></li>
-                        <li><a href="<?php echo esc_url(home_url('/research/?s=refinance')); ?>" class="navbar__nav-link">Refinance</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/refinance')); ?>" class="navbar__nav-link">Refinance</a></li>
                     </ul>
                 </nav>
             </div>
@@ -63,12 +66,16 @@ if (is_search() || is_archive() || is_home() || is_singular('post')) {
 
     <div class="bankirr-mobile-wrap">
         <div class="bankirr-mobile">
-            <div class="ticker">
-                <div class="ticker__date" id="bankirrMobileDate">FEB 26</div>
-                <div class="ticker__viewport">
-                    <div class="ticker__track" id="tickerTrack"></div>
+
+            <!-- CLICKABLE TICKER (MOBILE) -->
+            <a href="https://bankirr.com/ticker" style="display:block;">
+                <div class="ticker">
+                    <div class="ticker__date" id="bankirrMobileDate">FEB 26</div>
+                    <div class="ticker__viewport">
+                        <div class="ticker__track" id="tickerTrack"></div>
+                    </div>
                 </div>
-            </div>
+            </a>
 
             <div class="mast">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="mast__top" aria-label="BANKIRR Home">
@@ -83,7 +90,7 @@ if (is_search() || is_archive() || is_home() || is_singular('post')) {
                 <a href="<?php echo esc_url(home_url('/about')); ?>">About</a>
                 <a href="<?php echo esc_url(home_url('/research')); ?>">Research</a>
                 <a href="<?php echo esc_url(home_url('/get-started')); ?>">Mortgage</a>
-                <a href="<?php echo esc_url(home_url('/research/?s=refinance')); ?>">Refinance</a>
+                <a href="<?php echo esc_url(home_url('/refinance')); ?>">Refinance</a>
             </nav>
         </div>
     </div>

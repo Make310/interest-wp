@@ -22,16 +22,15 @@ $all_tags = get_tags(array('hide_empty' => true));
 <main class="main main--full-height main--research-page">
     <!-- Page Header -->
     <section class="research-header">
-        <h1 class="research-header__title"><span class="underline">The Research</span></h1>
-        <p class="research-header__subtitle">
-            <span class="research-header__subtitle-line research-header__subtitle-line--desktop">Fast and Free, use Interest Rate Research</span><br class="research-header__subtitle-break research-header__subtitle-break--desktop">
-            <span class="research-header__subtitle-line research-header__subtitle-line--desktop">for the lowest inPut our gaurnanteterest</span>
+<h1 class="research-header__title">
+    <span class="underline">Adventures in the Lowest Interest Rate Guarantee</span>
+</h1>
 
-            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">Fast and Free consultation, use</span>
-            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">Interest Rate Research for the lowest</span>
-            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">interest rate available today from the</span>
-            <span class="research-header__subtitle-line research-header__subtitle-line--mobile">top lenders.</span>
-        </p>
+<p class="research-header__subtitle">
+    People often ask, <strong>how do you GUARANTEE the lowest interest rate?</strong> 
+    This blog shows "how" we do it. Each post documents a real case where we analyze a Loan Estimate and pursue a lower rate. 
+    We do this to create transparency and demonstrates the research process behind the guarantee.
+</p>
 
         <?php if ($all_tags) : ?>
         <div class="tags">
@@ -95,22 +94,7 @@ $all_tags = get_tags(array('hide_empty' => true));
                     </section>
 
                     <!-- Chart Card -->
-                    <section class="section">
-                        <div class="card">
-                            <div class="chart-section">
-                                <h2 class="chart-section__title">Freddie Mac Prime Mortgage Market Survey and Interest Rate</h2>
-                                <p class="chart-section__subtitle">(Percent per annum, not seasonally adjusted)</p>
 
-                                <div class="chart-section__card">
-                                    <div class="chart-section__holder">
-                                        <canvas id="ratesChart" aria-label="Mortgage rates line chart" role="img"></canvas>
-                                    </div>
-                                </div>
-
-                                <p class="chart-section__source">Source: Freddie Mac and U.S. Federal Reserve.</p>
-                            </div>
-                        </div>
-                    </section>
 
                     <!-- More Blog Posts -->
                     <section class="blog-posts">

@@ -18,16 +18,21 @@ get_header();
                         <span class="guarantee__title-line guarantee__title-line--mobile">Close with confidence</span>
                         <span class="guarantee__title-line guarantee__title-line--mobile">you got the lower rate</span>
                     </h1>
-                    <p class="guarantee__text">
-                        <span class="guarantee__text-line guarantee__text-line--desktop">To take advantage of our lower rate guaranty</span><br class="gs-break-desktop">
-                        <span class="guarantee__text-line guarantee__text-line--desktop">upload your first offer for a certified Counter Offer within 24&nbsp;hours.</span><br class="gs-break-desktop">
-                        <span class="guarantee__text-line guarantee__text-line--desktop">Otherwise, choose New Offer or schedule a call.</span>
-                        <span class="guarantee__text-line guarantee__text-line--mobile">To take advantage of our lower rate guaranty</span>
-                        <span class="guarantee__text-line guarantee__text-line--mobile">upload your first offer for a certified</span>
-                        <span class="guarantee__text-line guarantee__text-line--mobile">Counter Offer within 24 hours.</span>
-                        <span class="guarantee__text-line guarantee__text-line--mobile guarantee__text-line--mobile-p2-start">If you have no you have no offer,</span>
-                        <span class="guarantee__text-line guarantee__text-line--mobile">choose New Offer below or schedule a call.</span>
-                    </p>
+ <p class="guarantee__text">
+    <span class="guarantee__text-line guarantee__text-line--desktop">To take advantage of our lower rate guarantee</span>
+    <br class="gs-break-desktop">
+    <span class="guarantee__text-line guarantee__text-line--desktop">upload your first offer for a certified Counter Offer within 24 hours</span>
+    <br class="gs-break-desktop">
+    <span class="guarantee__text-line guarantee__text-line--desktop">Otherwise, choose "New Offer" or "Schedule a Call".</span>
+
+    <span class="guarantee__text-line guarantee__text-line--mobile">
+        To take advantage of our lower rate guaranty upload your first offer for a certified Counter Offer within 24 hours.
+    </span>
+
+    <span class="guarantee__text-line guarantee__text-line--mobile guarantee__text-line--mobile-p2-start">
+        If you have no offer, choose New Offer below or schedule a call.
+    </span>
+</p>
                     <div class="guarantee__buttons">
                         <a href="#counter-offer" class="btn btn--dark">COUNTER OFFER</a>
                         <a href="#new-offer" class="btn btn--outline">NEW OFFER</a>
@@ -49,14 +54,14 @@ get_header();
                 <span class="step__label">COUNTER OFFER</span>
 
                 <div class="step__upload">
-                    <div class="upload-box">
-                        <svg class="upload-box__icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="17 8 12 3 7 8"></polyline>
-                            <line x1="12" y1="3" x2="12" y2="15"></line>
-                        </svg>
-                        <span class="upload-box__text">CLICK TO UPLOAD</span>
+					
+                    <!-- EZ File Drop Embed Form -->
+                    <div class="ezfd-embed-form">
+                        <div data-form-uuid="282a5b5f-e5b4-4060-87ba-e69535b04775" data-options="" class="ezfd-form"></div>
+                        <script type="text/javascript" src="//app.ezfiledrop.com/js/embed-form.js"></script>
                     </div>
+                    <!-- /EZ File Drop Embed Form -->
+					
                 </div>
 
                 <h2 class="step__subtitle">
